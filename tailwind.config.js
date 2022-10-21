@@ -25,9 +25,11 @@ module.exports = {
         grad1: "#8BCDF4",
         grad2: "#C9F5FD",
         grad3: "#C6F8FE",
-        borderBlue: "#B8F3FF",
+        borderBlue: "#B8F3FF", 
         darkP: "#462D4A",
         foot: "#F7F8E8",
+        midWhite: "#FAF4E8",
+        dull: "#CDAAA4"
       },
       boxShadow: {
         film: "15px 10px 50px -20px rgba(0, 0, 0.8, 0.3)",
@@ -49,11 +51,13 @@ module.exports = {
         conso: "Conso Regular",
         consoM: "Conso Medium",
         gaia: "Gaia",
-        fira: "Fira Code",
+        fira: "Fira Regular",
         firaL: "Fira Code Light",
-        firaB: "Fira Code Bold",
+        firaB: "Fira Bold",
         din: "DIN Condensed",
         futur: "Futurist",
+        mag: "Letter Magic",
+        rain: "Internal Rainbows"
       },
       keyframes: {
         marquee: {

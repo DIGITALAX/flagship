@@ -1,17 +1,26 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { NextPage } from "next";
+import Head from "next/head";
+import Banner from "../components/home/banner/Banner";
+import Gallery from "../components/home/gallery/Gallery";
+import Footer from "../components/layout/Footer";
+import Header from "../components/layout/Header";
+import Title from "./../components/home/title/Title";
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <div className="min-w-screen min-h-full h-full flex flex-col bg-midWhite">
       <Head>
         <title>DIGITALAX</title>
         <meta name="description" content="DIGITALAX" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Header />
+      <Title />
+      <Banner />
+      <Gallery />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
