@@ -29,7 +29,10 @@ module.exports = {
         darkP: "#462D4A",
         foot: "#F7F8E8",
         midWhite: "#FAF4E8",
-        dull: "#CDAAA4"
+        dull: "#CDAAA4",
+        skyBlue: "#BBEEFF",
+        grayMid: "#C9D8E4",
+        purp: "#CFB0FA"
       },
       boxShadow: {
         film: "15px 10px 50px -20px rgba(0, 0, 0.8, 0.3)",
@@ -54,10 +57,11 @@ module.exports = {
         fira: "Fira Regular",
         firaL: "Fira Code Light",
         firaB: "Fira Bold",
+        firaM: "Fira Medium",
         din: "DIN Condensed",
         futur: "Futurist",
         mag: "Letter Magic",
-        rain: "Internal Rainbows"
+        rain: "Internal Rainbows",
       },
       keyframes: {
         marquee: {
@@ -90,6 +94,12 @@ module.exports = {
         midi: "1140px",
         half: "900px",
         alm: "740px",
+      },
+      cursor: {
+        sewing: "url('/images/sewingCursor.png'), auto",
+        sewingH: "url('/images/sewingCursorH.png'), auto",
+        sewingS: "url('/images/sewingCursorSmall.png'), auto",
+        sewingHS: "url('/images/sewingCursorHSmall.png'), auto",
       },
     },
   },

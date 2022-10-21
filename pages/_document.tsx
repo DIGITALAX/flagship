@@ -44,6 +44,12 @@ class Document extends NextDocument {
                   src: url("./fonts/Internal Rainbows.otf");
                 }
 
+                @font-face {
+                  font-family: "Fira Medium";
+                  font-weight: 400;
+                  src: url("./fonts/FiraCode-Medium.ttf");
+                }
+
             `,
             }}
           ></style>

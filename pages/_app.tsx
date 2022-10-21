@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     console.log(``);
   }, []);
   return (
-    <div className="min-h-full h-auto min-w-screen w-screen bg-midWhite relative cursor-empire selection:bg-offBlack selection:text-dull">
+    <div className="min-h-full h-auto min-w-screen w-screen bg-midWhite relative cursor-empire selection:bg-skyBlue selection:text-dull cursor-sewingS">
       <Component {...pageProps} />
     </div>
   );
