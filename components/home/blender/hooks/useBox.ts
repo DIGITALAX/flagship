@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Gallery, useGalleryResult } from "../../../../types/general.types";
-import tokens from "./../../../../pages/api/tokens.json";
+import { Blender, useBoxResults } from "../../../../types/general.types";
+import blender from "./../../../../pages/api/blender.json";
 
-const useGallery = (): useGalleryResult => {
-  const imagesPerPage: number = 18;
-  const [images, setImages] = useState<Gallery[]>(
-    tokens.slice(0, imagesPerPage)
+const useBox = (): useBoxResults => {
+  const imagesPerPage: number = 3;
+  const [images, setImages] = useState<Blender[]>(
+    blender.slice(0, imagesPerPage)
   );
   const [loading, setLoading] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -17,15 +17,14 @@ const useGallery = (): useGalleryResult => {
   const fetchImages = (): void => {
     setLoading(true);
     setPageBoundaryBackward(true);
-    const res: Gallery[] = tokens;
+    const res: Blender[] = blender;
     setImages(res);
   };
 
-  const totalImages: number = tokens.length;
+  const totalImages: number = blender.length;
   const indexofLastImage: number = currentPage * imagesPerPage;
   const indexofFirstImage: number = indexofLastImage - imagesPerPage;
-  const [more, setMore] = useState<boolean>(false)
-  const currentImages: Gallery[] = images.slice(
+  const currentImages: Blender[] = images.slice(
     indexofFirstImage,
     indexofLastImage
   );
@@ -69,9 +68,7 @@ const useGallery = (): useGalleryResult => {
     paginateForward,
     pageBoundaryBackward,
     pageBoundaryForward,
-    setMore,
-    more
   };
 };
 
-export default useGallery;
+export default useBox;

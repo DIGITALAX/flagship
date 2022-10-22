@@ -41,7 +41,7 @@ const Header: FunctionComponent = (): JSX.Element => {
       <div className="relative col-start-1 md:col-start-3 row-start-3 md:row-start-1 w-full md:w-fit min-w-full min-h-full h-full">
         <div className="grid grid-row-flow auto-rows-[auto auto] relative w-full h-full gap-4">
           <div className="relative w-fit h-fit row-start-1 place-self-center md:place-self-end pb-3">
-            <div className="relative w-screen md:w-40 h-fit bg-white border-t border-b md:border border-1 border-offBlack pt-1.5 pb-1.5 text-sm flex overflow-x-hidden whitespace-nowrap cursor-sewingHS hover:bg-skyBlue hover:text-purp active:text-purp active:bg-skyBlue">
+            <div className="relative w-screen md:w-40 h-fit bg-white border-t border-b md:border border-1 border-offBlack pt-1.5 pb-1.5 text-sm flex overflow-x-hidden whitespace-nowrap cursor-sewingHS hover:bg-skyBlue hover:text-dull active:text-dull active:bg-skyBlue">
               <Marquee direction="right" speed={25} gradient={false}>
                 {" "}
                 GO SHOPPING ❤️ 👉 GO SHOPPING ❤️ 👉 GO SHOPPING ❤️ 👉 GO

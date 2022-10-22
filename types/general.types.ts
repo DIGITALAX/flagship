@@ -17,9 +17,48 @@ export type useGalleryResult = {
   paginateForward: (e: number) => void;
   pageBoundaryForward: boolean;
   pageBoundaryBackward: boolean;
+  more: boolean;
+  setMore: (e: boolean) => void;
 };
 
 export type GalleryProps = {
   currentImages: Gallery[];
   loading: boolean;
+  more: boolean;
 };
+
+export type Blender = {
+  image: string;
+};
+
+export type BoxProps = {
+  currentImages: Blender[];
+  currentPage: number;
+  loading: boolean;
+  paginateBackward: (e: number) => void;
+  paginateForward: (e: number) => void;
+  pageBoundaryForward: boolean;
+  pageBoundaryBackward: boolean;
+};
+
+export type useBoxResults = {
+  currentImages: Blender[];
+  loading: boolean;
+  currentPage: number;
+  paginateBackward: (e: number) => void;
+  paginateForward: (e: number) => void;
+  pageBoundaryForward: boolean;
+  pageBoundaryBackward: boolean;
+};
+
+export type useGalleryBoxProps = {
+  currentImages: Blender[];
+};
+
+export type usePaginateProps = {
+  currentPage: number;
+  paginateBackward: (e: number) => void;
+  paginateForward: (e: number) => void;
+  pageBoundaryForward: boolean;
+  pageBoundaryBackward: boolean;
+}

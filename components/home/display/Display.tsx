@@ -12,6 +12,8 @@ const Display: FunctionComponent = (): JSX.Element => {
     paginateForward,
     pageBoundaryForward,
     pageBoundaryBackward,
+    setMore,
+    more,
   } = useGallery();
   return (
     <div className="relative flex bg-offBlack w-full min-w-full h-fit min-h-fit">
@@ -27,7 +29,7 @@ const Display: FunctionComponent = (): JSX.Element => {
                   <div
                     className={`col-start-1 relative w-fit h-fit place-self-center pt-1.5  ${
                       !pageBoundaryBackward &&
-                      "active:scale-105 active:opacity-90 hover:opacity-90"
+                      "active:scale-105 active:opacity-90 hover:opacity-90 cursor-sewingHS"
                     }`}
                     onClick={() => paginateBackward(currentPage)}
                   >
@@ -42,7 +44,7 @@ const Display: FunctionComponent = (): JSX.Element => {
                   <div
                     className={`col-start-3 relative w-fit h-fit place-self-center pt-1.5  ${
                       !pageBoundaryForward &&
-                      "active:scale-105 active:opacity-90 hover:opacity-90"
+                      "active:scale-105 active:opacity-90 hover:opacity-90 cursor-sewingHS"
                     } `}
                     onClick={() => paginateForward(currentPage)}
                   >
@@ -59,7 +61,26 @@ const Display: FunctionComponent = (): JSX.Element => {
           </div>
         </div>
         <div className="relative h-full w-full row-start-2 flex pt-10">
-          <Gallery loading={loading} currentImages={currentImages} />
+          <Gallery
+            loading={loading}
+            currentImages={currentImages}
+            more={more}
+          />
+        </div>
+        <div className="relative w-full h-fit pt-10 pb-2 flex justify-center cursor-sewingHS hover:opacity-70 active:opacity-70">
+          <div
+            className="relative grid grid-flow-col auto-cols-[auto auto] w-fit h-fit"
+            onClick={() => setMore(!more)}
+          >
+            <div className="col-start-1 relative w-fit h-fit pr-2">
+              <Image src={"/images/eye.png"} height={10} width={20} />
+            </div>
+            <div className="col-start-2 relative w-fit h-fit font-firaL text-offWhite">
+             {
+              !more ? "more?" : "less?"
+             }
+            </div>
+          </div>
         </div>
       </div>
     </div>

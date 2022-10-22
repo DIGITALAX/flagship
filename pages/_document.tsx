@@ -50,6 +50,23 @@ class Document extends NextDocument {
                   src: url("./fonts/FiraCode-Medium.ttf");
                 }
 
+                @font-face {
+                  font-family: "Fira Light";
+                  font-weight: 400;
+                  src: url("./fonts/FiraCode-Light.ttf");
+                }
+
+                @font-face {
+                  font-family: "Liberation Mono";
+                  font-weight: 400;
+                  src: url("./fonts/LiberationMono-Regular.ttf");
+                }
+
+                @font-face {
+                  font-family: "Liberation Mono Bold";
+                  font-weight: 400;
+                  src: url("./fonts/LiberationMono-Bold.ttf");
+                }
             `,
             }}
           ></style>

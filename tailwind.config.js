@@ -62,6 +62,8 @@ module.exports = {
         futur: "Futurist",
         mag: "Letter Magic",
         rain: "Internal Rainbows",
+        lib: "Liberation Mono",
+        libB: "Liberation Mono Bold"
       },
       keyframes: {
         marquee: {
