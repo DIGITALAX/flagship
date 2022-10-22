@@ -50,6 +50,12 @@
   src: url("/fonts/LiberationMono-Bold.ttf");
 }
 
+@font-face {
+  font-family: "FH Giselle Light";
+  font-weight: 400;
+  src: url("/fonts/FHGiselle-Light.ttf");
+}
+
 html,
 body {
   padding: 0;

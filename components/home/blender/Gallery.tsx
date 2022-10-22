@@ -6,7 +6,7 @@ const Gallery: FunctionComponent<useGalleryBoxProps> = ({
   currentImages,
 }): JSX.Element => {
   return (
-    <div className="relative grid grid-flow-col auto-cols-[auto auto] w-full h-fit justify-evenly gap-8 p-8">
+    <div className="relative grid grid-flow-col auto-cols-[auto auto] w-full h-fit justify-evenly gap-4 lg:gap-8 p-8">
       {currentImages.slice(0, 3).map((image: Blender, index: number) => {
         return (
           <div

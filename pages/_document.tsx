@@ -67,6 +67,12 @@ class Document extends NextDocument {
                   font-weight: 400;
                   src: url("./fonts/LiberationMono-Bold.ttf");
                 }
+
+                @font-face {
+                  font-family: "FH Giselle Light";
+                  font-weight: 400;
+                  src: url("./fonts/FHGiselle-Light.ttf");
+                }
             `,
             }}
           ></style>

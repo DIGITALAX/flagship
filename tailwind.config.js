@@ -63,7 +63,8 @@ module.exports = {
         mag: "Letter Magic",
         rain: "Internal Rainbows",
         lib: "Liberation Mono",
-        libB: "Liberation Mono Bold"
+        libB: "Liberation Mono Bold",
+        gisL: "FH Giselle Light"
       },
       keyframes: {
         marquee: {
