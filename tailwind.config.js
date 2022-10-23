@@ -32,7 +32,14 @@ module.exports = {
         dull: "#CDAAA4",
         skyBlue: "#BBEEFF",
         grayMid: "#C9D8E4",
-        purp: "#CFB0FA"
+        purp: "#CFB0FA",
+        deep: "#4FC0F3",
+        grad1: "#173FD7",
+        grad2: "#6CE3D6",
+        grad3: "#0772BB",
+        lib1: "#00FF00",
+        lib2: "#4251FF",
+        lib3: "#FAFF1B"
       },
       boxShadow: {
         film: "15px 10px 50px -20px rgba(0, 0, 0.8, 0.3)",
@@ -64,7 +71,9 @@ module.exports = {
         rain: "Internal Rainbows",
         lib: "Liberation Mono",
         libB: "Liberation Mono Bold",
-        gisL: "FH Giselle Light"
+        gisL: "FH Giselle Light",
+        thun: "A Love of Thunder",
+        fut: "Futurist"
       },
       keyframes: {
         marquee: {

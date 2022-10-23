@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import Glass from "./Glass";
+import DIY from "./DIY";
 import Text from "./Text";
 
 const Dials: FunctionComponent = (): JSX.Element => {
@@ -9,7 +9,7 @@ const Dials: FunctionComponent = (): JSX.Element => {
         <Text />
       </div>
       <div className="relative w-full h-fit row-start-2 place-self-center">
-        <Glass />
+        <DIY />
       </div>
     </div>
   );

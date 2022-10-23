@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { FunctionComponent } from "react";
 import Marquee from "react-fast-marquee";
+import { HeaderProps } from "../../types/general.types";
 
-const Header: FunctionComponent = (): JSX.Element => {
+const Header: FunctionComponent<HeaderProps> = ({rewind}): JSX.Element => {
   return (
-    <div className="relative grid grid-flow-col auto-cols-[auto auto] w-full gap-10 md:gap-1 md:justify-between md:content-between pt-6 md:pt-10 min-h-96 md:h-80 justify-center md:min-h-80 md:pl-8 md:pr-8 pb-4 overflow-x-hidden">
+    <div ref={rewind} className="relative grid grid-flow-col auto-cols-[auto auto] w-full gap-10 md:gap-1 md:justify-between md:content-between pt-6 md:pt-10 min-h-96 md:h-80 justify-center md:min-h-80 md:pl-8 md:pr-8 pb-4 overflow-x-hidden">
       <div className="relative col-start-1 row-start-1 md:w-fit min-h-full h-full">
         <div className="relative grid-flow-row auto-rows-[auto auto] md:w-fit h-full min-h-full font-fira text-xs grid md:place-self-start place-self-center text-center md:text-left md:pr-20 lg:pr-11">
           <div className="relative h-fit md:w-fit row-start-1">PR D CTS</div>

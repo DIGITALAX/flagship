@@ -15,18 +15,27 @@ const Static: FunctionComponent = (): JSX.Element => {
         </div>
       </div>
       <div className="w-full h-full row-start-2 relative place-self-center">
-        <div className="w-full h-[85vh] relative flex">
+        <div className="relative flex border-8 w-full h-[57vw] pb-2 rounded-xl border-offBlack">
           <Image
             src="/images/static.png"
             layout="fill"
-            className="w-full rounded-xl"
+            className="w-full rounded-sm"
           />
+          <div className="relative w-full h-full grid grid-flow-col auto-cols-[auto auto]">
+            <video
+              autoPlay
+              muted
+              loop
+              placeholder="blur"
+              className="relative max-w-none border-gray-900 border-8 w-[14vw] h-[18vw] object-cover flex place-self-center"
+            >
+              <source src="/videos/glitch.mp4" type="video/mp4"></source>
+            </video>
+          </div>
         </div>
-        <div className="relative z-30 w-60 h-80 border-6 border-offBlack rounded-xl">
-          <video>
-            <source></source>
-          </video>
-        </div>
+      </div>
+      <div className="row-start-3 w-full h-fit text-center font-lib text-offBlack relative pt-20 text-lg font-libB">
+        x005.m-3 – MICROFACTORY LOCAL CO•OP
       </div>
     </div>
   );

@@ -61,4 +61,33 @@ export type usePaginateProps = {
   paginateForward: (e: number) => void;
   pageBoundaryForward: boolean;
   pageBoundaryBackward: boolean;
+};
+
+export type FooterProps = {
+  handleRewind: () => void;
+};
+
+export type HeaderProps = {
+  rewind: any;
+};
+
+export type useLibraryResult = {
+  showImage: string;
+  setShowImage: (e: string) => void;
+};
+
+export type Library = {
+  name: string;
+  image: string;
+  number: string;
+  color: string;
+  link: string;
+  width: number;
+  height: number;
+};
+
+export type LibraryProps = {
+  lastBook: any;
+  otherBooks: any;
+  handleLastBook: () => void;
 }

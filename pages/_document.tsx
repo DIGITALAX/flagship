@@ -73,6 +73,18 @@ class Document extends NextDocument {
                   font-weight: 400;
                   src: url("./fonts/FHGiselle-Light.ttf");
                 }
+
+                @font-face {
+                  font-family: "A Love of Thunder";
+                  font-weight: 400;
+                  src: url("./fonts/A Love of Thunder.ttf");
+                }
+
+                @font-face {
+                  font-family: "Futurist";
+                  font-weight: 400;
+                  src: url("./fonts/Futurist Fixed-width Regular.ttf");
+                }
             `,
             }}
           ></style>
