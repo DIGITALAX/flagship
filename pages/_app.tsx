@@ -4,7 +4,6 @@ import { createContext, useEffect, useRef, useState } from "react";
 import Footer from "../components/layout/Footer";
 // import restoreScrollPosition from 'next-restore-scroll'
 
-
 export const GlobalProfileContextDefault = {
   expressInterest: "",
   setExpressInterest: (expressInterest: string) => {},

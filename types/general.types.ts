@@ -93,19 +93,19 @@ export type Library = {
 export type LibraryProps = {
   lastBook: any;
   handleLastBook: () => void;
-  RefactorModal: boolean | undefined;
+  setRefactorModal: (e: boolean) => void;
 };
 
 export type LibraryLargeProps = {
   lastBook: any;
   handleLastBook: () => void;
-  RefactorModal: boolean | undefined;
+  setRefactorModal: (e: boolean) => void;
 };
 
 export type LibrarySmallProps = {
   lastBook: any;
   handleLastBook: () => void;
-  RefactorModal: boolean | undefined;
+  setRefactorModal: (e: boolean) => void;
 };
 
 export type FeedProps = {
@@ -132,12 +132,12 @@ export type useFormResults = {
   setSubmitSuccess: (e: boolean) => void;
   submitSuccess: boolean;
   handleSubmitForm: (e: any) => Promise<void>;
-}
+};
 
 export type HomeProps = {
   rewind: any;
-}
+};
 
 export type RefactorElementProps = {
   setRefactorModal: (e: boolean) => void;
-}
+};

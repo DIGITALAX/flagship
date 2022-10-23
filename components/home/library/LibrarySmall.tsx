@@ -8,6 +8,7 @@ import useLibrary from "./hooks/useLibrary";
 const LibrarySmall: FunctionComponent<LibraryLargeProps> = ({
   lastBook,
   handleLastBook,
+  setRefactorModal,
 }): JSX.Element => {
   const { showImage, setShowImage, setLink, link } = useLibrary();
   return (
@@ -74,15 +75,24 @@ const LibrarySmall: FunctionComponent<LibraryLargeProps> = ({
         <div className="relative col-start-1 row-start-1 min-w-[40vw] w-full h-[50vw]">
           <Image layout="fill" objectFit="cover" src={showImage} />
           <div className="relative grid w-full h-full grid-flow-col auto-cols-[auto auto] pr-4 pb-2">
-            <Link href={link === "" ? "cat" : link}>
-              <a
-                target={"_blank"}
-                rel="noreferrer"
+            {link !== "" ? (
+              <Link href={link}>
+                <a
+                  target={"_blank"}
+                  rel="noreferrer"
+                  className="relative w-fit h-fit place-self-end cursor-sewingHS"
+                >
+                  <Image src={"/images/eye.png"} height={15} width={25} />
+                </a>
+              </Link>
+            ) : (
+              <div
+                onClick={() => setRefactorModal(true)}
                 className="relative w-fit h-fit place-self-end cursor-sewingHS"
               >
                 <Image src={"/images/eye.png"} height={15} width={25} />
-              </a>
-            </Link>
+              </div>
+            )}
           </div>
         </div>
         <div className="relative col-start-2 row-start-1 w-full h-full bg-offBlack self-end">
