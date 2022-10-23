@@ -25,6 +25,7 @@ export type GalleryProps = {
   currentImages: Gallery[];
   loading: boolean;
   more: boolean;
+  setExpressInterest: (e: string) => void;
 };
 
 export type Blender = {
@@ -69,6 +70,7 @@ export type FooterProps = {
 
 export type HeaderProps = {
   rewind: any;
+  handleShop: () => void;
 };
 
 export type useLibraryResult = {
@@ -88,6 +90,31 @@ export type Library = {
 
 export type LibraryProps = {
   lastBook: any;
-  otherBooks: any;
   handleLastBook: () => void;
+};
+
+export type FeedProps = {
+  publicationsFeed: any[];
+  getMoreFeed: () => Promise<any>;
+};
+
+export type SocialProps = {
+  publicationsFeed: any[];
+  getMoreFeed: () => Promise<any>;
+};
+
+export type useFeedResults = {
+  publicationsFeed: any[];
+  getMoreFeed: () => Promise<any>;
+};
+
+export type DisplayProps = {
+  shop: any;
+  setExpressInterest: (e: string) => void;
+};
+
+export type useFormResults = {
+  setSubmitSuccess: (e: boolean) => void;
+  submitSuccess: boolean;
+  handleSubmitForm: (e: any) => Promise<void>;
 }

@@ -85,6 +85,12 @@ class Document extends NextDocument {
                   font-weight: 400;
                   src: url("./fonts/Futurist Fixed-width Regular.ttf");
                 }
+
+                @font-face {
+                  font-family: "Audimat";
+                  font-weight: 400;
+                  src: url("./fonts/AUdimat Regular.ttf");
+                }
             `,
             }}
           ></style>

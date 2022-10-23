@@ -7,7 +7,6 @@ import useLibrary from "./hooks/useLibrary";
 const Library: FunctionComponent<LibraryProps> = ({
   lastBook,
   handleLastBook,
-  otherBooks,
 }): JSX.Element => {
   const { showImage, setShowImage } = useLibrary();
   return (
@@ -35,20 +34,32 @@ const Library: FunctionComponent<LibraryProps> = ({
                   ).toString()} row-start-1 w-fit h-full p-2 pt-3 hover:scale-105 active:scale-95 cursor-sewingHS`}
                   id={book.id}
                   onClick={() => setShowImage(book.image)}
-                  ref={index === library.length ? lastBook : otherBooks}
+                  ref={lastBook}
                 >
                   <div className="grid grid-flow-row auto-rows-[auto auto] relative w-full h-fit gap-3 p-4">
                     <div
                       id={book.id}
                       className={`relative row-start-1 w-14 h-14 place-self-center rounded-full border-2 border-offBlack text-center font-lib self-start`}
                     >
-                      <div className="relative w-full h-full justify-center flex content-center text-2xl top-1/4">
-                        {Number(book.number) < 10
-                          ? `0${book.number}`
-                          : book.number}
+                      <div
+                        className="relative w-full h-full justify-center flex content-center text-2xl text-offWhite"
+                        id="circle"
+                      >
+                        <Image
+                          src={"/images/library/rounded.png"}
+                          layout="fill"
+                          className="opacity-50"
+                        />
+                        <div className="relative w-full h-full grid grid-flow-col auto-cols-[auto auto]">
+                          <div className="relative col-start-1 w-fit h-fit place-self-center">
+                            {Number(book.number) < 10
+                              ? `0${book.number}`
+                              : book.number}
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div className="relative row-start-2 w-full pb-16 pr-1 pl-1 h-fit self-start">
+                    <div className="relative row-start-2 w-full pb-8 pr-0.5 pl-0.5 h-fit self-start">
                       <div
                         id="foot3"
                         className="h-2 border border-offBlack w-full"

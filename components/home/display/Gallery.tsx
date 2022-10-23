@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FunctionComponent } from "react";
 import { Gallery, GalleryProps } from "../../../types/general.types";
 
@@ -6,11 +7,14 @@ const Gallery: FunctionComponent<GalleryProps> = ({
   loading,
   currentImages,
   more,
+  setExpressInterest,
 }): JSX.Element => {
   return (
     <div
       className={`overflow-hidden ${
-        more ? "h-full md:h-full lg:h-full" : "h-[70vh] md:h-[100vh] lg:h-[155vh]"
+        more
+          ? "h-full md:h-full lg:h-full"
+          : "h-[70vh] md:h-[100vh] lg:h-[155vh]"
       } w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center relative content-evenly gap-5 items-center inline-flex`}
     >
       <div className="relative w-fit h-full">
@@ -19,9 +23,9 @@ const Gallery: FunctionComponent<GalleryProps> = ({
             return (
               <div
                 key={index}
-                className={`h-fit w-fit min-h-full relative row-start-${
+                className={`h-fit w-fit min-h-full flex relative row-start-${
                   index + 1
-                }`}
+                } cursor-sewingHS`}
               >
                 <div>
                   <Image
@@ -30,7 +34,20 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                     height={token.height}
                     objectFit="cover"
                     objectPosition="center"
+                    className="hover:opacity-40"
                   />
+                  <div className="absolute top-4 left-4 grid grid-flow-col auto-cols-[auto auto] w-fit h-fit font-lib text-midWhite">
+                    <Link href={"/express-interest"}>
+                      <a>
+                        <div
+                          className="relative col-start-1 hover:decoration hover:decoration-offset-2 mix-blend-screen hover:cursor-sewingHS"
+                          onClick={() => setExpressInterest(token.name)}
+                        >
+                          Collect NFT
+                        </div>
+                      </a>
+                    </Link>
+                  </div>
                 </div>
               </div>
             );

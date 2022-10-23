@@ -4,7 +4,7 @@ import { FunctionComponent } from "react";
 const Poster: FunctionComponent = (): JSX.Element => {
   return (
     <div className="w-full relative grid grid-flow-col auto-cols-[auto auto] min-h-[120vw] h-[180vh] place-items-center pb-20">
-      <div className="h-full relative flex col-start-1 border-8 border-offBlack place-self-center ">
+      <div className="h-full relative flex col-start-1 border-8 border-offBlack place-self-center">
         <Image layout="fill" objectFit="cover" src="/images/latent.png" />
         <div className="relative w-full h-full grid grid-flow-col auto-cols-[auto auto]">
           <div className="relative w-fit h-fit place-self-end col-start-1">

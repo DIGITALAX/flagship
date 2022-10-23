@@ -3,7 +3,7 @@ import { FunctionComponent } from "react";
 import Marquee from "react-fast-marquee";
 import { HeaderProps } from "../../types/general.types";
 
-const Header: FunctionComponent<HeaderProps> = ({rewind}): JSX.Element => {
+const Header: FunctionComponent<HeaderProps> = ({rewind, handleShop}): JSX.Element => {
   return (
     <div ref={rewind} className="relative grid grid-flow-col auto-cols-[auto auto] w-full gap-10 md:gap-1 md:justify-between md:content-between pt-6 md:pt-10 min-h-96 md:h-80 justify-center md:min-h-80 md:pl-8 md:pr-8 pb-4 overflow-x-hidden">
       <div className="relative col-start-1 row-start-1 md:w-fit min-h-full h-full">
@@ -42,7 +42,7 @@ const Header: FunctionComponent<HeaderProps> = ({rewind}): JSX.Element => {
       <div className="relative col-start-1 md:col-start-3 row-start-3 md:row-start-1 w-full md:w-fit min-w-full min-h-full h-full">
         <div className="grid grid-row-flow auto-rows-[auto auto] relative w-full h-full gap-4">
           <div className="relative w-fit h-fit row-start-1 place-self-center md:place-self-end pb-3">
-            <div className="relative w-screen md:w-40 h-fit bg-white border-t border-b md:border border-1 border-offBlack pt-1.5 pb-1.5 text-sm flex overflow-x-hidden whitespace-nowrap cursor-sewingHS hover:bg-skyBlue hover:text-dull active:text-dull active:bg-skyBlue">
+            <div className="relative w-screen md:w-40 h-fit bg-white border-t border-b md:border border-1 border-offBlack pt-1.5 pb-1.5 text-sm flex overflow-x-hidden whitespace-nowrap cursor-sewingHS hover:bg-skyBlue hover:text-dull active:text-dull active:bg-skyBlue" onClick={() => handleShop()}>
               <Marquee direction="right" speed={25} gradient={false}>
                 {" "}
                 GO SHOPPING ❤️ 👉 GO SHOPPING ❤️ 👉 GO SHOPPING ❤️ 👉 GO

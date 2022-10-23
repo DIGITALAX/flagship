@@ -68,6 +68,12 @@
   src: url("/fonts/Futurist Fixed-width Regular.ttf");
 }
 
+@font-face {
+  font-family: "Audimat";
+  font-weight: 400;
+  src: url("/fonts/AUdimat Regular.ttf");
+}
+
 html,
 body {
   padding: 0;
@@ -163,22 +169,24 @@ body {
 }
 
 #static {
-  background-size: 450px 450px;
-  background-image: url(https://imgur.com/a/OUP89IC);
+  margin: auto;
+  background-image: url(https://i.stack.imgur.com/uzEM4.png);
   display: flex;
-  position: absolute;
-
   animation: anim 1s steps(2, end) infinite both;
 
   transform: translate3d(0, 0, 0);
 }
 
-#static2 {
-  background-size: 1000px 1000px;
-  background-image: url(https://imgur.com/a/zi7ZZHp);
-  display: flex;
-  position: absolute;
+#circle {
 
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 0.05rem black;
+}
+
+#static2 {
+  margin: auto;
+  background-image: url(https://i.imgur.com/ZcRn3SQ.jpeg);
+  display: flex;
   animation: anim 1s steps(2, end) infinite both;
 
   transform: translate3d(0, 0, 0);
@@ -290,4 +298,16 @@ body {
 
 #eighteen {
   background-color: #7A534E;
+}
+
+div::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+div::-webkit-scrollbar-track {
+  background-color: #131313;
+}
+ 
+div::-webkit-scrollbar-thumb {
+  background-color: #FFDCFF;
 }

@@ -1,9 +1,13 @@
 import Image from "next/image";
 import { FunctionComponent } from "react";
+import { DisplayProps } from "../../../types/general.types";
 import Gallery from "./Gallery";
 import useGallery from "./hooks/useGallery";
 
-const Display: FunctionComponent = (): JSX.Element => {
+const Display: FunctionComponent<DisplayProps> = ({
+  shop,
+  setExpressInterest,
+}): JSX.Element => {
   const {
     currentImages,
     loading,
@@ -19,7 +23,11 @@ const Display: FunctionComponent = (): JSX.Element => {
     <div className="relative flex bg-offBlack w-full min-w-full h-fit min-h-fit">
       <div className="grid grid-flow-rows auto-row-[auto auto] w-full min-w-full p-4">
         <div className="relative h-fit w-full row-start-1">
-          <div className="grid relative grid-flow-col auto-cols-[auto auto] content-between justify-between w-full h-fit pt-2 pb-2">
+          <div
+            className="grid relative grid-flow-col auto-cols-[auto auto] content-between justify-between w-full h-fit pt-2 pb-2"
+            ref={shop}
+            id="shop"
+          >
             <div className="col-start-1 w-fit h-fit relative text-white font-rain text-7xl pl-3">
               X
             </div>
@@ -65,6 +73,7 @@ const Display: FunctionComponent = (): JSX.Element => {
             loading={loading}
             currentImages={currentImages}
             more={more}
+            setExpressInterest={setExpressInterest}
           />
         </div>
         <div className="relative w-full h-fit pt-10 pb-2 flex justify-center cursor-sewingHS hover:opacity-70 active:opacity-70">
@@ -76,9 +85,7 @@ const Display: FunctionComponent = (): JSX.Element => {
               <Image src={"/images/eye.png"} height={10} width={20} />
             </div>
             <div className="col-start-2 relative w-fit h-fit font-firaL text-offWhite">
-             {
-              !more ? "more?" : "less?"
-             }
+              {!more ? "more?" : "less?"}
             </div>
           </div>
         </div>

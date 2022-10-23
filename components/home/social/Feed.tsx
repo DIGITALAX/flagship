@@ -1,9 +1,136 @@
 import { FunctionComponent } from "react";
+import { FaComments, FaRetweet } from "react-icons/fa";
+import { HiCollection } from "react-icons/hi";
+import moment from "moment";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { FeedProps } from "../../../types/general.types";
 
-const Feed: FunctionComponent = (): JSX.Element => {
-    return (
-        <div></div>
-    )
-}
+const Feed: FunctionComponent<FeedProps> = ({
+  publicationsFeed,
+  getMoreFeed,
+}): JSX.Element => {
+  return (
+    <InfiniteScroll
+      dataLength={publicationsFeed?.length}
+      next={getMoreFeed}
+      hasMore={true}
+      loader={""}
+      height={"50rem"}
+      scrollableTarget="scrollableDiv"
+    >
+      {publicationsFeed?.map((publication: any, index: number) => {
+        const splitContent = publication.metadata.content.split("\n", +10);
+        const prompt = splitContent[0];
+        const meta = splitContent.slice(2, 3);
+        const description = splitContent.slice(4, 10);
+        let profileImage: any;
+        if (!publication.profile.picture) {
+          profileImage = <></>;
+        } else if (publication.profile.picture.original) {
+          if (publication.profile.picture.original.url.includes("http")) {
+            profileImage = publication.profile.picture.original.url;
+          } else {
+            const cut = publication.profile.picture.original.url.split("/");
+            profileImage = "https://" + cut[2] + ".ipfs.dweb.link/";
+          }
+        } else {
+          profileImage = publication.profile.picture.uri;
+        }
+        return (
+          <div key={index}>
+            <div className="w-10 flex flex-col justify-start float-left">
+              <a
+                href={`https://lenster.xyz/u/${publication.profile.handle}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src={profileImage}
+                  className="w-8 h-8 rounded-full drop-shadow-md"
+                />
+              </a>
+            </div>
+            <div>
+              <a
+                href={`https://lenster.xyz/u/${publication.profile.handle}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <b className="text-lensDark relative float-left font-sourceReg text-xs sm:text-base inline-flex">
+                  @{publication.profile.handle}
+                </b>
+              </a>
+              <div className="text-space text-xs font-sourceReg flex justify-end">
+                {moment(`${publication.createdAt}`).fromNow()}
+              </div>
+              {publication.__typename === "Mirror" && (
+                <div className="w-full flex justify-end relative">
+                  <FaRetweet />
+                </div>
+              )}
+            </div>
+            <div className="mt-6 mb-24 rounded pt-4 pl-8 pr-8 pb-4 text-xs sm:text-base  shadow-md shadow-grad2">
+              <div className="text-black text-base m-2 font-sourceReg">
+                <b>{prompt}</b>
+              </div>
+              <div className="text-xs mt-3 text-offBlack font-sourceReg">
+                {meta}
+              </div>
+              <div className="text-base mt-10 text-offBlack font-sourceReg">
+                {description}
+              </div>
+              {publication.metadata.media.length !== 0 && (
+                <div>
+                  {publication.metadata.media.map(
+                    (media: any, index: number) => {
+                      const newLink = media.original.url.split("/");
+                      const imageSource =
+                        "https://" + newLink[2] + ".ipfs.dweb.link/";
+                      return (
+                        <div
+                          key={index}
+                          className="mt-6 mb-4 relative flex justify-center"
+                        >
+                          <a
+                            href={imageSource}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="cursor-pointer"
+                          >
+                            <img src={imageSource} />
+                          </a>
+                        </div>
+                      );
+                    }
+                  )}
+                </div>
+              )}
+              <ul className="mt-2 inline-block cursor-pointer font-sourceReg text-sm sm:text-base">
+                <li className="float-left ml-0 sm:m-1">
+                  <HiCollection className="float-left relative top-[0.15rem] m-2 ml-0 align-middle" />
+                  <span className="relative top-2 text-xs sm:top-1">
+                    {publication.stats.totalAmountOfCollects}
+                  </span>
+                </li>
+                <li className="float-left sm:m-1">
+                  <FaComments className="float-left relative top-1 text-xs m-2 align-middle" />
+                  <span className="relative top-2 text-xs sm:top-1">
+                    {publication.stats.totalAmountOfComments}
+                  </span>
+                </li>
+                <li className="float-left sm:m-1">
+                  <FaRetweet className="float-left relative top-1 text-xs m-2 align-middle" />
+                  <span className="relative top-2 text-xs sm:top-1">
+                    {publication.stats.totalAmountOfMirrors}
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        );
+      })}
+    </InfiniteScroll>
+  );
+};
 
 export default Feed;

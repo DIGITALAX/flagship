@@ -15,8 +15,10 @@ import World from "../components/home/world/World";
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import Title from "./../components/home/title/Title";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import Description from "../components/home/description/Description";
+import useFeed from "../components/home/social/hooks/useFeed";
+import { GlobalContext } from "./_app";
 
 const Home: NextPage = () => {
   const rewind = useRef<null | HTMLDivElement>(null);
@@ -24,12 +26,24 @@ const Home: NextPage = () => {
     rewind.current?.scrollIntoView({ behavior: "smooth" });
   };
   const lastBook = useRef<null | HTMLDivElement>(null);
-  const otherBooks = useRef<null | HTMLDivElement>(null);
   const handleLastBook = (): void => {
-    console.log("click")
-    console.log(lastBook)
-    lastBook.current?.scrollIntoView({ behavior: "smooth" });
+    if (lastBook.current) {
+      lastBook.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
+  const shop = useRef<null | HTMLDivElement>(null);
+  const handleShop = (): void => {
+    if (shop.current) {
+      shop.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const { setExpressInterest } = useContext(GlobalContext);
+
+  const {
+    publicationsFeed,
+    getMoreFeed,
+  } = useFeed();
   return (
     <div className="min-w-screen min-h-full h-full flex flex-col bg-midWhite">
       <Head>
@@ -37,10 +51,10 @@ const Home: NextPage = () => {
         <meta name="description" content="DIGITALAX" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header rewind={rewind} />
+      <Header rewind={rewind} handleShop={handleShop}/>
       <Title />
       <Banner />
-      <Display />
+      <Display shop={shop} setExpressInterest={setExpressInterest}/>
       <Description />
       <Blender />
       <Dials />
@@ -49,11 +63,10 @@ const Home: NextPage = () => {
       <Static />
       <Poster />
       <World />
-      <Social />
+      <Social publicationsFeed={publicationsFeed} getMoreFeed={getMoreFeed}  />
       <Library
         lastBook={lastBook}
         handleLastBook={handleLastBook}
-        otherBooks={otherBooks}
       />
       <Slider />
       <Footer handleRewind={handleRewind} />

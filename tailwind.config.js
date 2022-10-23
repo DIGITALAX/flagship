@@ -41,15 +41,6 @@ module.exports = {
         lib2: "#4251FF",
         lib3: "#FAFF1B"
       },
-      boxShadow: {
-        film: "15px 10px 50px -20px rgba(0, 0, 0.8, 0.3)",
-        film2: "-2px -10px 30px -10px rgba(0, 0.2, 0, 0.3)",
-      },
-      cursor: {
-        empire: "url('/images/empirecursor.png'), auto",
-        empireA: "url('/images/empirecursorogsmall.png'), auto",
-        empireS: "url('/images/empirecursorsmall.png'), auto",
-      },
       fontFamily: {
         holo: "Nan Holo",
         york: "New York",
@@ -73,7 +64,8 @@ module.exports = {
         libB: "Liberation Mono Bold",
         gisL: "FH Giselle Light",
         thun: "A Love of Thunder",
-        fut: "Futurist"
+        fut: "Futurist",
+        aud: "Audimat"
       },
       keyframes: {
         marquee: {
