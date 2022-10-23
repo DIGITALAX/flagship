@@ -3,7 +3,7 @@ import { FunctionComponent } from "react";
 
 const Text: FunctionComponent = (): JSX.Element => {
   return (
-    <div className="relative max-w-fit w-fit pb-8  h-full grid grid-flow-col auto-col-[auto auto]">
+    <div className="relative max-w-screen w-fit pb-8  h-full grid grid-flow-col auto-col-[auto auto]">
       <div className="relative place-self-center w-fit lg:w-full h-full row-start-1 col-start-1 text-offBlack lg:pl-4">
         <div className="relative w-full h-full grid grid-flow-col auto-col-[auto auto]">
           <div className="relative h-full w-6 grid grid-flow-col auto-cols-[auto auto] col-start-1 md:row-start-1 lg:pr-1">

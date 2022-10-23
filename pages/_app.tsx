@@ -2,6 +2,8 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { createContext, useEffect, useRef, useState } from "react";
 import Footer from "../components/layout/Footer";
+// import restoreScrollPosition from 'next-restore-scroll'
+
 
 export const GlobalProfileContextDefault = {
   expressInterest: "",
@@ -11,6 +13,7 @@ export const GlobalProfileContextDefault = {
 export const GlobalContext = createContext(GlobalProfileContextDefault);
 
 function MyApp({ Component, pageProps }: AppProps) {
+  // restoreScrollPosition(router, '#scrolling-element')
   const [expressInterest, setExpressInterest] = useState(
     GlobalProfileContextDefault.expressInterest
   );

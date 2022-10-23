@@ -94,7 +94,17 @@ body {
   -webkit-background-clip: text;
   -webkit-text-stroke: 0.16rem transparent;
   color: #131313;
+ 
 }
+
+@media (max-width: 640px) { 
+  #world {
+    -webkit-text-stroke: 0.06rem transparent;
+  }
+ 
+ }
+
+
 
 #digi {
   background: linear-gradient(

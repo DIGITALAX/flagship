@@ -23,9 +23,9 @@ const Gallery: FunctionComponent<GalleryProps> = ({
             return (
               <div
                 key={index}
-                className={`h-fit w-fit min-h-full flex relative row-start-${
+                className={`h-fit w-full min-h-full flex relative row-start-${
                   index + 1
-                } cursor-sewingHS`}
+                } group`}
               >
                 <div>
                   <Image
@@ -35,12 +35,19 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                     objectFit="cover"
                     objectPosition="center"
                   />
-                  <div className="relative grid grid-flow-col auto-cols-[auto auto] w-fit h-fit font-lib text-midWhite">
-
-                    <Link href={"/express-interest"}>
-                      <a>
+                  <div className="absolute bg-black top-0 grid grid-flow-col auto-cols-[auto auto] w-full bg-opacity-70 h-full font-lib text-midWhite invisible group-hover:visible group-active:visible">
+                    <Link
+                      href={
+                        token.link === "" ? "/express-interest" : token.link
+                      }
+                    >
+                      <a
+                        target={token.link === "" ? "self" : "_blank"}
+                        rel="noreferrer"
+                        className="w-fit h-fit relative col-start-1 place-self-end"
+                      >
                         <div
-                          className="relative col-start-1 decoration-1 underline underline-offset-2 mix-blend-screen hover:cursor-sewingHS"
+                          className="relative decoration-1 underline underline-offset-2 whitespace-nowrap mix-blend-screen hover:cursor-sewingHS w-fit h-fit text-[1.2vw] p-6"
                           onClick={() => setExpressInterest(token.name)}
                         >
                           Collect NFT
@@ -60,9 +67,9 @@ const Gallery: FunctionComponent<GalleryProps> = ({
             return (
               <div
                 key={index}
-                className={`h-fit w-fit min-h-full relative row-start-${
+                className={`h-fit w-full min-h-full flex relative row-start-${
                   index + 1
-                }`}
+                } group`}
               >
                 <div>
                   <Image
@@ -72,6 +79,26 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                     objectFit="cover"
                     objectPosition="center"
                   />
+                  <div className="absolute bg-black top-0 grid grid-flow-col auto-cols-[auto auto] w-full bg-opacity-70 h-full font-lib text-midWhite invisible group-hover:visible group-active:visible">
+                    <Link
+                      href={
+                        token.link === "" ? "/express-interest" : token.link
+                      }
+                    >
+                      <a
+                        target={token.link === "" ? "self" : "_blank"}
+                        rel="noreferrer"
+                        className="w-fit h-fit relative col-start-1 place-self-end"
+                      >
+                        <div
+                          className="relative decoration-1 underline underline-offset-2 whitespace-nowrap mix-blend-screen hover:cursor-sewingHS w-fit h-fit text-[1.2vw] p-6"
+                          onClick={() => setExpressInterest(token.name)}
+                        >
+                          Collect NFT
+                        </div>
+                      </a>
+                    </Link>
+                  </div>
                 </div>
               </div>
             );
@@ -84,9 +111,9 @@ const Gallery: FunctionComponent<GalleryProps> = ({
             return (
               <div
                 key={index}
-                className={`h-fit w-fit min-h-full relative row-start-${
+                className={`h-fit w-full min-h-full flex relative row-start-${
                   index + 1
-                }`}
+                } group`}
               >
                 <div>
                   <Image
@@ -96,6 +123,26 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                     objectFit="cover"
                     objectPosition="center"
                   />
+                  <div className="absolute bg-black top-0 grid grid-flow-col auto-cols-[auto auto] w-full bg-opacity-70 h-full font-lib text-midWhite invisible group-hover:visible group-active:visible">
+                    <Link
+                      href={
+                        token.link === "" ? "/express-interest" : token.link
+                      }
+                    >
+                      <a
+                        target={token.link === "" ? "self" : "_blank"}
+                        rel="noreferrer"
+                        className="w-fit h-fit relative col-start-1 place-self-end"
+                      >
+                        <div
+                          className="relative decoration-1 underline underline-offset-2 whitespace-nowrap mix-blend-screen hover:cursor-sewingHS w-fit h-fit text-[1.2vw] p-6"
+                          onClick={() => setExpressInterest(token.name)}
+                        >
+                          Collect NFT
+                        </div>
+                      </a>
+                    </Link>
+                  </div>
                 </div>
               </div>
             );

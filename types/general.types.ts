@@ -95,6 +95,16 @@ export type LibraryProps = {
   handleLastBook: () => void;
 };
 
+export type LibraryLargeProps = {
+  lastBook: any;
+  handleLastBook: () => void;
+};
+
+export type LibrarySmallProps = {
+  lastBook: any;
+  handleLastBook: () => void;
+};
+
 export type FeedProps = {
   publicationsFeed: any[];
   getMoreFeed: () => Promise<any>;
