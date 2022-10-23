@@ -33,13 +33,21 @@ const Home: NextPage<HomeProps> = ({ rewind }) => {
 
   const { setExpressInterest } = useContext(GlobalContext);
 
-  const { publicationsFeed, getMoreFeed, queryWindowSize, queryWindowSizeMobile} = useFeed();
+  const {
+    publicationsFeed,
+    getMoreFeed,
+    queryWindowSize,
+    queryWindowSizeMobile,
+  } = useFeed();
   return (
     <div className="min-w-screen min-h-full h-full flex flex-col bg-midWhite">
       <Head>
         <title>DIGITALAX</title>
-        <meta name="description" content="DIGITALAX" />
+        <meta name="description" content="CC0 Web3 Fashion" />
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:site_name" content="DIGITALAX" />
+        <meta property="og:image" content="https://digitalax.xyz/card.png/" />
+        <meta property="og:type" content="website" />
       </Head>
       <Header rewind={rewind} handleShop={handleShop} />
       <Title />
@@ -59,9 +67,7 @@ const Home: NextPage<HomeProps> = ({ rewind }) => {
         queryWindowSize={queryWindowSize}
         queryWindowSizeMobile={queryWindowSizeMobile}
       />
-      <Library
-        setRefactorModal={setRefactorModal}
-      />
+      <Library setRefactorModal={setRefactorModal} />
       <Slider />
       {RefactorModal && <RefactorElement setRefactorModal={setRefactorModal} />}
     </div>

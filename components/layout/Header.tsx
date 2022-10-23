@@ -54,7 +54,7 @@ const Header: FunctionComponent<HeaderProps> = ({rewind, handleShop}): JSX.Eleme
             </div>
           </div>
           <div className="relative w-fit h-fit row-start-2 place-self-end self-end pr-3 pt-4 md:pt-0 md:pr-10">
-            <div className="border border-2 rounded-full border-offBlack w-fit h-fit pr-5 pl-5 flex pt-2 pb-2 cursor-sewingHS">
+            <div className="border border-2 rounded-full border-offBlack w-fit h-fit pr-5 pl-5 flex pt-2 pb-2 cursor-sewingHS hover:border-red-600">
               <Image width={40} height={28} src="/images/header/heart.png" />
             </div>
           </div>

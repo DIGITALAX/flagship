@@ -6,12 +6,23 @@ class Document extends NextDocument {
     return (
       <Html>
         <Head>
-          <meta property="og:url" content="https://digitalax.xyz/" />
-          <meta property="og:title" content="DIGITALAX" />
-          <meta property="og:description" content="" />
-          <meta property="og:image" content="" />
-          <meta property="twitter:card" content="summary" />
+        <meta name="og:url" content="https://digitalax.xyz/" />
+          <meta name="og:title" content="DIGITALAX" />
+          <meta name="og:description" content="I Want My Web3 Fashion" />
+          <meta name="og:image" content="" />
+          <meta name="twitter:card" content="summary" />
+          <meta name="og:url" content="https://digitalax.xyz/" />
+          <meta name="og:image" content="https://digitalax.xyz/card.png/" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@igitalax_" />
+          <meta name="twitter:creator" content="@digitalax_" />
+          <meta
+            name="twitter:image"
+            content="https://digitalax.xyz/card.png/"
+          />
+          <meta name="twitter:url" content="https://digitalax.xyz/" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="canonical" href="https://digitalax.xyz/" />
           <link
             rel="preconnect"
             href="https://fonts.gstatic.com"

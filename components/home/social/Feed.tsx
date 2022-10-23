@@ -73,11 +73,11 @@ const Feed: FunctionComponent<FeedProps> = ({
                     </div>
                   </a>
 
-                  <div className="relative w-fit h-fit col-start-3 row-start-1 text-space text-xs font-firaL self-center justify-end place-self-center md:pr-4 whitespace-nowrap md:pt-0 pr-6">
+                  <div className="relative w-fit h-fit col-start-3 row-start-1 text-space text-xs font-firaL self-center justify-end place-self-center md:pr-4 whitespace-nowrap pt-2 md:pt-0 pr-6">
                     {moment(`${publication.createdAt}`).fromNow()}
                   </div>
                   {publication.__typename === "Mirror" && (
-                    <div className="w-fit place-self-center self-center half:place-self-end md:place-self-center self-end md:self-center relative md:pt-0 col-start-4 h-fit row-start-1">
+                    <div className="w-fit place-self-center self-center place-self-center  relative md:pt-0 pt-2 col-start-4 h-fit row-start-1">
                       <FaRetweet />
                     </div>
                   )}
