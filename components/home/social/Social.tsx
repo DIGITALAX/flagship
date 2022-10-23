@@ -37,7 +37,8 @@ const Social: FunctionComponent<SocialProps> = ({
         <br />
         RELEASED AT A STEADY CLIP. <span className="text-lensG">
           WHY LENS?
-        </span>{" "}<br />
+        </span>{" "}
+        <br />
         DECENTRAIZED SOCIAL CONNECTS YOU <br /> WITH COLLECTORS AND CREATORS{" "}
         <br /> WITHOUT ALL THE EXTRA ANGST OVER
         <br /> WHY THE ALGORITHM DECIDED YOU’RE
@@ -48,14 +49,14 @@ const Social: FunctionComponent<SocialProps> = ({
         <br /> HAVE TO SAY, WHEN WE HAVE WEB3?
       </div>
       <div className="row-start-2 col-start-2 relative w-full h-full border-offBlack border-8 border-l-4 border-r-4 border-b-4">
-        <div className="grid-flow-col grid auto-cols-[auto auto] relative w-full h-full">
+        <div className="grid-flow-row grid auto-rows-[auto auto] relative w-full h-full">
           <div
             id="static2"
-            className="relative row-start-1 w-full h-full"
+            className="relative row-start-1 w-full h-[47vw] m-h-[47vw] bg-offBlack"
           ></div>
-          <div className="relative row-start-2 w-full h-full self-end justify-self-center bg-midWhite p-2 border-t-8 border-offBlack">
-            <div className="grid grid-flow-col auto-cols-[auto auto] w-full h-fit relative">
-              <div className="relative col-start-1 w-fit h-fit place-self-end self-end hover:rotate-12">
+          <div className="relative row-start-2 w-full h-full border-t-8 border-offBlack">
+            <div className="relative w-fit p-2 h-fit row-start-2 bg-midWhite self-end place-self-end">
+              <div className="relative w-fit h-full hover:rotate-12">
                 <Image
                   width={40}
                   height={50}
@@ -68,7 +69,9 @@ const Social: FunctionComponent<SocialProps> = ({
         </div>
       </div>
       <div className="row-start-2 col-start-3 relative w-full h-full bg-offWhite border-offBlack border-8 border-l-4 border-b-4">
-        <Feed publicationsFeed={publicationsFeed} getMoreFeed={getMoreFeed} />
+        <div className="relative w-full h-full grid grid-flow-row auto-rows-[auto auto]">
+          <Feed publicationsFeed={publicationsFeed} getMoreFeed={getMoreFeed} />
+        </div>
       </div>
     </div>
   );

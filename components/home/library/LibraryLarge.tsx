@@ -8,7 +8,7 @@ import useLibrary from "./hooks/useLibrary";
 const LibraryLarge: FunctionComponent<LibrarySmallProps> = ({
   lastBook,
   handleLastBook,
-  setRefactorModal
+  setRefactorModal,
 }): JSX.Element => {
   const { showImage, setShowImage, setLink, link } = useLibrary();
   return (
@@ -27,12 +27,12 @@ const LibraryLarge: FunctionComponent<LibrarySmallProps> = ({
               </a>
             </Link>
           ) : (
-              <div
+            <div
               onClick={() => setRefactorModal(true)}
-                className="relative w-fit h-fit place-self-end cursor-sewingHS"
-              >
-                <Image src={"/images/eye.png"} height={15} width={25} />
-              </div>
+              className="relative w-fit h-fit place-self-end cursor-sewingHS"
+            >
+              <Image src={"/images/eye.png"} height={15} width={25} />
+            </div>
           )}
         </div>
       </div>

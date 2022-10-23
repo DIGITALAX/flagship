@@ -4,6 +4,7 @@ import { HiCollection } from "react-icons/hi";
 import moment from "moment";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { FeedProps } from "../../../types/general.types";
+import Image from "next/image";
 
 const Feed: FunctionComponent<FeedProps> = ({
   publicationsFeed,
@@ -24,8 +25,12 @@ const Feed: FunctionComponent<FeedProps> = ({
         const meta = splitContent.slice(2, 3);
         const description = splitContent.slice(4, 10);
         let profileImage: any;
-        if (!publication.profile.picture) {
-          profileImage = <></>;
+        if (
+          !publication.profile.picture ||
+          publication.profile.picture.original?.url.includes("svg") ||
+          publication.profile.picture.original?.url.includes("object")
+        ) {
+          profileImage = "/images/inaripfp.png";
         } else if (publication.profile.picture.original) {
           if (publication.profile.picture.original.url.includes("http")) {
             profileImage = publication.profile.picture.original.url;
@@ -37,47 +42,51 @@ const Feed: FunctionComponent<FeedProps> = ({
           profileImage = publication.profile.picture.uri;
         }
         return (
-          <div key={index}>
-            <div className="w-10 flex flex-col justify-start float-left">
-              <a
-                href={`https://lenster.xyz/u/${publication.profile.handle}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  src={profileImage}
-                  className="w-8 h-8 rounded-full drop-shadow-md"
-                />
-              </a>
-            </div>
-            <div>
-              <a
-                href={`https://lenster.xyz/u/${publication.profile.handle}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <b className="text-lensDark relative float-left font-sourceReg text-xs sm:text-base inline-flex">
-                  @{publication.profile.handle}
-                </b>
-              </a>
-              <div className="text-space text-xs font-sourceReg flex justify-end">
-                {moment(`${publication.createdAt}`).fromNow()}
-              </div>
-              {publication.__typename === "Mirror" && (
-                <div className="w-full flex justify-end relative">
-                  <FaRetweet />
+          <div
+            key={index}
+            className={`relative w-fit h-fit p-6 row-start-${index}`}
+          >
+            <div className="relative grid grid-flow-row auto-rows-[auto auto] w-full h-full">
+              <div className="relative w-fit h-full row-start-1 pt-4 place-self-center">
+                <div className="relative grid grid-flow-col auto-cols-[auto auto] w-full h-full">
+                  <div className="relative w-fit h-fit col-start-1 place-self-center pr-4">
+                    <a
+                      href={`https://lenster.xyz/u/${publication.profile.handle}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <img
+                        src={profileImage}
+                        className="w-8 h-8 rounded-full drop-shadow-md"
+                      />
+                    </a>
+                  </div>
+                  <div className="relative w-fit h-fit col-start-2 self-center">
+                    <a
+                      href={`https://lenster.xyz/u/${publication.profile.handle}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <b className="text-lensDark relative font-sourceReg text-xs sm:text-base whitespace-nowrap">
+                        @{publication.profile.handle}
+                      </b>
+                    </a>
+                  </div>
+                  <div className="relative w-fit h-fit col-start-3 text-space text-xs font-sourceReg self-center">
+                    {moment(`${publication.createdAt}`).fromNow()}
+                  </div>
+                    {publication.__typename === "Mirror" && (
+                      <div className="w-fit self-center relative col-start-4 h-fit">
+                        <FaRetweet />
+                      </div>
+                    )}
                 </div>
-              )}
-            </div>
-            <div className="mt-6 mb-24 rounded pt-4 pl-8 pr-8 pb-4 text-xs sm:text-base  shadow-md shadow-grad2">
-              <div className="text-black text-base m-2 font-sourceReg">
+              </div>
+              <div className="relative w-full h-full row-start-2 text-black text-base font-sourceReg">
                 <b>{prompt}</b>
               </div>
-              <div className="text-xs mt-3 text-offBlack font-sourceReg">
-                {meta}
-              </div>
-              <div className="text-base mt-10 text-offBlack font-sourceReg">
-                {description}
+              <div className="relative w-full h-full row-start-3 text-xs text-offBlack">
+                {meta} {description}
               </div>
               {publication.metadata.media.length !== 0 && (
                 <div>
@@ -89,7 +98,9 @@ const Feed: FunctionComponent<FeedProps> = ({
                       return (
                         <div
                           key={index}
-                          className="mt-6 mb-4 relative flex justify-center"
+                          className={`relative flex justify-center row-start-${
+                            index + 3
+                          }`}
                         >
                           <a
                             href={imageSource}
@@ -105,26 +116,34 @@ const Feed: FunctionComponent<FeedProps> = ({
                   )}
                 </div>
               )}
-              <ul className="mt-2 inline-block cursor-pointer font-sourceReg text-sm sm:text-base">
-                <li className="float-left ml-0 sm:m-1">
-                  <HiCollection className="float-left relative top-[0.15rem] m-2 ml-0 align-middle" />
-                  <span className="relative top-2 text-xs sm:top-1">
-                    {publication.stats.totalAmountOfCollects}
-                  </span>
-                </li>
-                <li className="float-left sm:m-1">
-                  <FaComments className="float-left relative top-1 text-xs m-2 align-middle" />
-                  <span className="relative top-2 text-xs sm:top-1">
-                    {publication.stats.totalAmountOfComments}
-                  </span>
-                </li>
-                <li className="float-left sm:m-1">
-                  <FaRetweet className="float-left relative top-1 text-xs m-2 align-middle" />
-                  <span className="relative top-2 text-xs sm:top-1">
-                    {publication.stats.totalAmountOfMirrors}
-                  </span>
-                </li>
-              </ul>
+              <div
+                className={`relative w-full h-full row-start-${
+                  publication.metadata.media.length !== 0
+                    ? publication.metadata.media.length + 3
+                    : "5"
+                }`}
+              >
+                <div className="relative grid grid-flow-col auto-cols-[auto auto] w-full h-fit">
+                  <div className="relative w-fit h-fit col-start-1">
+                    <HiCollection className="relative align-middle" />
+                    <span className="relative text-xs">
+                      {publication.stats.totalAmountOfCollects}
+                    </span>
+                  </div>
+                  <div className="relative w-fit h-fit col-start-2">
+                    <FaComments className="relative text-xsalign-middle" />
+                    <span className="relative text-xs">
+                      {publication.stats.totalAmountOfComments}
+                    </span>
+                  </div>
+                  <div className="relative w-fit h-fit col-start-3">
+                    <FaRetweet className="relative text-xs align-middle" />
+                    <span className="relative text-xs">
+                      {publication.stats.totalAmountOfMirrors}
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         );
