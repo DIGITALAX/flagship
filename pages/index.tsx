@@ -14,13 +14,16 @@ import TV from "../components/home/tv/TV";
 import World from "../components/home/world/World";
 import Header from "../components/layout/Header";
 import Title from "./../components/home/title/Title";
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import Description from "../components/home/description/Description";
 import useFeed from "../components/home/social/hooks/useFeed";
 import { GlobalContext } from "./_app";
 import { HomeProps } from "../types/general.types";
+import RefactorElement from "../components/common/modals/RefactorElement";
 
 const Home: NextPage<HomeProps> = ({rewind}) => {
+
+  const [RefactorModal, setRefactorModal] = useState<boolean>();
   
   const lastBook = useRef<null | HTMLDivElement>(null);
   const handleLastBook = (): void => {
@@ -64,8 +67,13 @@ const Home: NextPage<HomeProps> = ({rewind}) => {
       <Library
         lastBook={lastBook}
         handleLastBook={handleLastBook}
+        RefactorModal={RefactorModal}
       />
       <Slider />
+      {
+        RefactorModal &&  <RefactorElement setRefactorModal={setRefactorModal}/>
+      }
+     
     </div>
   );
 };

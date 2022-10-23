@@ -91,14 +91,14 @@ const LibrarySmall: FunctionComponent<LibraryLargeProps> = ({
               116 104 101 32 101 99 111 <br />
               115 121 115 116 101 109
             </div>
-            <div className="relative w-fit h-full col-start-1 row-start-2 place-self-center p-4">
+            <div className="relative w-fit h-full col-start-1 row-start-2 place-self-center pb-0 sm:pb-4 p-4">
               <div className="relative h-6 w-52 grid grid-flow-row auto-rows-[auto auto] col-start-1 md:row-start-1">
                 <div className="relative row-start-1 w-full h-full border-r-2 border-l-2 border-b border-midWhite"></div>
                 <div className="relative row-start-2 w-full h-full border-l-2 border-r-2 border-t border-midWhite"></div>
               </div>
             </div>
             <div
-              className="relative w-14 h-14 col-start-1 row-start-3 place-self-center self-start hover:opacity-90 active:mix-blend-hard-light cursor-sewingHS"
+              className="relative w-8 h-8 sm:pb-0 sm:w-14 sm:h-14 col-start-1 row-start-3 place-self-center self-start hover:opacity-90 active:mix-blend-hard-light cursor-sewingHS"
               onClick={() => handleLastBook()}
             >
               <Image src="/images/library/player.png" layout="fill" />
