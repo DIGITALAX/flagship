@@ -6,11 +6,10 @@ import library from "./../../../pages/api/library.json";
 import useLibrary from "./hooks/useLibrary";
 
 const LibrarySmall: FunctionComponent<LibraryLargeProps> = ({
-  lastBook,
-  handleLastBook,
   setRefactorModal,
 }): JSX.Element => {
-  const { showImage, setShowImage, setLink, link } = useLibrary();
+  const { showImage, setShowImage, setLink, link, lastBook, handleLastBook } =
+    useLibrary();
   return (
     <div className="relative grid w-full h-fit grid-flow-row auto-rows-[auto auto]">
       <div className="row-start-1 relative grid grid-flow-col auto-cols-[auto auto] w-full sm:min-h-[80vw] min-h-[120vw] md:min-h-[60vw]">
@@ -80,7 +79,7 @@ const LibrarySmall: FunctionComponent<LibraryLargeProps> = ({
                 <a
                   target={"_blank"}
                   rel="noreferrer"
-                  className="relative w-fit h-fit place-self-end cursor-sewingHS"
+                  className="relative w-fit h-fit place-self-end cursor-sewingHS hover:scale-95 active:scale-95"
                 >
                   <Image src={"/images/eye.png"} height={15} width={25} />
                 </a>
@@ -88,7 +87,7 @@ const LibrarySmall: FunctionComponent<LibraryLargeProps> = ({
             ) : (
               <div
                 onClick={() => setRefactorModal(true)}
-                className="relative w-fit h-fit place-self-end cursor-sewingHS"
+                className="relative w-fit h-fit place-self-end cursor-sewingHS hover:scale-95 active:scale-95"
               >
                 <Image src={"/images/eye.png"} height={15} width={25} />
               </div>

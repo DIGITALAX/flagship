@@ -5,9 +5,7 @@ import LibraryLarge from "./LibraryLarge";
 import LibrarySmall from "./LibrarySmall";
 
 const Library: FunctionComponent<LibraryProps> = ({
-  lastBook,
-  handleLastBook,
-  setRefactorModal
+  setRefactorModal,
 }): JSX.Element => {
   return (
     <div className="relative grid w-full h-fit grid-flow-row auto-rows-[auto auto] pt-4">
@@ -20,10 +18,10 @@ const Library: FunctionComponent<LibraryProps> = ({
         />
       </div>
       <div className="row-start-2 w-full hidden lg:flex h-full">
-        <LibraryLarge setRefactorModal={setRefactorModal} lastBook={lastBook} handleLastBook={handleLastBook} />
+        <LibraryLarge setRefactorModal={setRefactorModal} />
       </div>
       <div className="row-start-2 w-full lg:hidden flex h-full">
-        <LibrarySmall setRefactorModal={setRefactorModal} lastBook={lastBook} handleLastBook={handleLastBook} />
+        <LibrarySmall setRefactorModal={setRefactorModal} />
       </div>
     </div>
   );

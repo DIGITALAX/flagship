@@ -22,12 +22,6 @@ import { HomeProps } from "../types/general.types";
 import RefactorElement from "../components/common/modals/RefactorElement";
 
 const Home: NextPage<HomeProps> = ({ rewind }) => {
-  const lastBook = useRef<null | HTMLDivElement>(null);
-  const handleLastBook = (): void => {
-    if (lastBook.current) {
-      lastBook.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
   const shop = useRef<null | HTMLDivElement>(null);
   const handleShop = (): void => {
     if (shop.current) {
@@ -66,8 +60,6 @@ const Home: NextPage<HomeProps> = ({ rewind }) => {
         queryWindowSizeMobile={queryWindowSizeMobile}
       />
       <Library
-        lastBook={lastBook}
-        handleLastBook={handleLastBook}
         setRefactorModal={setRefactorModal}
       />
       <Slider />

@@ -78,6 +78,8 @@ export type useLibraryResult = {
   setShowImage: (e: string) => void;
   link: string;
   setLink: (e: string) => void;
+  lastBook: any;
+  handleLastBook: () => void;
 };
 
 export type Library = {
@@ -91,20 +93,14 @@ export type Library = {
 };
 
 export type LibraryProps = {
-  lastBook: any;
-  handleLastBook: () => void;
   setRefactorModal: (e: boolean) => void;
 };
 
 export type LibraryLargeProps = {
-  lastBook: any;
-  handleLastBook: () => void;
   setRefactorModal: (e: boolean) => void;
 };
 
 export type LibrarySmallProps = {
-  lastBook: any;
-  handleLastBook: () => void;
   setRefactorModal: (e: boolean) => void;
 };
 
