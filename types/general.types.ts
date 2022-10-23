@@ -80,7 +80,7 @@ export type Library = {
   name: string;
   image: string;
   number: string;
-  color: string;
+  id: string;
   link: string;
   width: number;
   height: number;

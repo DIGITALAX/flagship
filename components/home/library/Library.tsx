@@ -7,7 +7,7 @@ import useLibrary from "./hooks/useLibrary";
 const Library: FunctionComponent<LibraryProps> = ({
   lastBook,
   handleLastBook,
-  otherBooks
+  otherBooks,
 }): JSX.Element => {
   const { showImage, setShowImage } = useLibrary();
   return (
@@ -32,15 +32,15 @@ const Library: FunctionComponent<LibraryProps> = ({
                   key={index}
                   className={`border-2 border-offBlack relative col-start-${(
                     Number(book.number) + 1
-                  ).toString()} row-start-1 w-fit h-full bg-[${
-                    book.color
-                  }] p-2 pt-3 hover:scale-105 active:scale-95`}
+                  ).toString()} row-start-1 w-fit h-full p-2 pt-3 hover:scale-105 active:scale-95 cursor-sewingHS`}
+                  id={book.id}
                   onClick={() => setShowImage(book.image)}
                   ref={index === library.length ? lastBook : otherBooks}
                 >
                   <div className="grid grid-flow-row auto-rows-[auto auto] relative w-full h-fit gap-3 p-4">
                     <div
-                      className={`relative row-start-1 w-14 h-14 place-self-center rounded-full border-2 border-offBlack text-center font-lib self-start bg-${book.color}`}
+                      id={book.id}
+                      className={`relative row-start-1 w-14 h-14 place-self-center rounded-full border-2 border-offBlack text-center font-lib self-start`}
                     >
                       <div className="relative w-full h-full justify-center flex content-center text-2xl top-1/4">
                         {Number(book.number) < 10
@@ -54,7 +54,7 @@ const Library: FunctionComponent<LibraryProps> = ({
                         className="h-2 border border-offBlack w-full"
                       ></div>
                     </div>
-                    <div className="relative row-start-3 self-end relative text-xs whitespace-nowrap font-lib place-self-center h-full w-10 rotate-90">
+                    <div className="relative row-start-3 self-end relative text-[1.3vw] whitespace-nowrap font-lib place-self-center h-full w-10 rotate-90">
                       <div className="relative grid grid-flow-row auto-rows-[auto auto]">
                         <div className="border-2 border-offBlack relative h-full w-fit p-2 text-offBlack row-start-1 place-self-center self-center justify-self-center z-10 bg-offWhite">
                           {book.name}
@@ -75,14 +75,14 @@ const Library: FunctionComponent<LibraryProps> = ({
               <div className="relative w-6 h-[16vw] col-start-1 place-self-center">
                 <Image src="/images/library/numbers.png" layout="fill" />
               </div>
-              <div className="relative w-fit h-full col-start-2 place-self-center">
+              <div className="relative w-fit h-full col-start-2 place-self-center pl-4">
                 <div className="relative h-full w-6 grid grid-flow-col auto-cols-[auto auto] col-start-1 md:row-start-1 lg:pr-1">
                   <div className="relative col-start-1 w-full h-full border-t-2 border-b-2 border-r border-midWhite"></div>
                   <div className="relative col-start-2 w-full h-full border-t-2 border-b-2 border-l border-midWhite"></div>
                 </div>
               </div>
               <div
-                className="relative w-10 h-10 col-start-3 place-self-center hover:opacity-90 active:mix-blend-hard-light"
+                className="relative w-10 h-10 col-start-3 place-self-center hover:opacity-90 active:mix-blend-hard-light cursor-sewingHS"
                 onClick={() => handleLastBook()}
               >
                 <Image src="/images/library/player.png" layout="fill" />
