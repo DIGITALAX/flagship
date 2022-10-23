@@ -111,17 +111,30 @@ export type LibrarySmallProps = {
 export type FeedProps = {
   publicationsFeed: any[];
   getMoreFeed: () => Promise<any>;
+  queryWindowSize: boolean;
+  queryWindowSizeMobile: boolean;
 };
 
 export type SocialProps = {
   publicationsFeed: any[];
   getMoreFeed: () => Promise<any>;
+  queryWindowSize: boolean;
+  queryWindowSizeMobile: boolean;
 };
 
 export type useFeedResults = {
   publicationsFeed: any[];
   getMoreFeed: () => Promise<any>;
+  queryWindowSize: boolean;
+  queryWindowSizeMobile: boolean;
 };
+
+export type GridProps = {
+  publicationsFeed: any[];
+  getMoreFeed: () => Promise<any>;
+  queryWindowSize: boolean;
+  queryWindowSizeMobile: boolean;
+}
 
 export type DisplayProps = {
   shop: any;

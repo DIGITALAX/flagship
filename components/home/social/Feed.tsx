@@ -4,11 +4,12 @@ import { HiCollection } from "react-icons/hi";
 import moment from "moment";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { FeedProps } from "../../../types/general.types";
-import Image from "next/image";
 
 const Feed: FunctionComponent<FeedProps> = ({
   publicationsFeed,
   getMoreFeed,
+  queryWindowSize,
+  queryWindowSizeMobile,
 }): JSX.Element => {
   return (
     <InfiniteScroll
@@ -16,7 +17,7 @@ const Feed: FunctionComponent<FeedProps> = ({
       next={getMoreFeed}
       hasMore={true}
       loader={""}
-      height={"50rem"}
+      height={queryWindowSize ? "35rem" : "50rem"}
       scrollableTarget="scrollableDiv"
     >
       {publicationsFeed?.map((publication: any, index: number) => {
@@ -44,48 +45,48 @@ const Feed: FunctionComponent<FeedProps> = ({
         return (
           <div
             key={index}
-            className={`relative w-fit h-fit p-6 row-start-${index}`}
+            className={`relative w-full h-fit p-6 row-start-${index}`}
           >
-            <div className="relative grid grid-flow-row auto-rows-[auto auto] w-full h-full">
-              <div className="relative w-fit h-full row-start-1 pt-4 place-self-center">
-                <div className="relative grid grid-flow-col auto-cols-[auto auto] w-full h-full">
-                  <div className="relative w-fit h-fit col-start-1 place-self-center pr-4">
-                    <a
-                      href={`https://lenster.xyz/u/${publication.profile.handle}`}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <img
-                        src={profileImage}
-                        className="w-8 h-8 rounded-full drop-shadow-md"
-                      />
-                    </a>
-                  </div>
-                  <div className="relative w-fit h-fit col-start-2 self-center">
-                    <a
-                      href={`https://lenster.xyz/u/${publication.profile.handle}`}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <b className="text-lensDark relative font-sourceReg text-xs sm:text-base whitespace-nowrap">
-                        @{publication.profile.handle}
-                      </b>
-                    </a>
-                  </div>
-                  <div className="relative w-fit h-fit col-start-3 text-space text-xs font-sourceReg self-center">
+            <div className="relative grid grid-flow-row auto-rows-[auto auto] w-full h-full  rounded-xl drop-shadow-xl bg-white pb-4 pt-4">
+              <div className="relative w-fit xl:w-full h-full row-start-1 pt-4 place-self-center sm:place-self-start half:place-self-center xl:place-self-start half:pr-2 half:pl-2 sm:pr-11 sm:pl-11 xl:pr-11 xl:pl-11 ">
+                <div className="relative grid grid-flow-col auto-cols-[auto auto] w-fit h-full">
+                  <a
+                    href={`https://lenster.xyz/u/${publication.profile.handle}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="cursor-sewingHS w-fit h-fit relative col-start-1 place-self-start md:place-self-center pr-3 row-start-1"
+                  >
+                    <img
+                      src={profileImage}
+                      className="w-8 h-8 rounded-full drop-shadow-md relative"
+                    />
+                  </a>
+
+                  <a
+                    href={`https://lenster.xyz/u/${publication.profile.handle}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="cursor-sewingHS relative w-fit h-fit col-start-2 row-start-1 self-center pt-2 md:pt-0 pr-4 xl:pr-16"
+                  >
+                    <div className="text-lensDark relative font-fira text-xs xl:text-base whitespace-nowrap">
+                      @{publication.profile.handle}
+                    </div>
+                  </a>
+
+                  <div className="relative w-fit h-fit col-start-3 row-start-1 text-space text-xs font-firaL self-center justify-end place-self-center md:pr-4 whitespace-nowrap md:pt-0 pr-6">
                     {moment(`${publication.createdAt}`).fromNow()}
                   </div>
-                    {publication.__typename === "Mirror" && (
-                      <div className="w-fit self-center relative col-start-4 h-fit">
-                        <FaRetweet />
-                      </div>
-                    )}
+                  {publication.__typename === "Mirror" && (
+                    <div className="w-fit place-self-center self-center half:place-self-end md:place-self-center self-end md:self-center relative md:pt-0 col-start-4 h-fit row-start-1">
+                      <FaRetweet />
+                    </div>
+                  )}
                 </div>
               </div>
-              <div className="relative w-full h-full row-start-2 text-black text-base font-sourceReg">
-                <b>{prompt}</b>
+              <div className="relative w-fit h-fit row-start-2 text-offBlack text-base font-gisL place-self-start p-14 pt-8 pb-6">
+                {prompt}
               </div>
-              <div className="relative w-full h-full row-start-3 text-xs text-offBlack">
+              <div className="relative w-fit h-full row-start-3 text-sm place-self-start text-offBlack p-14 pb-8 pt-0 font-gisL">
                 {meta} {description}
               </div>
               {publication.metadata.media.length !== 0 && (
@@ -98,17 +99,20 @@ const Feed: FunctionComponent<FeedProps> = ({
                       return (
                         <div
                           key={index}
-                          className={`relative flex justify-center row-start-${
+                          className={`relative row-start-${
                             index + 3
-                          }`}
+                          } pb-2 w-full h-fit p-10 pt-0`}
                         >
                           <a
                             href={imageSource}
                             target="_blank"
                             rel="noreferrer"
-                            className="cursor-pointer"
+                            className="w-full h-fit cursor-sewingHS"
                           >
-                            <img src={imageSource} />
+                            <img
+                              className="rounded-xl w-full h-fit"
+                              src={imageSource}
+                            />
                           </a>
                         </div>
                       );
@@ -117,30 +121,51 @@ const Feed: FunctionComponent<FeedProps> = ({
                 </div>
               )}
               <div
-                className={`relative w-full h-full row-start-${
+                className={`relative w-fit place-self-center h-full row-start-${
                   publication.metadata.media.length !== 0
-                    ? publication.metadata.media.length + 3
-                    : "5"
+                    ? (publication.metadata.media.length + 4).toString()
+                    : "4"
                 }`}
               >
                 <div className="relative grid grid-flow-col auto-cols-[auto auto] w-full h-fit">
-                  <div className="relative w-fit h-fit col-start-1">
-                    <HiCollection className="relative align-middle" />
-                    <span className="relative text-xs">
-                      {publication.stats.totalAmountOfCollects}
-                    </span>
+                  <div className="relative w-fit h-fit col-start-1 p-2">
+                    <div className="relative w-full h-fit grid grid-flow-col auto-cols-[auto auto]">
+                      <div className="relative w-fit h-fit col-start-1 pr-1">
+                        <HiCollection
+                          className="relative align-middle"
+                          color="#131313"
+                        />
+                      </div>
+                      <div className="relative w-fit h-fit col-start-2 text-xs text-offBlack">
+                        {publication.stats.totalAmountOfCollects}
+                      </div>
+                    </div>
                   </div>
-                  <div className="relative w-fit h-fit col-start-2">
-                    <FaComments className="relative text-xsalign-middle" />
-                    <span className="relative text-xs">
-                      {publication.stats.totalAmountOfComments}
-                    </span>
+                  <div className="relative w-fit h-fit col-start-2 p-2">
+                    <div className="relative w-full h-fit grid grid-flow-col auto-cols-[auto auto]">
+                      <div className="relative w-fit h-fit col-start-1 pr-1">
+                        <FaComments
+                          className="relative align-middle"
+                          color="#131313"
+                        />
+                      </div>
+                      <div className="relative w-fit h-fit col-start-2 text-xs text-offBlack">
+                        {publication.stats.totalAmountOfComments}
+                      </div>
+                    </div>
                   </div>
-                  <div className="relative w-fit h-fit col-start-3">
-                    <FaRetweet className="relative text-xs align-middle" />
-                    <span className="relative text-xs">
-                      {publication.stats.totalAmountOfMirrors}
-                    </span>
+                  <div className="relative w-fit h-fit col-start-3 p-2">
+                    <div className="relative w-full h-fit grid grid-flow-col auto-cols-[auto auto]">
+                      <div className="relative w-fit h-fit col-start-1 pr-1">
+                        <FaRetweet
+                          className="relative align-middle"
+                          color="#131313"
+                        />
+                      </div>
+                      <div className="relative w-fit h-fit col-start-2 text-xs text-offBlack">
+                        {publication.stats.totalAmountOfMirrors}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

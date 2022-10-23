@@ -39,7 +39,7 @@ const Home: NextPage<HomeProps> = ({ rewind }) => {
 
   const { setExpressInterest } = useContext(GlobalContext);
 
-  const { publicationsFeed, getMoreFeed } = useFeed();
+  const { publicationsFeed, getMoreFeed, queryWindowSize, queryWindowSizeMobile} = useFeed();
   return (
     <div className="min-w-screen min-h-full h-full flex flex-col bg-midWhite">
       <Head>
@@ -59,7 +59,12 @@ const Home: NextPage<HomeProps> = ({ rewind }) => {
       <Static />
       <Poster />
       <World />
-      <Social publicationsFeed={publicationsFeed} getMoreFeed={getMoreFeed} />
+      <Social
+        publicationsFeed={publicationsFeed}
+        getMoreFeed={getMoreFeed}
+        queryWindowSize={queryWindowSize}
+        queryWindowSizeMobile={queryWindowSizeMobile}
+      />
       <Library
         lastBook={lastBook}
         handleLastBook={handleLastBook}

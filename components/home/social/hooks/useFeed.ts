@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import exploreInariPublications from "../../../../graphql/queries/explorePublications";
 import { useFeedResults } from "../../../../types/general.types";
+import { useMediaQuery } from "@material-ui/core";
 
 const useFeed = (): useFeedResults => {
   const [publicationsFeed, setPublicationsFeed] = useState<any[]>([]);
   const [pageInfo, setPageInfo] = useState<any>([]);
+  let queryWindowSize: boolean = useMediaQuery("(max-width:1024px)");
+  let queryWindowSizeMobile: boolean = useMediaQuery("(max-width:950px)");
 
   useEffect(() => {
     getFeedData();
@@ -53,7 +56,7 @@ const useFeed = (): useFeedResults => {
     }
   };
 
-  return { publicationsFeed, getMoreFeed };
+  return { publicationsFeed, getMoreFeed, queryWindowSize, queryWindowSizeMobile };
 };
 
 export default useFeed;
