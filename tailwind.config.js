@@ -37,9 +37,6 @@ module.exports = {
         grad1: "#173FD7",
         grad2: "#6CE3D6",
         grad3: "#0772BB",
-        lib1: "#00FF00",
-        lib2: "#4251FF",
-        lib3: "#FAFF1B"
       },
       fontFamily: {
         holo: "Nan Holo",

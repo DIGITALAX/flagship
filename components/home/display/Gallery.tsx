@@ -34,13 +34,13 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                     height={token.height}
                     objectFit="cover"
                     objectPosition="center"
-                    className="hover:opacity-40"
                   />
-                  <div className="absolute top-4 left-4 grid grid-flow-col auto-cols-[auto auto] w-fit h-fit font-lib text-midWhite">
+                  <div className="relative grid grid-flow-col auto-cols-[auto auto] w-fit h-fit font-lib text-midWhite">
+
                     <Link href={"/express-interest"}>
                       <a>
                         <div
-                          className="relative col-start-1 hover:decoration hover:decoration-offset-2 mix-blend-screen hover:cursor-sewingHS"
+                          className="relative col-start-1 decoration-1 underline underline-offset-2 mix-blend-screen hover:cursor-sewingHS"
                           onClick={() => setExpressInterest(token.name)}
                         >
                           Collect NFT

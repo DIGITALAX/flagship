@@ -10,7 +10,7 @@ const useForm = (): useFormResults => {
     try {
       await emailjs.sendForm(
         "service_67226pr",
-        "template_jgv456x",
+        "template_msdrie7",
         e.target,
         "Ex7hIkgjbXrWu8tTu"
       );

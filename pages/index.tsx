@@ -12,19 +12,16 @@ import Social from "../components/home/social/Social";
 import Static from "../components/home/static/Static";
 import TV from "../components/home/tv/TV";
 import World from "../components/home/world/World";
-import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import Title from "./../components/home/title/Title";
 import { useContext, useRef } from "react";
 import Description from "../components/home/description/Description";
 import useFeed from "../components/home/social/hooks/useFeed";
 import { GlobalContext } from "./_app";
+import { HomeProps } from "../types/general.types";
 
-const Home: NextPage = () => {
-  const rewind = useRef<null | HTMLDivElement>(null);
-  const handleRewind = (): void => {
-    rewind.current?.scrollIntoView({ behavior: "smooth" });
-  };
+const Home: NextPage<HomeProps> = ({rewind}) => {
+  
   const lastBook = useRef<null | HTMLDivElement>(null);
   const handleLastBook = (): void => {
     if (lastBook.current) {
@@ -69,7 +66,6 @@ const Home: NextPage = () => {
         handleLastBook={handleLastBook}
       />
       <Slider />
-      <Footer handleRewind={handleRewind} />
     </div>
   );
 };

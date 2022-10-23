@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
+import Footer from "../components/layout/Footer";
 
 export const GlobalProfileContextDefault = {
   expressInterest: "",
@@ -16,10 +17,15 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     console.log(``);
   }, []);
+  const rewind = useRef<null | HTMLDivElement>(null);
+  const handleRewind = (): void => {
+    rewind.current?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <GlobalContext.Provider value={{ expressInterest, setExpressInterest }}>
       <div className="min-h-full h-auto min-w-screen w-screen bg-midWhite relative selection:bg-skyBlue selection:text-dull cursor-sewingS">
-        <Component {...pageProps} />
+        <Component {...pageProps} rewind={rewind} />
+        <Footer handleRewind={handleRewind} />
       </div>
     </GlobalContext.Provider>
   );

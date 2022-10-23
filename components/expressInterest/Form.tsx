@@ -20,7 +20,7 @@ const Form: FunctionComponent= (): JSX.Element => {
       <div className="relative grid auto-rows-[auto auto] grid-flow-row gap-10">
         <div className="relative h-fit w-fit col-start-1 row-start-1">
           <div className="relative col-start-1 row-start-1">
-            <input name="orderIRL" className="hidden" defaultValue={expressInterest} />
+            <input name="expressInterest" className="hidden" defaultValue={expressInterest} />
             <div className="text-offWhite m-2 font-firaL">
               Have more to say? Share your thoughts on the piece before you submit.
             </div>

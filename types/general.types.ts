@@ -76,6 +76,8 @@ export type HeaderProps = {
 export type useLibraryResult = {
   showImage: string;
   setShowImage: (e: string) => void;
+  link: string;
+  setLink: (e: string) => void;
 };
 
 export type Library = {
@@ -117,4 +119,8 @@ export type useFormResults = {
   setSubmitSuccess: (e: boolean) => void;
   submitSuccess: boolean;
   handleSubmitForm: (e: any) => Promise<void>;
+}
+
+export type HomeProps = {
+  rewind: any;
 }

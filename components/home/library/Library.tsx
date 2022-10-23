@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { FunctionComponent, useRef } from "react";
+import Link from "next/link";
+import { FunctionComponent } from "react";
 import { Library, LibraryProps } from "../../../types/general.types";
 import library from "./../../../pages/api/library.json";
 import useLibrary from "./hooks/useLibrary";
@@ -8,7 +9,7 @@ const Library: FunctionComponent<LibraryProps> = ({
   lastBook,
   handleLastBook,
 }): JSX.Element => {
-  const { showImage, setShowImage } = useLibrary();
+  const { showImage, setShowImage, setLink, link } = useLibrary();
   return (
     <div className="relative grid w-full h-fit grid-flow-row auto-rows-[auto auto] pt-4">
       <div className="row-start-1 relative w-full h-3 border-t-4 border-black">
@@ -23,6 +24,16 @@ const Library: FunctionComponent<LibraryProps> = ({
         <div className="relative grid grid-flow-col auto-cols-[auto auto] w-full h-full">
           <div className="relative col-start-1 row-start-1 w-80 h-full">
             <Image layout="fill" objectFit="cover" src={showImage} />
+
+            <div className="relative w-full h-full grid grid-flow-col auto-cols-[auto auto] pr-4 pb-2">
+              <Link href={link === "" ? "cat" : link}>
+                <a target={"_blank"} rel="noreferrer">
+                  <div className="relative w-fit h-fit place-self-end">
+                    <Image src={"/images/eye.png"} height={15} width={25} />
+                  </div>
+                </a>
+              </Link>
+            </div>
           </div>
           <div className="relative w-full h-full overflow-x-scroll overflow-y-hidden flex">
             {library.map((book: Library, index: number) => {
@@ -33,7 +44,10 @@ const Library: FunctionComponent<LibraryProps> = ({
                     Number(book.number) + 1
                   ).toString()} row-start-1 w-fit h-full p-2 pt-3 hover:scale-105 active:scale-95 cursor-sewingHS`}
                   id={book.id}
-                  onClick={() => setShowImage(book.image)}
+                  onClick={() => {
+                    setShowImage(book.image);
+                    setLink(book.link);
+                  }}
                   ref={lastBook}
                 >
                   <div className="grid grid-flow-row auto-rows-[auto auto] relative w-full h-fit gap-3 p-4">
@@ -59,10 +73,10 @@ const Library: FunctionComponent<LibraryProps> = ({
                         </div>
                       </div>
                     </div>
-                    <div className="relative row-start-2 w-full pb-8 pr-0.5 pl-0.5 h-fit self-start">
+                    <div className="relative row-start-2 w-full pb-8 h-fit self-start">
                       <div
                         id="foot3"
-                        className="h-2 border border-offBlack w-full"
+                        className="h-1.5 border border-offBlack w-full"
                       ></div>
                     </div>
                     <div className="relative row-start-3 self-end relative text-[1.3vw] whitespace-nowrap font-lib place-self-center h-full w-10 rotate-90">
