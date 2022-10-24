@@ -10,40 +10,54 @@ const Poster: FunctionComponent = (): JSX.Element => {
           <div className="relative w-full h-fit place-self-end col-start-1">
             <div className="grid relative grid-flow-row auto-rows-[auto auto] w-full h-fit">
               <div className="relative row-start-1 w-[74vw] h-[62vw] sm:w-72 sm:h-60 self-end pb-3 pl-10">
-                <video
-                  autoPlay
-                  muted
-                  loop
+                <div
                   id="crt"
-                  placeholder="blur"
-                  className="relative max-w-none h-full w-full object-cover rounded-xl flex"
+                  className="relative bg-offBlack w-full h-full rounded-xl"
                 >
-                  <source src="/videos/crt1.mp4" type="video/mp4"></source>
-                </video>
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    id="crt"
+                    placeholder="blur"
+                    className="relative max-w-none p-0.5 h-full w-full object-cover rounded-xl flex"
+                  >
+                    <source src="/videos/crt1.mp4" type="video/mp4"></source>
+                  </video>
+                </div>
               </div>
               <div className="relative row-start-2 w-[74vw] h-[62vw] sm:w-72 sm:h-60 self-end pb-3 pl-10">
-                <video
-                  autoPlay
-                  muted
-                  loop
+                <div
                   id="crt"
-                  placeholder="blur"
-                  className="relative max-w-none h-full w-full object-cover rounded-xl flex"
+                  className="relative bg-offBlack w-full h-full rounded-xl"
                 >
-                  <source src="/videos/crt2.mp4" type="video/mp4"></source>
-                </video>
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    id="crt"
+                    placeholder="blur"
+                    className="relative max-w-none p-0.5 h-full w-full object-cover rounded-xl flex"
+                  >
+                    <source src="/videos/crt2.mp4" type="video/mp4"></source>
+                  </video>
+                </div>
               </div>
               <div className="relative row-start-3 w-[74vw] h-[62vw] sm:w-72 sm:h-60 self-end pl-10">
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  placeholder="blur"
+                <div
                   id="crt"
-                  className="relative max-w-none h-full w-full object-cover rounded-xl flex"
+                  className="relative bg-offBlack w-full h-full rounded-xl"
                 >
-                  <source src="/videos/crt3.mp4" type="video/mp4"></source>
-                </video>
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    placeholder="blur"
+                    className="relative max-w-none p-0.5 h-full w-full object-cover rounded-xl flex"
+                  >
+                    <source src="/videos/crt3.mp4" type="video/mp4"></source>
+                  </video>
+                </div>
               </div>
               <div className="relative row-start-4 w-full h-fit pt-10 sm:pt-10 pb-8">
                 <div className="relative text-offWhite text-[8.1vw] whitespace-nowrap text-center pl-3 pr-3 sm:pl-10 sm:pr-10 w-full font-mag bg-offBlack pt-3 pb-3">
