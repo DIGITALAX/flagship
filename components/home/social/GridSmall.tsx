@@ -21,14 +21,15 @@ const GridSmall: FunctionComponent<GridProps> = ({
       </div>
       <div
         id="static"
-        className="row-start-2 col-start-1 relative w-full h-10 border-offBlack border-8 border-l-4 border-r-4 border-b-4"
+        className="row-start-2 col-start-1 relative w-full h-full border-offBlack border-8 border-l-4 border-r-4 border-b-4"
       ></div>
       <div className="row-start-3 col-start-1 relative w-full h-[50vw] border-offBlack md:border-8 md:border-l-4 md:border-b-4">
         <Image
           objectFit="cover"
           layout="fill"
+          objectPosition={"top"}
           className="w-full h-full"
-          src="/images/digifizzy/digifizzy1.png"
+          src="/images/gridmain.png"
         />
       </div>
       <div className="row-start-4 col-start-1 relative w-full pb-12 pt-12 h-full border-offBlack border-8 border-r-4 border-b-4 text-darkG bg-grayL font-aud text-[4.5vw] leading-normal p-10">
@@ -48,18 +49,18 @@ const GridSmall: FunctionComponent<GridProps> = ({
         <br /> CELEBRITIES THINK ABOUT WHAT WE
         <br /> HAVE TO SAY, WHEN WE HAVE WEB3?
       </div>
-      <div className="row-start-5 col-start-1 relative w-full h-20 border-offBlack border-2">
+      <div className="row-start-5 col-start-1 relative w-full h-14 border-offBlack border-2">
         <div className="grid-flow-col grid auto-cols-[auto auto] relative w-full h-full">
           <div
             id="static2"
-            className="relative col-start-1 w-full h-full bg-offBlack"
+            className="relative col-start-1 w-full h-full bg-offBlack saturate-0"
           ></div>
-          <div className="relative col-start-2 w-fit h-full self-end place-self-end">
-            <div className="relative w-fit p-2 h-fit bg-midWhite ">
-              <div className="relative w-fit h-full hover:rotate-12">
+          <div className="absolute col-start-2 w-16 h-full p-2 border-offBlack self-end place-self-end m-0 bg-midWhite border-r-2 border-4 border-t-0 border-b-0">
+            <div className="relative w-full h-full grid grid-flow-row auto-rows-[auto auto]">
+              <div className="relative w-fit h-full hover:rotate-12 row-start-1 place-self-center cursor-sewingHS">
                 <Image
-                  width={40}
-                  height={50}
+                  width={30}
+                  height={40}
                   src={"/images/inari.png"}
                   className="justify-center"
                 />

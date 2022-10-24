@@ -29,7 +29,7 @@ const Static: FunctionComponent = (): JSX.Element => {
               placeholder="blur"
               className="relative max-w-none border-gray-900 border-8 w-[14vw] h-[18vw] object-cover flex place-self-center"
             >
-              <source src="/videos/glitch.mp4" type="video/mp4"></source>
+              <source src="/videos/static.mp4" type="video/mp4"></source>
             </video>
           </div>
         </div>

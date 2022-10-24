@@ -14,10 +14,11 @@ const Poster: FunctionComponent = (): JSX.Element => {
                   autoPlay
                   muted
                   loop
+                  id="crt"
                   placeholder="blur"
                   className="relative max-w-none h-full w-full object-cover rounded-xl flex"
                 >
-                  <source src="/videos/glitch.mp4" type="video/mp4"></source>
+                  <source src="/videos/crt1.mp4" type="video/mp4"></source>
                 </video>
               </div>
               <div className="relative row-start-2 w-[74vw] h-[62vw] sm:w-72 sm:h-60 self-end pb-3 pl-10">
@@ -25,24 +26,26 @@ const Poster: FunctionComponent = (): JSX.Element => {
                   autoPlay
                   muted
                   loop
+                  id="crt"
                   placeholder="blur"
                   className="relative max-w-none h-full w-full object-cover rounded-xl flex"
                 >
-                  <source src="/videos/glitch.mp4" type="video/mp4"></source>
+                  <source src="/videos/crt2.mp4" type="video/mp4"></source>
                 </video>
               </div>
-              <div className="relative row-start-3 w-[74vw] h-[62vw] sm:w-72 sm:h-60 self-end pl-10 pb-3 sm:pb-10">
+              <div className="relative row-start-3 w-[74vw] h-[62vw] sm:w-72 sm:h-60 self-end pl-10">
                 <video
                   autoPlay
                   muted
                   loop
                   placeholder="blur"
+                  id="crt"
                   className="relative max-w-none h-full w-full object-cover rounded-xl flex"
                 >
-                  <source src="/videos/glitch.mp4" type="video/mp4"></source>
+                  <source src="/videos/crt3.mp4" type="video/mp4"></source>
                 </video>
               </div>
-              <div className="relative row-start-4 w-full h-fit pt-10 sm:pt-0 pb-8">
+              <div className="relative row-start-4 w-full h-fit pt-10 sm:pt-10 pb-8">
                 <div className="relative text-offWhite text-[8.1vw] whitespace-nowrap text-center pl-3 pr-3 sm:pl-10 sm:pr-10 w-full font-mag bg-offBlack pt-3 pb-3">
                   LATENT THREADS
                 </div>

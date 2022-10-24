@@ -53,7 +53,7 @@ const Box: FunctionComponent<BoxProps> = ({
                     </div>
                   </div>
                   <div className="relative row-start-4 w-fit h-full pt-1 p-8 place-self-end font-lib text-offBlack text-xs">
-                    Something: 000s
+                    bl_info: fashion syntheziser
                   </div>
                 </div>
               </div>

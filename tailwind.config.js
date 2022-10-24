@@ -39,7 +39,8 @@ module.exports = {
         grad3: "#0772BB",
         grayL: "#FBF9F5",
         darkG: "#2A3940",
-        lensG: "#7FDA1F"
+        lensG: "#7FDA1F",
+        lightB: "#BCF9FF"
       },
       fontFamily: {
         holo: "Nan Holo",

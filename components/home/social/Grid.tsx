@@ -30,10 +30,11 @@ const Grid: FunctionComponent<GridProps> = ({
           objectFit="cover"
           layout="fill"
           className="w-full h-full"
-          src="/images/digifizzy/digifizzy1.png"
+          objectPosition={"top"}
+          src="/images/gridmain.png"
         />
       </div>
-      <div className="row-start-2 col-start-1 relative w-full pb-12 lg:pb-0 h-full border-offBlack border-8 border-r-4 border-b-4 text-darkG bg-grayL font-aud text-[2.5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-tight p-6">
+      <div className="row-start-2 col-start-1 relative w-full pb-12 lg:pb-0 h-full border-offBlack border-8 border-r-0 border-b-0 text-darkG bg-grayL font-aud text-[2.5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-tight p-6">
         THE FIRST PROFILES ARE LIVE ON LENS, <br /> WITH NEW PROTOCOL
         INTEGRATONS
         <br />
@@ -50,15 +51,15 @@ const Grid: FunctionComponent<GridProps> = ({
         <br /> CELEBRITIES THINK ABOUT WHAT WE
         <br /> HAVE TO SAY, WHEN WE HAVE WEB3?
       </div>
-      <div className="row-start-2 col-start-2 relative w-full h-full border-offBlack border-8 border-l-4 border-r-4 border-b-4">
+      <div className="row-start-2 col-start-2 relative w-full h-full border-offBlack border-t-4 border-l-4 border-r-4 border-b-0">
         <div className="grid-flow-row grid auto-rows-[auto auto] relative w-full h-full">
           <div
             id="static2"
-            className="relative row-start-1 w-6 md:w-16 h-full bg-offBlack"
+            className="relative row-start-1 w-6 md:w-16 h-full bg-offBlack saturate-0 border-offBlack border-t-4 border-l-4 border-r-4 border-b-4"
           ></div>
-          <div className="relative row-start-2 w-fit h-full border-t-8 border-offBlack self-end place-self-end">
-            <div className="relative w-fit p-2 h-fit bg-midWhite ">
-              <div className="relative w-fit h-full hover:rotate-12">
+          <div className="absolute row-start-2 w-full h-fit p-2 border-t-8 border-offBlack self-end place-self-end m-0 bg-midWhite border-4 border-b-0">
+            <div className="relative w-full h-fit grid grid-flow-row auto-rows-[auto auto]">
+              <div className="relative w-fit h-fit hover:rotate-12 row-start-1 place-self-center cursor-sewingHS">
                 <Image
                   width={40}
                   height={50}
@@ -70,7 +71,7 @@ const Grid: FunctionComponent<GridProps> = ({
           </div>
         </div>
       </div>
-      <div className="row-start-2 col-start-3 relative w-full h-fit lg:h-full bg-offWhite border-offBlack lg:border-8 lg:border-l-4 lg:border-b-4">
+      <div className="row-start-2 col-start-3 relative w-full h-fit lg:h-full bg-offWhite border-offBlack lg:border-8 lg:border-l-4 lg:border-b-0">
         <div className="relative w-full h-full grid grid-flow-row auto-rows-[auto auto] content-center">
           <Feed
             publicationsFeed={publicationsFeed}
