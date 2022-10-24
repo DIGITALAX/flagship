@@ -31,7 +31,7 @@ const Header: FunctionComponent<HeaderProps> = ({
       <div className="relative col-start-1 row-start-2 md:col-start-2 w-full md:row-start-1 text-center min-h-full h-full justify-self-center">
         <div className="grid grid-row-flow auto-rows-[auto auto] relative md:w-fit h-fit justify-center w-full">
           <div className="relative w-10 h-16 row-start-1 place-self-center pb-2">
-            <div className="border border-2 border-darkP w-full h-full min-h-full relative flex">
+            <div className="border border-2 border-mainText w-full h-full min-h-full relative flex">
               <Image
                 width={50}
                 height={70}
@@ -51,7 +51,7 @@ const Header: FunctionComponent<HeaderProps> = ({
         <div className="grid grid-row-flow auto-rows-[auto auto] relative w-full h-full gap-4">
           <div className="relative w-fit h-fit row-start-1 place-self-center md:place-self-end pb-3">
             <div
-              className="relative w-screen md:w-40 h-fit bg-white border-t border-b md:border border-1 border-offBlack pt-1.5 pb-1.5 text-sm flex overflow-x-hidden whitespace-nowrap cursor-sewingHS hover:bg-skyBlue hover:text-dull active:text-dull active:bg-skyBlue"
+              className="relative w-screen md:w-40 h-fit bg-white border-t border-b md:border border-1 border-offBlack pt-1.5 pb-1.5 text-sm flex overflow-x-hidden whitespace-nowrap cursor-sewingHS hover:bg-skyBlue hover:text-dull active:text-dull active:bg-skyBlue text-offBlack"
               onClick={() => handleShop()}
             >
               <Marquee direction="right" speed={25} gradient={false}>

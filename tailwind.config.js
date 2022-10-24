@@ -45,7 +45,10 @@ module.exports = {
         themG: "#BEFD4E",
         themP: "#C89EFF",
         mainBg: "var(--mainBg)",
-        mainText: "var(--mainText)"
+        mainText: "var(--mainText)",
+        banner: "var(--banner)",
+        themH: "#f6ec7b",
+        themHT: "#2f25a7"
       },
       fontFamily: {
         holo: "Nan Holo",

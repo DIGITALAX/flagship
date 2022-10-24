@@ -52,7 +52,7 @@ const DirectorySmall: FunctionComponent = (): JSX.Element => {
                   <Image height={20} width={20} src="/images/arrowright.png" />
                 </div>
                 <div className="relative col-start-2 w-fit h-fit">
-                  other worlds
+                zero waste
                 </div>
               </div>
               <div className="relative grid col-start-2 row-start-3 sm:col-start-3 sm:row-start-2 grid-flow-col auto-cols-[auto auto] w-fit h-fit pt-2 pl-4 sm:pl-2">
@@ -60,7 +60,7 @@ const DirectorySmall: FunctionComponent = (): JSX.Element => {
                   <Image height={20} width={20} src="/images/arrowright.png" />
                 </div>
                 <div className="relative col-start-2 w-fit h-fit">
-                  other worlds
+                  packing
                 </div>
               </div>
               <div className="relative grid col-start-1 row-start-4 sm:col-start-4 sm:row-start-1 grid-flow-col auto-cols-[auto auto] w-fit h-fit pt-2 pl-2">
@@ -68,26 +68,26 @@ const DirectorySmall: FunctionComponent = (): JSX.Element => {
                   <Image height={20} width={20} src="/images/arrowright.png" />
                 </div>
                 <div className="relative col-start-2 w-fit h-fit">
-                  other worlds
+                  3d design
                 </div>
               </div>
               <div className="relative grid md:col-start-4 md:row-start-2 grid-flow-col auto-cols-[auto auto] w-fit h-fit sm:col-start-4 sm:row-start-2 pt-2 pl-4 sm:pl-2">
                 <div className="relative col-start-1 w-fit h-fit pr-2">
                   <Image height={20} width={20} src="/images/arrowright.png" />
                 </div>
-                <div className="relative col-start-2 w-fit h-fit">chuck</div>
+                <div className="relative col-start-2 w-fit h-fit">restitch</div>
               </div>
               <div className="relative grid sm:row-start-3 sm:col-start-1 md:col-start-5 md:row-start-1 grid-flow-col auto-cols-[auto auto] w-fit h-fit pt-2 pl-2">
                 <div className="relative col-start-1 w-fit h-fit pr-2">
                   <Image height={20} width={20} src="/images/arrowright.png" />
                 </div>
-                <div className="relative col-start-2 w-fit h-fit">chuck</div>
+                <div className="relative col-start-2 w-fit h-fit">rematerialize</div>
               </div>
               <div className="relative grid md:col-start-5 md:row-start-2 sm:col-start-2 sm:row-start-3 grid-flow-col auto-cols-[auto auto] w-fit h-fit pt-2 pl-4 sm:pl-2">
                 <div className="relative col-start-1 w-fit h-fit pr-2">
                   <Image height={20} width={20} src="/images/arrowright.png" />
                 </div>
-                <div className="relative col-start-2 w-fit h-fit">chuck</div>
+                <div className="relative col-start-2 w-fit h-fit">mint</div>
               </div>
             </div>
           </div>

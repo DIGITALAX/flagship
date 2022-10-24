@@ -21,7 +21,7 @@ const TV: FunctionComponent = (): JSX.Element => {
         <div className="relative grid grid-flow-col auto-cols-[auto auto] w-full h-full p-4 sm:p-4 md:p-10 pb-0 md:pb-0 sm:pb-0 md:pt-16 lg:pt-24 pt-8 sm:pt-12 gap-1 sm:gap-3 sm:gap-6 justify-center ">
           {newImages.map((image: string, index: number) => {
             return (
-              <Link href={"https://digifizzy.xyz"}>
+              <Link href={"https://digifizzy.xyz"} key={index}>
                 <a
                   target={"_blank"}
                   rel="noreferrer"

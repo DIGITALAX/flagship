@@ -52,7 +52,7 @@ const Directory: FunctionComponent = (): JSX.Element => {
                   <Image height={20} width={20} src="/images/arrowright.png" />
                 </div>
                 <div className="relative col-start-2 w-full h-fit">
-                  other worlds
+                  zero waste
                 </div>
               </div>
               <div className="relative grid col-start-1 row-start-6 grid-flow-col auto-cols-[auto auto] w-fit h-fit pl-5 sm:pl-3 pt-2">
@@ -60,7 +60,7 @@ const Directory: FunctionComponent = (): JSX.Element => {
                   <Image height={20} width={20} src="/images/arrowright.png" />
                 </div>
                 <div className="relative col-start-2 w-full h-fit">
-                  other worlds
+                  packing
                 </div>
               </div>
               <div className="relative grid col-start-1 row-start-7 grid-flow-col auto-cols-[auto auto] w-fit h-fit  pl-3 pt-2">
@@ -68,26 +68,26 @@ const Directory: FunctionComponent = (): JSX.Element => {
                   <Image height={20} width={20} src="/images/arrowright.png" />
                 </div>
                 <div className="relative col-start-2 w-full h-fit">
-                  other worlds
+                 3d design
                 </div>
               </div>
               <div className="relative grid col-start-1 row-start-8 grid-flow-col auto-cols-[auto auto] w-fit h-fit pl-3 pt-2">
                 <div className="relative col-start-1 w-fit h-fit pr-3">
                   <Image height={20} width={20} src="/images/arrowright.png" />
                 </div>
-                <div className="relative col-start-2 w-full h-fit">chuck</div>
+                <div className="relative col-start-2 w-full h-fit">restitch</div>
               </div>
               <div className="relative grid col-start-1 row-start-9 grid-flow-col auto-cols-[auto auto] w-fit h-fit pl-3 pt-2">
                 <div className="relative col-start-1 w-fit h-fit pr-3">
                   <Image height={20} width={20} src="/images/arrowright.png" />
                 </div>
-                <div className="relative col-start-2 w-full h-fit">chuck</div>
+                <div className="relative col-start-2 w-full h-fit">rematerialize</div>
               </div>
               <div className="relative grid col-start-1 row-start-10 grid-flow-col auto-cols-[auto auto] w-fit h-fit pl-3 pt-2">
                 <div className="relative col-start-1 w-fit h-fit pr-3">
                   <Image height={20} width={20} src="/images/arrowright.png" />
                 </div>
-                <div className="relative col-start-2 w-full h-fit">chuck</div>
+                <div className="relative col-start-2 w-full h-fit">mint</div>
               </div>
             </div>
           </div>

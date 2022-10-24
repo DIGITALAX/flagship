@@ -86,26 +86,37 @@ body {
 .theme-cream {
   --mainBg: theme("colors.midWhite");
   --mainText: theme("colors.offBlack");
+  --banner: theme("colors.offBlack")
 }
 
 .theme-blue {
   --mainBg: theme("colors.themB");
   --mainText: theme("colors.midWhite");
+  --banner: theme("colors.offWhite")
 }
 
 .theme-dark {
   --mainBg: theme("colors.offBlack");
   --mainText: theme("colors.midWhite");
+  --banner: theme("colors.offWhite")
 }
 
 .theme-green {
   --mainBg: theme("colors.themG");
   --mainText: theme("colors.offBlack");
+  --banner: theme("colors.offBlack")
 }
 
 .theme-purple {
   --mainBg: theme("colors.themP");
   --mainText: theme("colors.themB");
+  --banner: theme("colors.themB")
+}
+
+.theme-heart {
+  --mainBg: theme("colors.themH");
+  --mainText: theme("colors.themHT");
+  --banner: theme("colors.themH")
 }
 
 #world {

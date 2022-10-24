@@ -157,3 +157,8 @@ export type useTvResults = {
   refreshImages: () => void;
   newImages: string[];
 };
+
+export type useStickyStateResults = {
+  setItem: (value: string) => void;
+  value: string | null
+}

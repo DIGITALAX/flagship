@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { createContext, useEffect, useRef, useState } from "react";
 import Footer from "../components/layout/Footer";
-import shuffle from "shuffle-array";
+import useStickyState from "../components/common/hooks/useStickyState";
 
 export const GlobalProfileContextDefault = {
   expressInterest: "",
@@ -10,14 +10,18 @@ export const GlobalProfileContextDefault = {
 };
 
 export const GlobalContext = createContext(GlobalProfileContextDefault);
-const colors = ["cream", "dark", "blue", "green", "purple"];
+const colors = ["cream", "dark", "blue", "green", "purple", "heart"];
+// const { setItem, value } = useStickyState();
 function MyApp({ Component, pageProps }: AppProps) {
   const [color, setColor] = useState<string>(colors[0]);
   const changeColor = () => {
-    console.log("here");
-    shuffle<string>(colors);
-    setColor(colors[0]);
-    console.log(colors[0]);
+    if (colors.indexOf(color) < 4) {
+      setColor(colors[colors.indexOf(color) + 1]);
+      localStorage.setItem("theme-color", color);
+    } else {
+      setColor(colors[0]);
+      localStorage.setItem("theme-color", color);
+    }
   };
   const [expressInterest, setExpressInterest] = useState(
     GlobalProfileContextDefault.expressInterest
@@ -121,7 +125,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <div
         className={[
           "min-h-full h-auto min-w-screen w-screen relative selection:bg-skyBlue selection:text-dull cursor-sewingS bg-mainBg",
-          `theme-${color}`,
+          color ? `theme-${color}` : "theme-cream",
         ]
           .filter(Boolean)
           .join(" ")}
