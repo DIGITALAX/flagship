@@ -13,29 +13,28 @@ const LibraryLarge: FunctionComponent<LibrarySmallProps> = ({
   return (
     <div className="relative grid grid-flow-col auto-cols-[auto auto] w-full h-full">
       <div className="relative col-start-1 row-start-1 w-80 h-full">
-        <div className="relative border-t-2 border-offBlack w-full h-full">
+        <div className="relative border-t-2 border-offBlack w-full h-full xl:border-b-[1.18vw] border-b-[1.55vw] bg-offBlack">
           <Image layout="fill" objectFit="cover" src={showImage} />
-        </div>
-
-        <div className="relative w-full h-full grid grid-flow-col auto-cols-[auto auto] pr-4 pb-2">
-          {link !== "" ? (
-            <Link href={link}>
-              <a
-                target={"_blank"}
-                rel="noreferrer"
+          <div className="relative w-full h-full grid grid-flow-col auto-cols-[auto auto] pr-4 pb-2">
+            {link !== "" ? (
+              <Link href={link}>
+                <a
+                  target={"_blank"}
+                  rel="noreferrer"
+                  className="relative w-fit h-fit place-self-end cursor-sewingHS hover:scale-95"
+                >
+                  <Image src={"/images/eye.png"} height={15} width={25} />
+                </a>
+              </Link>
+            ) : (
+              <div
+                onClick={() => setRefactorModal(true)}
                 className="relative w-fit h-fit place-self-end cursor-sewingHS hover:scale-95"
               >
                 <Image src={"/images/eye.png"} height={15} width={25} />
-              </a>
-            </Link>
-          ) : (
-            <div
-              onClick={() => setRefactorModal(true)}
-              className="relative w-fit h-fit place-self-end cursor-sewingHS hover:scale-95"
-            >
-              <Image src={"/images/eye.png"} height={15} width={25} />
-            </div>
-          )}
+              </div>
+            )}
+          </div>
         </div>
       </div>
       <div className="relative w-full h-full overflow-x-scroll overflow-y-hidden flex">

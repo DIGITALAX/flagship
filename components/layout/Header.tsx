@@ -36,6 +36,7 @@ const Header: FunctionComponent<HeaderProps> = ({
                 height={70}
                 src="/images/header/diagram.png"
                 objectFit="cover"
+                priority
               />
             </div>
           </div>
@@ -63,14 +64,14 @@ const Header: FunctionComponent<HeaderProps> = ({
             </div>
           </div>
           <div className="relative w-fit h-fit row-start-2 place-self-end self-end pr-3 pt-4 md:pt-0 md:pr-10">
-            <div className="border border-2 rounded-full border-offBlack w-fit h-fit pr-5 pl-5 flex pt-2 pb-2 cursor-sewingHS active:border-red-600 active:bg-red-500 hover:border-red-600 hover:bg-red-500">
-              <Image width={40} height={28} src="/images/header/heart.svg" />
+            <div className="border border-2 rounded-full border-offBlack w-fit h-fit pr-5 pl-5 flex pt-2 pb-2 cursor-sewingHS active:bg-lightB active:bg-lightB hover:border-lightB hover:bg-lightB">
+              <Image width={40} height={28} src="/images/header/heart.svg" priority/>
             </div>
           </div>
           <div className="relative w-full h-fit row-start-3 place-self-start pr-5">
             <div className="relative w-fit h-fit grid grid-flow-col auto-cols-[auto auto] gap-2 pt-4">
               <div className="relative w-fit h-full col-start-1 place-self-end pt-2 hover:-rotate-12">
-                <Image src="/images/header/arrow.svg" height={20} width={60} />
+                <Image src="/images/header/arrow.svg" height={20} width={60} priority/>
               </div>
               <div className="relative w-fit h-full whitespace-nowrap col-start-2 font-firaL">
                 DO NOT BEND

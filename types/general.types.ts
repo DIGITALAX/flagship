@@ -130,7 +130,7 @@ export type GridProps = {
   getMoreFeed: () => Promise<any>;
   queryWindowSize: boolean;
   queryWindowSizeMobile: boolean;
-}
+};
 
 export type DisplayProps = {
   shop: any;
@@ -149,4 +149,9 @@ export type HomeProps = {
 
 export type RefactorElementProps = {
   setRefactorModal: (e: boolean) => void;
+};
+
+export type useTvResults = {
+  refreshImages: () => void;
+  newImages: string[];
 };

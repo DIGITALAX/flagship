@@ -5,6 +5,7 @@ import Marquee from "react-fast-marquee";
 const Slider: FunctionComponent = (): JSX.Element => {
   const [blur, setBlur] = useState<boolean>(true);
   const images: string[] = [
+    "slider0",
     "slider1",
     "slider2",
     "slider3",
@@ -65,6 +66,19 @@ const Slider: FunctionComponent = (): JSX.Element => {
     "slider58",
     "slider59",
     "slider60",
+    "slider61",
+    "slider62",
+    "slider63",
+    "slider64",
+    "slider65",
+    "slider66",
+    "slider67",
+    "slider68",
+    "slider69",
+    "slider70",
+    "slider71",
+    "slider72",
+    "slider73",
   ];
 
   return (
@@ -90,6 +104,7 @@ const Slider: FunctionComponent = (): JSX.Element => {
                 layout="fill"
                 priority
                 placeholder="blur"
+                objectPosition={"top"}
                 blurDataURL={`/images/blurred/${image}.png`}
                 onLoadingComplete={() => setBlur(false)}
               />

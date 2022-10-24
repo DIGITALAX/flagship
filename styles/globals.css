@@ -83,6 +83,26 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+.theme-cream {
+  background-color: "#FAF4E8";
+}
+
+.theme-blue {
+  background-color: "#9FD4FB";
+}
+
+.theme-dark {
+  background-color: "#131313";
+}
+
+.theme-green {
+  background-color: "#BEFD4E";
+}
+
+.theme-purple {
+  background-color: "#C89EFF";
+}
+
 #world {
   background: -webkit-linear-gradient(
     -86deg,
@@ -198,8 +218,7 @@ body {
 }
 
 #crt {
-  background:
-  linear-gradient(to right, #fc9cf3, #b9d9ff, #0091ff, #99fdc1);
+  background: linear-gradient(to right, #fc9cf3, #b9d9ff, #0091ff, #99fdc1);
 }
 
 @keyframes anim {
@@ -273,8 +292,6 @@ body {
     background-position: 100% 100%;
   }
 }
-
-
 
 #one {
   background-color: #befd4e;

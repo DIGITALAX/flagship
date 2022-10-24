@@ -3,7 +3,7 @@ import { useLibraryResult } from "../../../../types/general.types";
 
 const useLibrary = (): useLibraryResult => {
   const [showImage, setShowImage] = useState<string>("/images/library/og.png");
-  const [link, setLink] = useState<string>("https://digitalax.xyz");
+  const [link, setLink] = useState<string>("https://docs.digitalax.xyz");
 
   const lastBook = useRef<null | HTMLDivElement>(null);
   const handleLastBook = (): void => {

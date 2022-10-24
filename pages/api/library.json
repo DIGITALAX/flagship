@@ -1,34 +1,34 @@
 [
   {
     "name": "REALMS",
-    "image": "/images/library/AlternativePorcelain.png",
+    "image": "/images/library/realms.png",
     "number": "1",
     "id": "one",
-    "link": "https://market.zora.co/collections/0x21a511f251C2213381856984a957bD827db4153E/1",
+    "link": "",
     "width": 25,
     "height": 80
   },
   {
     "name": "MONA",
-    "image": "/images/library/AlternativePorcelain.png",
+    "image": "/images/library/mona.png",
     "number": "2",
     "id": "two",
-    "link": "https://market.zora.co/collections/0x21a511f251C2213381856984a957bD827db4153E/1",
+    "link": "",
     "width": 25,
     "height": 60
   },
   {
     "name": "GLOBAL DESIGNER NETWORK",
-    "image": "/images/library/AlternativePorcelain.png",
+    "image": "/images/library/gdn.png",
     "number": "3",
     "id": "three",
-    "link": "https://market.zora.co/collections/0x21a511f251C2213381856984a957bD827db4153E/1",
+    "link": "",
     "width": 25,
     "height": 320
   },
   {
     "name": "GLOBAL MODELS SYNDICATE",
-    "image": "/images/library/AlternativePorcelain.png",
+    "image": "/images/library/gms.png",
     "number": "4",
     "id": "four",
     "link": "",
@@ -37,127 +37,127 @@
   },
   {
     "name": "ENGINEERING",
-    "image": "/images/library/AlternativePorcelain.png",
+    "image": "/images/library/engineering.png",
     "number": "5",
     "id": "five",
-    "link": "https://market.zora.co/collections/0x21a511f251C2213381856984a957bD827db4153E/1",
+    "link": "https://github.com/DIGITALAX/",
     "width": 25,
     "height": 150
   },
   {
     "name": "PODE",
-    "image": "/images/library/AlternativePorcelain.png",
+    "image": "/images/library/pode.png",
     "number": "6",
     "id": "six",
-    "link": "https://market.zora.co/collections/0x21a511f251C2213381856984a957bD827db4153E/1",
+    "link": "",
     "width": 25,
     "height": 55
   },
   {
     "name": "THE DLTA SYSTEM",
-    "image": "/images/library/AlternativePorcelain.png",
+    "image": "/images/library/dlta.png",
     "number": "7",
     "id": "seven",
-    "link": "https://market.zora.co/collections/0x21a511f251C2213381856984a957bD827db4153E/1",
+    "link": "",
     "width": 25,
     "height": 210
   },
   {
     "name": "WEB3 FASHION WEEK",
-    "image": "/images/library/AlternativePorcelain.png",
+    "image": "/images/library/web3.png",
     "number": "8",
     "id": "eight",
-    "link": "https://market.zora.co/collections/0x21a511f251C2213381856984a957bD827db4153E/1",
+    "link": "",
     "width": 25,
     "height": 235
   },
   {
     "name": "REALM RUNWAYS",
-    "image": "/images/library/AlternativePorcelain.png",
+    "image": "/images/library/runways.png",
     "number": "9",
     "id": "nine",
-    "link": "https://market.zora.co/collections/0x21a511f251C2213381856984a957bD827db4153E/1",
+    "link": "",
     "width": 25,
     "height": 180
   },
   {
     "name": "DIY SYNTH",
-    "image": "/images/library/AlternativePorcelain.png",
+    "image": "/images/library/diy.png",
     "number": "10",
     "id": "ten",
-    "link": "https://market.zora.co/collections/0x21a511f251C2213381856984a957bD827db4153E/1",
+    "link": "https://diysynth.xyz",
     "width": 25,
     "height": 125
   },
   {
     "name": "INARI SYNTH",
-    "image": "/images/library/AlternativePorcelain.png",
+    "image": "/images/library/inari.png",
     "number": "11",
     "id": "eleven",
-    "link": "https://market.zora.co/collections/0x21a511f251C2213381856984a957bD827db4153E/1",
+    "link": "https://inarisynth.xyz",
     "width": 25,
     "height": 150
   },
   {
     "name": "WHITEPAPER V3",
-    "image": "/images/library/AlternativePorcelain.png",
+    "image": "/images/library/whitepaper.png",
     "number": "12",
     "id": "twelve",
-    "link": "https://market.zora.co/collections/0x21a511f251C2213381856984a957bD827db4153E/1",
+    "link": "https://digitalax.xyz/whitepaper",
     "width": 25,
     "height": 180
   },
   {
     "name": "ROADMAP V3",
-    "image": "/images/library/AlternativePorcelain.png",
+    "image": "/images/library/roadmap.png",
     "number": "13",
     "id": "thirteen",
-    "link": "https://market.zora.co/collections/0x21a511f251C2213381856984a957bD827db4153E/1",
+    "link": "",
     "width": 25,
     "height": 140
   },
   {
     "name": "LOOK: FASHION LOOT",
-    "image": "/images/library/AlternativePorcelain.png",
+    "image": "/images/library/look.png",
     "number": "14",
     "id": "fourteen",
-    "link": "https://market.zora.co/collections/0x21a511f251C2213381856984a957bD827db4153E/1",
+    "link": "",
     "width": 25,
     "height": 250
   },
   {
     "name": "ESPA",
-    "image": "/images/library/AlternativePorcelain.png",
+    "image": "/images/library/espa.png",
     "number": "15",
     "id": "fifteen",
-    "link": "https://market.zora.co/collections/0x21a511f251C2213381856984a957bD827db4153E/1",
+    "link": "",
     "width": 25,
     "height": 55
   },
   {
     "name": "GOVERNANCE",
-    "image": "/images/library/AlternativePorcelain.png",
+    "image": "/images/library/gov.png",
     "number": "16",
     "id": "sixteen",
-    "link": "https://market.zora.co/collections/0x21a511f251C2213381856984a957bD827db4153E/1",
+    "link": "https://gov.digitalax.xyz",
     "width": 25,
     "height": 125
   },
   {
     "name": "TRANSPARENCY REPORTS",
-    "image": "/images/library/AlternativePorcelain.png",
+    "image": "/images/library/transparency.png",
     "number": "17",
     "id": "seventeen",
-    "link": "https://market.zora.co/collections/0x21a511f251C2213381856984a957bD827db4153E/1",
+    "link": "https://primer.digitalax.xyz/transparency-reports",
     "width": 25,
     "height": 275
   },
   {
     "name": "DASH",
-    "image": "/images/library/AlternativePorcelain.png",
+    "image": "/images/library/dash.png",
     "number": "18",
     "id": "eighteen",
-    "link": "https://market.zora.co/collections/0x21a511f251C2213381856984a957bD827db4153E/1",
+    "link": "",
     "width": 25,
     "height": 55
   }

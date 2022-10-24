@@ -45,7 +45,7 @@ const Feed: FunctionComponent<FeedProps> = ({
         return (
           <div
             key={index}
-            className={`relative w-full h-fit p-6 row-start-${index}`}
+            className={`relative w-full h-fit p-2 md:p-6 row-start-${index}`}
           >
             <div className="relative grid grid-flow-row auto-rows-[auto auto] w-full h-full  rounded-xl drop-shadow-xl bg-white pb-4 pt-4 border-2 border-lightB">
               <div className="relative w-fit xl:w-full h-full row-start-1 pt-4 place-self-center sm:place-self-start half:place-self-center xl:place-self-start half:pr-2 half:pl-2 sm:pr-11 sm:pl-11 xl:pr-11 xl:pl-11 ">

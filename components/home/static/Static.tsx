@@ -10,7 +10,7 @@ const Static: FunctionComponent = (): JSX.Element => {
             212
           </div>
           <div className="col-start-2 w-full h-fit relative text-right">
-            332 646
+            917 646
           </div>
         </div>
       </div>
