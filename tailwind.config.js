@@ -48,6 +48,10 @@ module.exports = {
         mainBg: "var(--mainBg)",
         mainText: "var(--mainText)",
         banner: "var(--banner)",
+        diy: "var(--diy)",
+        diyText: "var(--diyText)",
+        mevText: "var(--mevText)",
+        mevSlash: "var(--mevSlash)",
         themH: "#f6ec7b",
         themHT: "#2f25a7",
         themP: "#621145",
@@ -58,6 +62,8 @@ module.exports = {
         themST: "#c3e0c3",
         themHP: "#ffffff",
         themHPT: "#ce02cb",
+        themGray: "#1D1F1F",
+        lightPurp: "#CEC0E7"
       },
       fontFamily: {
         holo: "Nan Holo",

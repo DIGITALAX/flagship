@@ -52,7 +52,7 @@ const Header: FunctionComponent<HeaderProps> = ({
         <div className="grid grid-row-flow auto-rows-[auto auto] relative w-full h-full gap-4">
           <div className="relative w-fit h-fit row-start-1 place-self-center md:place-self-end pb-3">
             <div
-              className="relative w-screen md:w-40 h-fit bg-white border-t border-b md:border border-1 border-offBlack pt-1.5 pb-1.5 text-sm flex overflow-x-hidden whitespace-nowrap cursor-sewingHS hover:bg-skyBlue hover:text-dull active:text-dull active:bg-skyBlue text-offBlack"
+              className="relative w-screen md:w-40 h-fit bg-white border-t border-b md:border border-1 border-mainText pt-1.5 pb-1.5 text-sm flex overflow-x-hidden whitespace-nowrap cursor-sewingHS hover:bg-mainBg hover:text-mainText active:text-mainText active:bg-mainBg text-offBlack"
               onClick={() => handleShop()}
             >
               <Marquee direction="right" speed={25} gradient={false}>

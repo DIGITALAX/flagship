@@ -14,7 +14,7 @@ const Blender: FunctionComponent = (): JSX.Element => {
     pageBoundaryBackward,
   } = useBox();
   return (
-    <div className="relative grid-flow-row auto-rows-[auto auto] max-w-screen overflow-hidden w-fit h-fit text-offBlack place-self-center pb-10">
+    <div className="relative grid-flow-row auto-rows-[auto auto] max-w-screen overflow-hidden w-fit h-fit text-mainText place-self-center pb-10">
       <div className="relative row-start-1 w-full h-fit md:pr-0 md:pl-0 pl-3 pr-3 sm:pr-10 sm:pl-10">
         <div className="grid grid-flow-col auto-cols-[auto auto] relative w-full h-fit pt-20">
           <div className="relative h-fit w-fit col-start-1 row-start-1">

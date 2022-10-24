@@ -10,7 +10,7 @@ const Paginate: FunctionComponent<usePaginateProps> = ({
 }): JSX.Element => {
   return (
     <div className="relative grid grid-flow-col auto-cols-[auto auto] w-full h-fit">
-      <div className="relative col-start-1 w-fit h-fit place-self-start">
+      <div className="relative col-start-1 w-fit h-fit place-self-start text-offBlack">
         <div className="relative grid grid-flow-col auto-cols-[auto auto] w-full h-fit gap-1.5 lg:gap-4 text-xs lg:text-sm font-lib">
           <div className="relative row-start-1 col-start-1 w-fit h-full">
             <div className="w-fit h-fit bg-offWhite p-1 lg:p-2 border-2 border-offBlack rounded-lg flex">
@@ -28,7 +28,7 @@ const Paginate: FunctionComponent<usePaginateProps> = ({
           </div>
         </div>
       </div>
-      <div className="relative col-start-2 w-fit h-fit place-self-end">
+      <div className="relative col-start-2 w-fit h-fit place-self-end text-offBlack">
         <div className="relative grid grid-flow-col auto-cols-[auto auto] w-full h-fit gap-3">
           <div className="relative col-start-1 row-start-1 w-fit h-fit">
             <div className="relative grid grid-flow-col auto-cols-[auto auto] w-full h-fit rounded-xl bg-offWhite border-2 border-offBlack">

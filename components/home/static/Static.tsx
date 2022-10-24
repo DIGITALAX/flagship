@@ -4,7 +4,7 @@ import { FunctionComponent } from "react";
 const Static: FunctionComponent = (): JSX.Element => {
   return (
     <div className="w-full relative grid grid-flow-row auto-rows-[auto auto] h-full place-items-center p-12 text-xs md:text-base">
-      <div className="row-start-1 w-full h-fit font-lib text-offBlack relative">
+      <div className="row-start-1 w-full h-fit font-lib text-mainText relative">
         <div className="w-full h-fit grid grid-flow-col auto-cols-[auto auto] relative">
           <div className="col-start-1 w-full h-fit relative text-left">
             212
@@ -34,7 +34,7 @@ const Static: FunctionComponent = (): JSX.Element => {
           </div>
         </div>
       </div>
-      <div className="row-start-3 w-full h-fit text-center font-lib text-offBlack relative pt-20 text-lg font-libB">
+      <div className="row-start-3 w-full h-fit text-center font-lib text-mainText relative pt-20 text-lg font-libB">
         x005.m-3 – MICROFACTORY LOCAL CO•OP
       </div>
     </div>

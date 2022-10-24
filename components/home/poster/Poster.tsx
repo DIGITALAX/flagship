@@ -4,7 +4,7 @@ import { FunctionComponent } from "react";
 const Poster: FunctionComponent = (): JSX.Element => {
   return (
     <div className="w-full relative sm:grid grid-flow-col auto-cols-[auto auto] min-h-[120vw] h-[180vh] place-items-center pb-20">
-      <div className="h-full relative flex col-start-1 md:border-8 border-offBlack place-self-center border-2">
+      <div className="h-full relative flex col-start-1 md:border-8 border-diy place-self-center border-2">
         <Image layout="fill" objectFit="cover" src="/images/latent.png" />
         <div className="relative w-full h-full grid grid-flow-col auto-cols-[auto auto]">
           <div className="relative w-full h-fit place-self-end col-start-1">
@@ -60,7 +60,7 @@ const Poster: FunctionComponent = (): JSX.Element => {
                 </div>
               </div>
               <div className="relative row-start-4 w-full h-fit pt-10 sm:pt-10 pb-8">
-                <div className="relative text-offWhite text-[8.1vw] whitespace-nowrap text-center pl-3 pr-3 sm:pl-10 sm:pr-10 w-full font-mag bg-offBlack pt-3 pb-3">
+                <div className="relative text-diyText text-[8.1vw] whitespace-nowrap text-center pl-3 pr-3 sm:pl-10 sm:pr-10 w-full font-mag bg-diy pt-3 pb-3">
                   LATENT THREADS
                 </div>
               </div>

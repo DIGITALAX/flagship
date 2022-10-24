@@ -82,7 +82,7 @@ const Slider: FunctionComponent = (): JSX.Element => {
   ];
 
   return (
-    <div className="min-h-80 h-80 flex relative w-full bg-midWhite overflow-hidden pb-10 pt-10">
+    <div className="min-h-80 h-80 flex relative w-full bg-mainBg overflow-hidden pb-10 pt-10">
       <Marquee
         className="flex"
         pauseOnHover
