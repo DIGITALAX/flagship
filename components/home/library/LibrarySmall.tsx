@@ -71,7 +71,7 @@ const LibrarySmall: FunctionComponent<LibraryLargeProps> = ({
         </div>
       </div>
       <div className="row-start-2 w-full h-full relative relative grid-flow-col auto-cols-[auto auto] grid">
-        <div className="relative col-start-1 row-start-1 min-w-[40vw] w-full h-[50vw]">
+        <div className="relative col-start-1 row-start-1 sm:min-w-[40vw] w-full h-[50vw]">
           <Image layout="fill" objectFit="cover" src={showImage} className="bg-offBlack" />
           <div className="relative grid w-full h-full grid-flow-col auto-cols-[auto auto] pr-4 pb-2">
             {link !== "" ? (

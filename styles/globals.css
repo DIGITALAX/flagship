@@ -366,7 +366,7 @@ body {
 }
 
 div::-webkit-scrollbar {
-  width: 1em;
+  width: 1vw;
 }
 
 div::-webkit-scrollbar-track {
