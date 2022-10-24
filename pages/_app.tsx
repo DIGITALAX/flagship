@@ -10,21 +10,36 @@ export const GlobalProfileContextDefault = {
 };
 
 export const GlobalContext = createContext(GlobalProfileContextDefault);
-const colors = ["cream", "dark", "blue", "green", "purple", "heart"];
+const colors = [
+  "cream",
+  "dark",
+  "blue",
+  "green",
+  "purple",
+  "heart",
+  "plum",
+  "lime",
+  "sea",
+  "hot",
+];
 const heartColors = [
   "#131313",
   "#FAF4E8",
   "#FAF4E8",
   "#131313",
-  "#BBEEFF",
+  "#4b0082",
   "#2f25a7",
+  "#3cfdf6",
+  "#090d12",
+  "#c3e0c3",
+  "#ce02cb",
 ];
 // const { setItem, value } = useStickyState();
 function MyApp({ Component, pageProps }: AppProps) {
   const [color, setColor] = useState<string>(colors[0]);
   const [heartColor, setHeartColor] = useState<string>(colors[0]);
   const changeColor = () => {
-    if (colors.indexOf(color) < 5) {
+    if (colors.indexOf(color) < 9) {
       setColor(colors[colors.indexOf(color) + 1]);
       setHeartColor(heartColors[colors.indexOf(color) + 1]);
       localStorage.setItem("theme-color", color);

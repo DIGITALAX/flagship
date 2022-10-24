@@ -86,37 +86,61 @@ body {
 .theme-cream {
   --mainBg: theme("colors.midWhite");
   --mainText: theme("colors.offBlack");
-  --banner: theme("colors.offBlack")
+  --banner: theme("colors.offBlack");
 }
 
 .theme-blue {
   --mainBg: theme("colors.themB");
   --mainText: theme("colors.midWhite");
-  --banner: theme("colors.offWhite")
+  --banner: theme("colors.offWhite");
 }
 
 .theme-dark {
   --mainBg: theme("colors.offBlack");
   --mainText: theme("colors.midWhite");
-  --banner: theme("colors.offWhite")
+  --banner: theme("colors.offWhite");
 }
 
 .theme-green {
   --mainBg: theme("colors.themG");
   --mainText: theme("colors.offBlack");
-  --banner: theme("colors.offBlack")
+  --banner: theme("colors.offBlack");
 }
 
 .theme-purple {
-  --mainBg: theme("colors.themP");
-  --mainText: theme("colors.themB");
-  --banner: theme("colors.themB")
+  --mainBg: theme("colors.themPU");
+  --mainText: theme("colors.themPUT");
+  --banner: theme("colors.themPU");
 }
 
 .theme-heart {
   --mainBg: theme("colors.themH");
   --mainText: theme("colors.themHT");
-  --banner: theme("colors.themH")
+  --banner: theme("colors.themH");
+}
+
+.theme-plum {
+  --mainBg: theme("colors.themP");
+  --mainText: theme("colors.themPT");
+  --banner: theme("colors.themP");
+}
+
+.theme-lime {
+  --mainBg: theme("colors.themL");
+  --mainText: theme("colors.themLT");
+  --banner: theme("colors.themL");
+}
+
+.theme-sea {
+  --mainBg: theme("colors.themS");
+  --mainText: theme("colors.themST");
+  --banner: theme("colors.themS");
+}
+
+.theme-hot {
+  --mainBg: theme("colors.themHP");
+  --mainText: theme("colors.themHPT");
+  --banner: theme("colors.themHP");
 }
 
 #world {

@@ -25,7 +25,7 @@ module.exports = {
         grad1: "#8BCDF4",
         grad2: "#C9F5FD",
         grad3: "#C6F8FE",
-        borderBlue: "#B8F3FF", 
+        borderBlue: "#B8F3FF",
         darkP: "#462D4A",
         foot: "#F7F8E8",
         midWhite: "#FAF4E8",
@@ -43,12 +43,21 @@ module.exports = {
         lightB: "#BCF9FF",
         themB: "#9FD4FB",
         themG: "#BEFD4E",
-        themP: "#C89EFF",
+        themPU: "#fcde9d",
+        themPUT: "#4b0082",
         mainBg: "var(--mainBg)",
         mainText: "var(--mainText)",
         banner: "var(--banner)",
         themH: "#f6ec7b",
-        themHT: "#2f25a7"
+        themHT: "#2f25a7",
+        themP: "#621145",
+        themPT: "#3cfdf6",
+        themL: "#6cec8b",
+        themLT: "#090d12",
+        themS: "#361495",
+        themST: "#c3e0c3",
+        themHP: "#ffffff",
+        themHPT: "#ce02cb",
       },
       fontFamily: {
         holo: "Nan Holo",
@@ -74,7 +83,7 @@ module.exports = {
         gisL: "FH Giselle Light",
         thun: "A Love of Thunder",
         fut: "Futurist",
-        aud: "Audimat"
+        aud: "Audimat",
       },
       keyframes: {
         marquee: {
