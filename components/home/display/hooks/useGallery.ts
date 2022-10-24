@@ -10,13 +10,12 @@ const useGallery = (): useGalleryResult => {
   const [loading, setLoading] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [pageBoundaryBackward, setPageBoundaryBackward] =
-    useState<boolean>(true);
-  const [pageBoundaryForward, setPageBoundaryForward] =
     useState<boolean>(false);
+  const [pageBoundaryForward, setPageBoundaryForward] = useState<boolean>(true);
 
   const fetchImages = (): void => {
     setLoading(true);
-    setPageBoundaryBackward(true);
+    setPageBoundaryBackward(false);
     const res: Gallery[] = tokens;
     setImages(res);
   };
@@ -24,7 +23,7 @@ const useGallery = (): useGalleryResult => {
   const totalImages: number = tokens.length;
   const indexofLastImage: number = currentPage * imagesPerPage;
   const indexofFirstImage: number = indexofLastImage - imagesPerPage;
-  const [more, setMore] = useState<boolean>(false)
+  const [more, setMore] = useState<boolean>(false);
   const currentImages: Gallery[] = images.slice(
     indexofFirstImage,
     indexofLastImage
@@ -38,10 +37,10 @@ const useGallery = (): useGalleryResult => {
   const paginateBackward = (pageNumber: number): void => {
     if (pageNumber > pageNumbers[0]) {
       setCurrentPage(pageNumber - 1);
-      setPageBoundaryBackward(false);
-      setPageBoundaryForward(false);
+      setPageBoundaryBackward(true);
+      setPageBoundaryForward(true);
       if (pageNumber - 1 === pageNumbers[0]) {
-        setPageBoundaryBackward(true);
+        setPageBoundaryBackward(false);
       }
     }
   };
@@ -50,9 +49,11 @@ const useGallery = (): useGalleryResult => {
     if (pageNumber < totalPages) {
       setCurrentPage(pageNumber + 1);
       setPageBoundaryForward(true);
-      setPageBoundaryBackward(false);
+      setPageBoundaryBackward(true);
+      console.log(pageNumber)
       if (pageNumber + 1 === totalPages) {
-        setPageBoundaryForward(true);
+        console.log("here")
+        setPageBoundaryForward(false);
       }
     }
   };
@@ -70,7 +71,7 @@ const useGallery = (): useGalleryResult => {
     pageBoundaryBackward,
     pageBoundaryForward,
     setMore,
-    more
+    more,
   };
 };
 

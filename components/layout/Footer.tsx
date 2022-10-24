@@ -48,14 +48,16 @@ const Footer: FunctionComponent<FooterProps> = ({
               </div>
             </div>
             <div className="md:col-start-2 relative h-fit w-full md:w-72 lg:w-96 text-xs text-midWhite place-self-end font-lib text-left sm:text-right leading-8 col-start-1 row-start-2 md:row-start-1 pr-10 pl-6">
-              Just in case you haven’t figured it out yet, you now have
-              everythig you need to blah blah blah… this is what this is… i
-              can’t really be bothered. maybe here is where it should have some
-              missing letters in the same way as the top nav? hmmm, not so sure.
-              but a bunch of text is goood. also need to add some line height.
+              From mini-maps and mesh segmentation, to synth machines and
+              material use, the web3 fashion ecosystem supplies more than a few
+              good looks.
               <br />
               <br />
-              maybe change the font?
+              For collectors, creators, and everyone in between, it’s more
+              dangerous than ever to go it alone out there.
+              <br />
+              <br />
+              Dress wisely, and take your keys with you.
             </div>
           </div>
         </div>

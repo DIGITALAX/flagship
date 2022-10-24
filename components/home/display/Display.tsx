@@ -37,7 +37,7 @@ const Display: FunctionComponent<DisplayProps> = ({
                 <div className="border-r-2 border-l-2 border-offBlack rounded-full w-full h-full whitespace-nowrap relative bg-midWhite grid grid-col-flow auto-cols-[auto auto]">
                   <div
                     className={`col-start-1 relative w-fit h-fit place-self-center pt-1.5  ${
-                      !pageBoundaryBackward &&
+                      pageBoundaryBackward &&
                       "active:scale-105 active:opacity-90 hover:opacity-90 cursor-sewingHS"
                     } ${blur && "blur-sm animate-unblur"}`}
                     onClick={() => paginateBackward(currentPage)}
@@ -46,7 +46,7 @@ const Display: FunctionComponent<DisplayProps> = ({
                       src="/images/left.png"
                       height={30}
                       width={30}
-                      className={`${pageBoundaryBackward && "opacity-50"}`}
+                      className={`${!pageBoundaryBackward && "opacity-50"}`}
                       priority
                       onLoadingComplete={() => setBlur(false)}
                       blurDataURL={"/images/blurred/left.png"}
@@ -55,7 +55,7 @@ const Display: FunctionComponent<DisplayProps> = ({
                   <div className="col-start-2 relative w-1.5 h-full bg-grayMid place-self-center"></div>
                   <div
                     className={`col-start-3 relative w-fit h-fit place-self-center pt-1.5  ${
-                      !pageBoundaryForward &&
+                      pageBoundaryForward &&
                       "active:scale-105 active:opacity-90 hover:opacity-90 cursor-sewingHS"
                     } ${blur && "blur-sm animate-unblur"}`}
                     onClick={() => paginateForward(currentPage)}
@@ -64,7 +64,7 @@ const Display: FunctionComponent<DisplayProps> = ({
                       src="/images/right.png"
                       height={30}
                       width={30}
-                      className={`${pageBoundaryForward && "opacity-50"}`}
+                      className={`${!pageBoundaryForward && "opacity-50"}`}
                       priority
                       onLoadingComplete={() => setBlur(false)}
                       blurDataURL={"/images/blurred/right.png"}
