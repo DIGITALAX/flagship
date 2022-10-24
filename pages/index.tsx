@@ -43,7 +43,7 @@ const Home: NextPage<HomeProps> = ({ rewind }) => {
     <div className="min-w-screen min-h-full h-full flex flex-col bg-midWhite">
       <Head>
         <title>DIGITALAX</title>
-        <meta name="description" content="CC0 Web3 Fashion" />
+        <meta name="description" content="We write prompts, design styles & build code for protocol-ecosystems where web3 fashion & latent machines draw distances between ideas & reality closer each day." />
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:site_name" content="DIGITALAX" />
         <meta property="og:image" content="https://digitalax.xyz/card.png/" />

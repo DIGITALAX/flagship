@@ -13,7 +13,10 @@ const LibraryLarge: FunctionComponent<LibrarySmallProps> = ({
   return (
     <div className="relative grid grid-flow-col auto-cols-[auto auto] w-full h-full">
       <div className="relative col-start-1 row-start-1 w-80 h-full">
-        <Image layout="fill" objectFit="cover" src={showImage} />
+        <div className="relative border-t-2 border-offBlack w-full h-full">
+          <Image layout="fill" objectFit="cover" src={showImage} />
+        </div>
+
         <div className="relative w-full h-full grid grid-flow-col auto-cols-[auto auto] pr-4 pb-2">
           {link !== "" ? (
             <Link href={link}>
