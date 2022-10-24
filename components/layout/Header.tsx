@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 import Marquee from "react-fast-marquee";
 import { HeaderProps } from "../../types/general.types";
 
@@ -9,6 +9,7 @@ const Header: FunctionComponent<HeaderProps> = ({
   changeColor,
   heartColor,
 }): JSX.Element => {
+  const [blur, setBlur] = useState<boolean>(true);
   return (
     <div
       ref={rewind}
@@ -16,29 +17,35 @@ const Header: FunctionComponent<HeaderProps> = ({
     >
       <div className="relative col-start-1 row-start-1 md:w-fit min-h-full h-full">
         <div className="relative grid-flow-row auto-rows-[auto auto] md:w-fit h-full min-h-full font-fira text-xs grid md:place-self-start place-self-center text-center md:text-left md:pr-20 lg:pr-11">
-          <div className="relative h-fit md:w-fit row-start-1">PR D CTS</div>
+          <div className="relative h-fit md:w-fit row-start-1">IN S ERT</div>
           <div className="relative h-fit md:w-fit row-start-2">
-            <p className="pb-4">ET I O IE RA R ES</p>
-            <p className="pl-2">OL OG I C AL</p>
-            <p>FRO M MO DE M ODE</p>
+            <p className="pb-4">T O K EN TO R UN </p>
+            <p className="pl-2">N O TEB O OK ON LA TENT</p>
+            <p>MA C HINE</p>
           </div>
           <div className="relative h-fit md:w-fit row-start-3">
-            <p>ET I O IE RA R ES</p>
-            <p className="pl-2 pt-4">OL OG I C AL</p>
-            <p>FRO M MO DE M ODE</p>
+            <p>D D OU HI K I LD BE</p>
+            <p className="pl-2 pt-4">SY? O TO L GI AL N ROMA</p>
+            <p>NCY</p>
           </div>
         </div>
       </div>
       <div className="relative col-start-1 row-start-2 md:col-start-2 w-full md:row-start-1 text-center min-h-full h-full justify-self-center">
         <div className="grid grid-row-flow auto-rows-[auto auto] relative md:w-fit h-fit justify-center w-full">
           <div className="relative w-10 h-16 row-start-1 place-self-center pb-2">
-            <div className="border border-2 border-mainText w-full h-full min-h-full relative flex">
+            <div
+              className={`border border-2 border-mainText w-full h-full min-h-full relative flex ${
+                blur && "blur-sm animate-unblur"
+              }`}
+            >
               <Image
                 width={50}
                 height={70}
                 src="/images/header/diagram.png"
                 objectFit="cover"
                 priority
+                onLoadingComplete={() => setBlur(false)}
+                blurDataURL={"/images/blurred/diagram.png"}
               />
             </div>
           </div>
@@ -111,7 +118,11 @@ const Header: FunctionComponent<HeaderProps> = ({
           </div>
           <div className="relative w-full h-fit row-start-3 place-self-start pr-5">
             <div className="relative w-fit h-fit grid grid-flow-col auto-cols-[auto auto] gap-2 pt-4">
-              <div className="relative w-fit h-full col-start-1 place-self-end pt-2 hover:-rotate-12">
+              <div
+                className={`relative w-fit h-full col-start-1 place-self-end pt-2 hover:-rotate-12 ${
+                  blur && "blur-sm animate-unblur"
+                }`}
+              >
                 <Image
                   src="/images/header/arrow.svg"
                   height={20}

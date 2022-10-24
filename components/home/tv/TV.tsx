@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 import useTV from "./hooks/useTv";
 import { motion } from "framer-motion";
 
 const TV: FunctionComponent = (): JSX.Element => {
   const { newImages, refreshImages } = useTV();
+  const [blur, setBlur] = useState<boolean>(true);
   return (
     <div className="relative grid grid-flow-row auto-rows-[auto auto] w-full min-w-full h-fit pb-32 p-10 justify-center">
       <div className="w-fit max-w-screen h-fit row-start-1 relative place-self-center h-[57vw]">
@@ -31,9 +32,17 @@ const TV: FunctionComponent = (): JSX.Element => {
                     index === 2 && "row-span-2"
                   } ${
                     index === 3 && "row-span-1"
-                  } row-start-1 w-[20vw] h-[30vw] place-self-center opacity-90 active:scale-95 cursor-sewingHS hover:opacity-70`}
+                  } row-start-1 w-[20vw] h-[30vw] place-self-center opacity-90 active:scale-95 cursor-sewingHS hover:opacity-70 ${
+                    blur && "blur-sm animate-unblur"
+                  }`}
                 >
-                  <Image src={`/images/digifizzy/${image}.png`} layout="fill" />
+                  <Image
+                    src={`/images/digifizzy/${image}.png`}
+                    layout="fill"
+                    priority
+                    onLoadingComplete={() => setBlur(false)}
+                    blurDataURL={`/images/blurred/${image}.png`}
+                  />
                 </a>
               </Link>
             );
@@ -43,13 +52,18 @@ const TV: FunctionComponent = (): JSX.Element => {
               rotate: 360,
             }}
             onClick={refreshImages}
-            className="absolute bottom-4 right-4 w-fit col-fit col-start-4 row-start-1 place-self-end h-fit hover:rotate-180 cursor-sewingHS active:mix-blend-color-dodge w-6 h-6 z-10 md:w-10 md:h-10"
+            className={`absolute bottom-4 right-4 w-fit col-fit col-start-4 row-start-1 place-self-end h-fit hover:rotate-180 cursor-sewingHS active:mix-blend-color-dodge w-6 h-6 z-10 md:w-10 md:h-10 ${
+              blur && "blur-sm animate-unblur"
+            }`}
           >
             <Image
               src="/images/digifizzy/disk.png"
               layout="fill"
               width={50}
               height={50}
+              priority
+              onLoadingComplete={() => setBlur(false)}
+              blurDataURL={`/images/blurred/disk.png`}
             />
           </motion.div>
         </div>

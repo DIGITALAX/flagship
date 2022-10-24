@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 import { BsTwitter } from "react-icons/bs";
 import { BiArrowToTop } from "react-icons/bi";
 import { FooterProps } from "../../types/general.types";
@@ -8,14 +8,25 @@ import { FooterProps } from "../../types/general.types";
 const Footer: FunctionComponent<FooterProps> = ({
   handleRewind,
 }): JSX.Element => {
+  const [blur, setBlur] = useState<boolean>(true);
   return (
     <div className="relative min-w-screen bg-offBlack h-fit min-h-full flex w-full">
       <div className="relative grid auto-rows-[auto auto] grid-flow-row w-full h-full  pt-12">
         <div className="relative row-start-1 w-full h-full">
           <div className="relative grid auto-cols-[auto auto] grid-flow-col h-full w-full">
             <div className="col-start-1 w-full md:w-fit lg:h-full lg:w-full relative md:pl-6 row-start-1 p-2 md:pb-0 pb-8">
-              <div className="relative flex border-2 w-full h-fit lg:h-full pb-2">
-                <Image layout="fill" src="/images/footerstatic.png" />
+              <div
+                className={`relative flex border-2 w-full h-fit lg:h-full pb-2 ${
+                  blur && "blur-sm animate-unblur"
+                }`}
+              >
+                <Image
+                  layout="fill"
+                  src="/images/footerstatic.png"
+                  priority
+                  onLoadingComplete={() => setBlur(false)}
+                  blurDataURL={"/images/blurred/footerstatic.png"}
+                />
                 <div className="relative w-full h-full grid grid-flow-row auto-rows-[auto auto]">
                   <div
                     id="digi"
@@ -62,12 +73,19 @@ const Footer: FunctionComponent<FooterProps> = ({
                 <div className="relative w-fit h-fit col-start-1 row-start-1 sm:row-start-1 pl-6 pb-1 hover:text-skyBlue cursor-sewingHS hover:rotate-3">
                   END OF LINE
                 </div>
-                <div className="relative w-36 h-4 row-start-2">
+                <div
+                  className={`relative w-36 h-4 row-start-2 ${
+                    blur && "blur-sm animate-unblur"
+                  }`}
+                >
                   <Image
                     src="/images/footerblur.png"
                     layout="fill"
                     width={160}
                     height={20}
+                    priority
+                    onLoadingComplete={() => setBlur(false)}
+                    blurDataURL={"/images/blurred/footerblur.png"}
                   />
                 </div>
               </div>
@@ -92,12 +110,17 @@ const Footer: FunctionComponent<FooterProps> = ({
                     <a
                       target="_blank"
                       rel="noreferrer"
-                      className="cursor-sewingHS h-fit relative pr-1"
+                      className={`cursor-sewingHS h-fit relative pr-1 ${
+                        blur && "blur-sm animate-unblur"
+                      }`}
                     >
                       <Image
                         src={"/images/mirror.png"}
                         width={21}
                         height={26}
+                        priority
+                        onLoadingComplete={() => setBlur(false)}
+                        blurDataURL={"/images/blurred/mirror.png"}
                       />
                     </a>
                   </Link>
@@ -107,12 +130,17 @@ const Footer: FunctionComponent<FooterProps> = ({
                     <a
                       target="_blank"
                       rel="noreferrer"
-                      className="cursor-sewingHS h-fit relative pr-1"
+                      className={`cursor-sewingHS h-fit relative pr-1 ${
+                        blur && "blur-sm animate-unblur"
+                      }`}
                     >
                       <Image
                         src={"/images/github.png"}
                         width={29}
                         height={28}
+                        priority
+                        onLoadingComplete={() => setBlur(false)}
+                        blurDataURL={"/images/blurred/github.png"}
                       />
                     </a>
                   </Link>
@@ -122,9 +150,18 @@ const Footer: FunctionComponent<FooterProps> = ({
                     <a
                       target="_blank"
                       rel="noreferrer"
-                      className="cursor-sewingHS h-fit relative"
+                      className={`cursor-sewingHS h-fit relative ${
+                        blur && "blur-sm animate-unblur"
+                      }`}
                     >
-                      <Image src={"/images/lens.png"} width={30} height={30} />
+                      <Image
+                        src={"/images/lens.png"}
+                        width={30}
+                        height={30}
+                        priority
+                        onLoadingComplete={() => setBlur(false)}
+                        blurDataURL={"/images/blurred/lens.png"}
+                      />
                     </a>
                   </Link>
                 </div>

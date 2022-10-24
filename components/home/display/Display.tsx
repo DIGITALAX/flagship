@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 import { DisplayProps } from "../../../types/general.types";
 import Gallery from "./Gallery";
 import useGallery from "./hooks/useGallery";
@@ -19,6 +19,7 @@ const Display: FunctionComponent<DisplayProps> = ({
     setMore,
     more,
   } = useGallery();
+  const [blur, setBlur] = useState<boolean>(true);
   return (
     <div className="relative flex bg-offBlack w-full min-w-full h-fit min-h-fit">
       <div className="grid grid-flow-rows auto-row-[auto auto] w-full min-w-full p-4">
@@ -38,7 +39,7 @@ const Display: FunctionComponent<DisplayProps> = ({
                     className={`col-start-1 relative w-fit h-fit place-self-center pt-1.5  ${
                       !pageBoundaryBackward &&
                       "active:scale-105 active:opacity-90 hover:opacity-90 cursor-sewingHS"
-                    }`}
+                    } ${blur && "blur-sm animate-unblur"}`}
                     onClick={() => paginateBackward(currentPage)}
                   >
                     <Image
@@ -46,6 +47,9 @@ const Display: FunctionComponent<DisplayProps> = ({
                       height={30}
                       width={30}
                       className={`${pageBoundaryBackward && "opacity-50"}`}
+                      priority
+                      onLoadingComplete={() => setBlur(false)}
+                      blurDataURL={"/images/blurred/left.png"}
                     />
                   </div>
                   <div className="col-start-2 relative w-1.5 h-full bg-grayMid place-self-center"></div>
@@ -53,7 +57,7 @@ const Display: FunctionComponent<DisplayProps> = ({
                     className={`col-start-3 relative w-fit h-fit place-self-center pt-1.5  ${
                       !pageBoundaryForward &&
                       "active:scale-105 active:opacity-90 hover:opacity-90 cursor-sewingHS"
-                    } `}
+                    } ${blur && "blur-sm animate-unblur"}`}
                     onClick={() => paginateForward(currentPage)}
                   >
                     <Image
@@ -61,6 +65,9 @@ const Display: FunctionComponent<DisplayProps> = ({
                       height={30}
                       width={30}
                       className={`${pageBoundaryForward && "opacity-50"}`}
+                      priority
+                      onLoadingComplete={() => setBlur(false)}
+                      blurDataURL={"/images/blurred/right.png"}
                     />
                   </div>
                 </div>
@@ -81,8 +88,19 @@ const Display: FunctionComponent<DisplayProps> = ({
             className="relative grid grid-flow-col auto-cols-[auto auto] w-fit h-fit"
             onClick={() => setMore(!more)}
           >
-            <div className="col-start-1 relative w-fit h-fit pr-2">
-              <Image src={"/images/eye.png"} height={10} width={20} />
+            <div
+              className={`col-start-1 relative w-fit h-fit pr-2 ${
+                blur && "blur-sm animate-unblur"
+              }`}
+            >
+              <Image
+                src={"/images/eye.png"}
+                height={10}
+                width={20}
+                priority
+                onLoadingComplete={() => setBlur(false)}
+                blurDataURL={"/images/blurred/eye.png"}
+              />
             </div>
             <div className="col-start-2 relative w-fit h-fit font-firaL text-offWhite">
               {!more ? "more?" : "less?"}

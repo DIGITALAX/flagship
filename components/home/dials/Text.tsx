@@ -1,7 +1,8 @@
 import Image from "next/image";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 
 const Text: FunctionComponent = (): JSX.Element => {
+  const [blur, setBlur] = useState<boolean>(true);
   return (
     <div className="relative max-w-screen w-fit pb-8  h-full grid grid-flow-col auto-col-[auto auto]">
       <div className="relative place-self-center w-fit lg:w-full h-full row-start-1 col-start-1 text-mainText lg:pl-4">
@@ -11,8 +12,19 @@ const Text: FunctionComponent = (): JSX.Element => {
             <div className="relative col-start-2 w-full h-full border-t-2 border-b-2 border-l border-mainText"></div>
           </div>
 
-          <div className="relative w-fit place-self-center h-fit  md:row-start-1 col-start-2 font-libB text-xs whitespace-nowrap pr-14 pl-3 lg:pr-3">
-            <Image height={100} width={10} src="/images/verttext1.png" />
+          <div
+            className={`relative w-fit place-self-center h-fit  md:row-start-1 col-start-2 font-libB text-xs whitespace-nowrap pr-14 pl-3 lg:pr-3 ${
+              blur && "blur-sm animate-unblur"
+            }`}
+          >
+            <Image
+              height={100}
+              width={10}
+              src="/images/verttext1.png"
+              priority
+              onLoadingComplete={() => setBlur(false)}
+              blurDataURL={"/images/blurred/verttext1.png"}
+            />
           </div>
 
           <div className="relative w-96 text-center h-fit col-start-3 font-libB text-sm p-6 border border-mainText place-self-center md:row-start-1">
@@ -21,8 +33,19 @@ const Text: FunctionComponent = (): JSX.Element => {
             with JPEGs“ to “We like the looks made for material use”
           </div>
 
-          <div className="relative w-fit place-self-center h-fit col-start-4 font-libB text-xs whitespace-nowrap pr-1 pl-14 lg:pl-3 md:row-start-1">
-            <Image height={70} width={10} src="/images/verttext2.png" />
+          <div
+            className={`relative w-fit place-self-center h-fit col-start-4 font-libB text-xs whitespace-nowrap pr-1 pl-14 lg:pl-3 md:row-start-1 ${
+              blur && "blur-sm animate-unblur"
+            }`}
+          >
+            <Image
+              height={70}
+              width={10}
+              src="/images/verttext2.png"
+              priority
+              onLoadingComplete={() => setBlur(false)}
+              blurDataURL={"/images/blurred/verttext2.png"}
+            />
           </div>
 
           <div className="relative h-full w-6 grid grid-flow-col auto-cols-[auto auto] col-start-5 md:row-start-1">

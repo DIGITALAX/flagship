@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 import { BoxProps } from "../../../types/general.types";
 import Directory from "./Directory";
 import DirectorySmall from "./DirectorySmall";
@@ -15,6 +15,7 @@ const Box: FunctionComponent<BoxProps> = ({
   pageBoundaryBackward,
   currentPage,
 }): JSX.Element => {
+  const [blur, setBlur] = useState<boolean>(true);
   return (
     <div className="w-full md:w-[85.5vw] h-full border-r-8 border-b-8 border-t sm:border-t-4 border-l-2 border-offBlack rounded-xl relative">
       <div className="bg-grayMid w-full md:w-[85vw] h-full rounded-lg relative">
@@ -45,10 +46,17 @@ const Box: FunctionComponent<BoxProps> = ({
                     />
                   </div>
                   <div className="relative row-start-3 w-full h-full p-8 pb-1">
-                    <div className="relative w-full h-[40vw]">
+                    <div
+                      className={`relative w-full h-[40vw] ${
+                        blur && "blur-sm animate-unblur"
+                      }`}
+                    >
                       <Image
                         src="/images/blender/imagelarge.png"
                         layout="fill"
+                        priority
+                        onLoadingComplete={() => setBlur(false)}
+                        blurDataURL={"/images/blurred/imagelarge.png"}
                       />
                     </div>
                   </div>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 import { Library, LibrarySmallProps } from "../../../types/general.types";
 import library from "./../../../pages/api/library.json";
 import useLibrary from "./hooks/useLibrary";
@@ -10,10 +10,15 @@ const LibraryLarge: FunctionComponent<LibrarySmallProps> = ({
 }): JSX.Element => {
   const { showImage, setShowImage, setLink, link, lastBook, handleLastBook } =
     useLibrary();
+  const [blur, setBlur] = useState<boolean>(true);
   return (
     <div className="relative grid grid-flow-col auto-cols-[auto auto] w-full h-full">
       <div className="relative col-start-1 row-start-1 w-80 h-full">
-        <div className="relative border-t-2 border-offBlack w-full h-full xl:border-b-[1.18vw] border-b-[1.55vw] bg-offBlack">
+        <div
+          className={`relative border-t-2 border-offBlack w-full h-full xl:border-b-[1.18vw] border-b-[1.55vw] bg-offBlack ${
+            blur && "blur-sm animate-unblur"
+          }`}
+        >
           <Image layout="fill" objectFit="cover" src={showImage} />
           <div className="relative w-full h-full grid grid-flow-col auto-cols-[auto auto] pr-4 pb-2">
             {link !== "" ? (
@@ -21,17 +26,35 @@ const LibraryLarge: FunctionComponent<LibrarySmallProps> = ({
                 <a
                   target={"_blank"}
                   rel="noreferrer"
-                  className="relative w-fit h-fit place-self-end cursor-sewingHS hover:scale-95"
+                  className={`relative w-fit h-fit place-self-end cursor-sewingHS hover:scale-95 ${
+                    blur && "blur-sm animate-unblur"
+                  }`}
                 >
-                  <Image src={"/images/eye.png"} height={15} width={25} />
+                  <Image
+                    src={"/images/eye.png"}
+                    height={15}
+                    width={25}
+                    priority
+                    onLoadingComplete={() => setBlur(false)}
+                    blurDataURL={`/images/blurred/eye.png`}
+                  />
                 </a>
               </Link>
             ) : (
               <div
                 onClick={() => setRefactorModal(true)}
-                className="relative w-fit h-fit place-self-end cursor-sewingHS hover:scale-95"
+                className={`relative w-fit h-fit place-self-end cursor-sewingHS hover:scale-95 ${
+                  blur && "blur-sm animate-unblur"
+                }`}
               >
-                <Image src={"/images/eye.png"} height={15} width={25} />
+                <Image
+                  src={"/images/eye.png"}
+                  height={15}
+                  width={25}
+                  priority
+                  onLoadingComplete={() => setBlur(false)}
+                  blurDataURL={`/images/blurred/eye.png`}
+                />
               </div>
             )}
           </div>
@@ -58,13 +81,18 @@ const LibraryLarge: FunctionComponent<LibrarySmallProps> = ({
                   className={`relative row-start-1 w-14 h-14 place-self-center rounded-full border-2 border-offBlack text-center font-lib self-start`}
                 >
                   <div
-                    className="relative w-full h-full justify-center flex content-center text-2xl text-offWhite"
+                    className={`relative w-full h-full justify-center flex content-center text-2xl text-offWhite ${
+                      blur && "blur-sm animate-unblur"
+                    }`}
                     id="circle"
                   >
                     <Image
                       src={"/images/library/rounded.png"}
                       layout="fill"
                       className="opacity-50"
+                      priority
+                      onLoadingComplete={() => setBlur(false)}
+                      blurDataURL={`/images/blurred/rounded.png`}
                     />
                     <div className="relative w-full h-full grid grid-flow-col auto-cols-[auto auto]">
                       <div className="relative col-start-1 w-fit h-fit place-self-center">
@@ -99,8 +127,18 @@ const LibraryLarge: FunctionComponent<LibrarySmallProps> = ({
         } row-start-1 w-full h-full bg-offBlack`}
       >
         <div className="relative grid auto-cols-[auto auto] grid-flow-col w-full h-full pt-12 pb-12 pr-12 pl-12">
-          <div className="relative w-6 h-[16vw] col-start-1 place-self-center">
-            <Image src="/images/library/numbers.png" layout="fill" />
+          <div
+            className={`relative w-6 h-[16vw] col-start-1 place-self-center ${
+              blur && "blur-sm animate-unblur"
+            }`}
+          >
+            <Image
+              src="/images/library/numbers.png"
+              layout="fill"
+              priority
+              onLoadingComplete={() => setBlur(false)}
+              blurDataURL={`/images/blurred/numbers.png`}
+            />
           </div>
           <div className="relative w-fit h-full col-start-2 place-self-center pl-4">
             <div className="relative h-full w-6 grid grid-flow-col auto-cols-[auto auto] col-start-1 md:row-start-1 lg:pr-1">
@@ -109,10 +147,18 @@ const LibraryLarge: FunctionComponent<LibrarySmallProps> = ({
             </div>
           </div>
           <div
-            className="relative w-10 h-10 col-start-3 place-self-center hover:opacity-90 active:mix-blend-hard-light cursor-sewingHS"
+            className={`relative w-10 h-10 col-start-3 place-self-center hover:opacity-90 active:mix-blend-hard-light cursor-sewingHS ${
+              blur && "blur-sm animate-unblur"
+            }`}
             onClick={() => handleLastBook()}
           >
-            <Image src="/images/library/player.png" layout="fill" />
+            <Image
+              src="/images/library/player.png"
+              layout="fill"
+              priority
+              onLoadingComplete={() => setBlur(false)}
+              blurDataURL={`/images/blurred/player.png`}
+            />
           </div>
         </div>
       </div>

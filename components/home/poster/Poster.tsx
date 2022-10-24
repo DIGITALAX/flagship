@@ -1,11 +1,23 @@
 import Image from "next/image";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 
 const Poster: FunctionComponent = (): JSX.Element => {
+  const [blur, setBlur] = useState<boolean>(true);
   return (
     <div className="w-full relative sm:grid grid-flow-col auto-cols-[auto auto] min-h-[120vw] h-[180vh] place-items-center pb-20">
-      <div className="h-full relative flex col-start-1 md:border-8 border-diy place-self-center border-2">
-        <Image layout="fill" objectFit="cover" src="/images/latent.png" />
+      <div
+        className={`h-full relative flex col-start-1 md:border-8 border-diy place-self-center border-2 ${
+          blur && "blur-sm animate-unblur"
+        }`}
+      >
+        <Image
+          layout="fill"
+          objectFit="cover"
+          src="/images/latent.png"
+          priority
+          onLoadingComplete={() => setBlur(false)}
+          blurDataURL={`/images/blurred/latent.png`}
+        />
         <div className="relative w-full h-full grid grid-flow-col auto-cols-[auto auto]">
           <div className="relative w-full h-fit place-self-end col-start-1">
             <div className="grid relative grid-flow-row auto-rows-[auto auto] w-full h-fit">

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 import Box from "./Box";
 import useBox from "./hooks/useBox";
 
@@ -13,6 +13,7 @@ const Blender: FunctionComponent = (): JSX.Element => {
     pageBoundaryForward,
     pageBoundaryBackward,
   } = useBox();
+  const [blur, setBlur] = useState<boolean>(true);
   return (
     <div className="relative grid-flow-row auto-rows-[auto auto] max-w-screen overflow-hidden w-fit h-fit text-mainText place-self-center pb-10">
       <div className="relative row-start-1 w-full h-fit md:pr-0 md:pl-0 pl-3 pr-3 sm:pr-10 sm:pl-10">
@@ -24,8 +25,19 @@ const Blender: FunctionComponent = (): JSX.Element => {
                   <div className="relative row-start-1 w-full h-fit font-lib text-xs text-center">
                     x03.m-4
                   </div>
-                  <div className="relative row-start-2 w-full h-fit">
-                    <Image height={15} width={60} src={"/images/bar.png"} />
+                  <div
+                    className={`relative row-start-2 w-full h-fit ${
+                      blur && "blur-sm animate-unblur"
+                    }`}
+                  >
+                    <Image
+                      height={15}
+                      width={60}
+                      src={"/images/bar.png"}
+                      priority
+                      onLoadingComplete={() => setBlur(false)}
+                      blurDataURL={"/images/blurred/bar.png"}
+                    />
                   </div>
                 </div>
               </div>

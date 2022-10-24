@@ -92,10 +92,6 @@ module.exports = {
         aud: "Audimat",
       },
       keyframes: {
-        marquee: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(100%)" },
-        },
         unblur: {
           "0%": {
             filter: "blur(20)",
@@ -106,7 +102,6 @@ module.exports = {
         },
       },
       animation: {
-        reverseAnimation: "marquee 40s linear infinite",
         unblur: "unblur 0.5s linear",
       },
       fontSize: {

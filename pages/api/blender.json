@@ -1,20 +1,26 @@
 [
   {
-    "image": "/images/blender/imagethree.png"
+    "image": "/images/blender/imageone.png",
+    "blurred": "/images/blurred/imageone.png"
   },
   {
-    "image": "/images/blender/imageone.png"
+    "image": "/images/blender/imagetwo.png",
+    "blurred": "/images/blurred/imagetwo.png"
   },
   {
-    "image": "/images/blender/imagetwo.png"
+    "image": "/images/blender/imagethree.png",
+    "blurred": "/images/blurred/imagethree.png"
   },
   {
-    "image": "/images/blender/imagelarge.png"
+    "image": "/images/blender/imagefour.png",
+    "blurred": "/images/blurred/imagefour.png"
   },
   {
-    "image": "/images/blender/imagelarge.png"
+    "image": "/images/blender/imagefive.png",
+    "blurred": "/images/blurred/imagefive.png"
   },
   {
-    "image": "/images/blender/imagelarge.png"
+    "image": "/images/blender/imagesix.png",
+    "blurred": "/images/blurred/imagesix.png"
   }
 ]

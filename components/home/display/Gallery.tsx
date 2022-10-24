@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 import { Gallery, GalleryProps } from "../../../types/general.types";
 
 const Gallery: FunctionComponent<GalleryProps> = ({
@@ -9,6 +9,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({
   more,
   setExpressInterest,
 }): JSX.Element => {
+  const [blur, setBlur] = useState<boolean>(true);
   return (
     <div
       className={`overflow-hidden ${
@@ -27,13 +28,16 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                   index + 1
                 } group`}
               >
-                <div>
+                <div className={`${blur && "blur-sm animate-unblur"}`}>
                   <Image
                     src={token.image}
                     width={token.width}
                     height={token.height}
                     objectFit="cover"
                     objectPosition="center"
+                    priority
+                    onLoadingComplete={() => setBlur(false)}
+                    blurDataURL={token.blurred}
                   />
                   <div className="absolute bg-black top-0 grid grid-flow-col auto-cols-[auto auto] w-full bg-opacity-70 h-full font-lib text-midWhite invisible group-hover:visible group-active:visible">
                     <Link
@@ -71,13 +75,16 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                   index + 1
                 } group`}
               >
-                <div>
+                <div className={`${blur && "blur-sm animate-unblur"}`}>
                   <Image
                     src={token.image}
                     width={token.width}
                     height={token.height}
                     objectFit="cover"
                     objectPosition="center"
+                    priority
+                    onLoadingComplete={() => setBlur(false)}
+                    blurDataURL={token.blurred}
                   />
                   <div className="absolute bg-black top-0 grid grid-flow-col auto-cols-[auto auto] w-full bg-opacity-70 h-full font-lib text-midWhite invisible group-hover:visible group-active:visible">
                     <Link
@@ -115,13 +122,16 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                   index + 1
                 } group`}
               >
-                <div>
+                <div className={`${blur && "blur-sm animate-unblur"}`}>
                   <Image
                     src={token.image}
                     width={token.width}
                     height={token.height}
                     objectFit="cover"
                     objectPosition="center"
+                    priority
+                    onLoadingComplete={() => setBlur(false)}
+                    blurDataURL={token.blurred}
                   />
                   <div className="absolute bg-black top-0 grid grid-flow-col auto-cols-[auto auto] w-full bg-opacity-70 h-full font-lib text-midWhite invisible group-hover:visible group-active:visible">
                     <Link

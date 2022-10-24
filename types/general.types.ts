@@ -28,6 +28,7 @@ export type GalleryProps = {
 
 export type Blender = {
   image: string;
+  blurred: string;
 };
 
 export type BoxProps = {
