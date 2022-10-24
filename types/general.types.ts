@@ -1,8 +1,6 @@
 export type Gallery = {
   name: string;
   image: string;
-  collection: string;
-  style: string;
   blurred: string;
   link: string;
   width: number;
