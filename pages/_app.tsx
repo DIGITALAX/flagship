@@ -11,15 +11,26 @@ export const GlobalProfileContextDefault = {
 
 export const GlobalContext = createContext(GlobalProfileContextDefault);
 const colors = ["cream", "dark", "blue", "green", "purple", "heart"];
+const heartColors = [
+  "#131313",
+  "#FAF4E8",
+  "#FAF4E8",
+  "#131313",
+  "#BBEEFF",
+  "#2f25a7",
+];
 // const { setItem, value } = useStickyState();
 function MyApp({ Component, pageProps }: AppProps) {
   const [color, setColor] = useState<string>(colors[0]);
+  const [heartColor, setHeartColor] = useState<string>(colors[0]);
   const changeColor = () => {
     if (colors.indexOf(color) < 5) {
       setColor(colors[colors.indexOf(color) + 1]);
+      setHeartColor(heartColors[colors.indexOf(color) + 1]);
       localStorage.setItem("theme-color", color);
     } else {
       setColor(colors[0]);
+      setHeartColor(heartColors[0]);
       localStorage.setItem("theme-color", color);
     }
   };
@@ -130,7 +141,12 @@ function MyApp({ Component, pageProps }: AppProps) {
           .filter(Boolean)
           .join(" ")}
       >
-        <Component {...pageProps} rewind={rewind} changeColor={changeColor} color={color} />
+        <Component
+          {...pageProps}
+          rewind={rewind}
+          changeColor={changeColor}
+          heartColor={heartColor}
+        />
         <Footer handleRewind={handleRewind} />
       </div>
     </GlobalContext.Provider>

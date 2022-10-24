@@ -33,16 +33,16 @@ const Text: FunctionComponent = (): JSX.Element => {
       </div>
       <div className="relative w-full h-full row-start-2 col-start-1 lg:row-start-1 lg:col-start-2 text-offBlack lg:pl-4 lg:pt-0 pt-12 lg:pr-0 pr-6">
         <div className="relative w-fit h-fit text-right text-sm pl-4 font-gisL">
-          If it’s the first time you've heard about Stable Diffusion, it is an
-          open-source AI model that generates images from a simple text prompt.
+          CLO is a closed source and very limited tool for working with fabric.
+          Blender can be a much more powerful and open source tool for working
+          with fabric.
           <br />
           <br />
-          A few days ago, developer Ben Rugg shared on Reddit a new AI Render
-          add-on for Blender that controls the style of the image generated from
-          within the Blender interface.
+          But a few things have to happen first.
           <br />
           <br />
-          You can download the AI Render add-on on Blender Market or Gumroad.
+          Fabric synth, segmentation, design and materialisation in a tailor made
+          Blender plugin? Where we're going, we're going to need a lot more GPUs.
         </div>
       </div>
     </div>
