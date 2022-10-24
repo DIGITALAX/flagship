@@ -6,11 +6,12 @@ import { HeaderProps } from "../../types/general.types";
 const Header: FunctionComponent<HeaderProps> = ({
   rewind,
   handleShop,
+  changeColor
 }): JSX.Element => {
   return (
     <div
       ref={rewind}
-      className="relative grid grid-flow-col auto-cols-[auto auto] w-full gap-10 md:gap-1 md:justify-between md:content-between pt-6 md:pt-10 min-h-96 md:h-80 justify-center md:min-h-80 md:pl-8 md:pr-8 pb-4 overflow-x-hidden"
+      className="relative grid grid-flow-col auto-cols-[auto auto] w-full gap-10 md:gap-1 md:justify-between md:content-between pt-6 md:pt-10 min-h-96 md:h-80 justify-center md:min-h-80 md:pl-8 md:pr-8 pb-4 overflow-x-hidden text-mainText"
     >
       <div className="relative col-start-1 row-start-1 md:w-fit min-h-full h-full">
         <div className="relative grid-flow-row auto-rows-[auto auto] md:w-fit h-full min-h-full font-fira text-xs grid md:place-self-start place-self-center text-center md:text-left md:pr-20 lg:pr-11">
@@ -64,7 +65,8 @@ const Header: FunctionComponent<HeaderProps> = ({
             </div>
           </div>
           <div className="relative w-fit h-fit row-start-2 place-self-end self-end pr-3 pt-4 md:pt-0 md:pr-10">
-            <div className="border border-2 rounded-full border-offBlack w-fit h-fit pr-5 pl-5 flex pt-2 pb-2 cursor-sewingHS active:bg-lightB active:bg-lightB hover:border-lightB hover:bg-lightB">
+            <div className="border border-2 rounded-full border-mainText w-fit h-fit pr-5 pl-5 flex pt-2 pb-2 cursor-sewingHS active:bg-mainBg active:bg-mainBg hover:border-maintText hover:bg-mainBg"
+            onClick={() => changeColor()}>
               <Image width={40} height={28} src="/images/header/heart.svg" priority/>
             </div>
           </div>

@@ -41,6 +41,11 @@ module.exports = {
         darkG: "#2A3940",
         lensG: "#7FDA1F",
         lightB: "#BCF9FF",
+        themB: "#9FD4FB",
+        themG: "#BEFD4E",
+        themP: "#C89EFF",
+        mainBg: "var(--mainBg)",
+        mainText: "var(--mainText)"
       },
       fontFamily: {
         holo: "Nan Holo",

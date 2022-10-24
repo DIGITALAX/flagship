@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { createContext, useEffect, useRef, useState } from "react";
 import Footer from "../components/layout/Footer";
-// import restoreScrollPosition from 'next-restore-scroll'
+import shuffle from "shuffle-array";
 
 export const GlobalProfileContextDefault = {
   expressInterest: "",
@@ -10,9 +10,15 @@ export const GlobalProfileContextDefault = {
 };
 
 export const GlobalContext = createContext(GlobalProfileContextDefault);
-
+const colors = ["cream", "dark", "blue", "green", "purple"];
 function MyApp({ Component, pageProps }: AppProps) {
-  // restoreScrollPosition(router, '#scrolling-element')
+  const [color, setColor] = useState<string>(colors[0]);
+  const changeColor = () => {
+    console.log("here");
+    shuffle<string>(colors);
+    setColor(colors[0]);
+    console.log(colors[0]);
+  };
   const [expressInterest, setExpressInterest] = useState(
     GlobalProfileContextDefault.expressInterest
   );
@@ -112,8 +118,15 @@ function MyApp({ Component, pageProps }: AppProps) {
   };
   return (
     <GlobalContext.Provider value={{ expressInterest, setExpressInterest }}>
-      <div className="min-h-full h-auto min-w-screen w-screen bg-midWhite relative selection:bg-skyBlue selection:text-dull cursor-sewingS">
-        <Component {...pageProps} rewind={rewind} />
+      <div
+        className={[
+          "min-h-full h-auto min-w-screen w-screen relative selection:bg-skyBlue selection:text-dull cursor-sewingS bg-mainBg",
+          `theme-${color}`,
+        ]
+          .filter(Boolean)
+          .join(" ")}
+      >
+        <Component {...pageProps} rewind={rewind} changeColor={changeColor} />
         <Footer handleRewind={handleRewind} />
       </div>
     </GlobalContext.Provider>

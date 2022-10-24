@@ -21,7 +21,7 @@ import { GlobalContext } from "./_app";
 import { HomeProps } from "../types/general.types";
 import RefactorElement from "../components/common/modals/RefactorElement";
 
-const Home: NextPage<HomeProps> = ({ rewind }) => {
+const Home: NextPage<HomeProps> = ({ rewind, changeColor }) => {
   const shop = useRef<null | HTMLDivElement>(null);
   const handleShop = (): void => {
     if (shop.current) {
@@ -40,16 +40,23 @@ const Home: NextPage<HomeProps> = ({ rewind }) => {
     queryWindowSizeMobile,
   } = useFeed();
   return (
-    <div className="min-w-screen min-h-full h-full flex flex-col bg-midWhite">
+    <div className="min-w-screen min-h-full h-full flex flex-col bg-mainBg">
       <Head>
         <title>DIGITALAX</title>
-        <meta name="description" content="We write prompts, design styles & build code for protocol-ecosystems where web3 fashion & latent machines draw distances between ideas & reality closer each day." />
+        <meta
+          name="description"
+          content="We write prompts, design styles & build code for protocol-ecosystems where web3 fashion & latent machines draw distances between ideas & reality closer each day."
+        />
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:site_name" content="DIGITALAX" />
         <meta property="og:image" content="https://digitalax.xyz/card.png/" />
         <meta property="og:type" content="website" />
       </Head>
-      <Header rewind={rewind} handleShop={handleShop} />
+      <Header
+        changeColor={changeColor}
+        rewind={rewind}
+        handleShop={handleShop}
+      />
       <Title />
       <Banner />
       <Display shop={shop} setExpressInterest={setExpressInterest} />

@@ -84,23 +84,28 @@ body {
 }
 
 .theme-cream {
-  background-color: "#FAF4E8";
+  --mainBg: theme("colors.midWhite");
+  --mainText: theme("colors.offBlack");
 }
 
 .theme-blue {
-  background-color: "#9FD4FB";
+  --mainBg: theme("colors.themB");
+  --mainText: theme("colors.midWhite");
 }
 
 .theme-dark {
-  background-color: "#131313";
+  --mainBg: theme("colors.offBlack");
+  --mainText: theme("colors.midWhite");
 }
 
 .theme-green {
-  background-color: "#BEFD4E";
+  --mainBg: theme("colors.themG");
+  --mainText: theme("colors.offBlack");
 }
 
 .theme-purple {
-  background-color: "#C89EFF";
+  --mainBg: theme("colors.themP");
+  --mainText: theme("colors.themB");
 }
 
 #world {
