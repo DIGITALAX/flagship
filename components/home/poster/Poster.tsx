@@ -20,7 +20,7 @@ const Poster: FunctionComponent = (): JSX.Element => {
                     loop
                     id="crt"
                     placeholder="blur"
-                    className="relative max-w-none p-0.5 h-full w-full object-cover rounded-xl flex"
+                    className="relative p-0.5 h-full w-full object-cover rounded-xl flex"
                   >
                     <source src="/videos/crt1.mp4" type="video/mp4"></source>
                   </video>
@@ -37,7 +37,7 @@ const Poster: FunctionComponent = (): JSX.Element => {
                     loop
                     id="crt"
                     placeholder="blur"
-                    className="relative max-w-none p-0.5 h-full w-full object-cover rounded-xl flex"
+                    className="relative p-0.5 h-full w-full object-cover rounded-xl flex"
                   >
                     <source src="/videos/crt2.mp4" type="video/mp4"></source>
                   </video>
@@ -53,7 +53,7 @@ const Poster: FunctionComponent = (): JSX.Element => {
                     muted
                     loop
                     placeholder="blur"
-                    className="relative max-w-none p-0.5 h-full w-full object-cover rounded-xl flex"
+                    className="relative p-0.5 h-full w-full object-cover rounded-xl flex"
                   >
                     <source src="/videos/crt3.mp4" type="video/mp4"></source>
                   </video>

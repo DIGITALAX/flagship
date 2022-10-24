@@ -25,8 +25,12 @@ const TV: FunctionComponent = (): JSX.Element => {
                 <a
                   target={"_blank"}
                   rel="noreferrer"
-                  className={`relative col-start-${index + 1} row-span-${
-                    newImages.length - index
+                  className={`relative col-start-${index + 1} ${
+                    index === 0 && "row-span-4"
+                  } ${index === 1 && "row-span-3"} ${
+                    index === 2 && "row-span-2"
+                  } ${
+                    index === 3 && "row-span-1"
                   } row-start-1 w-[20vw] h-[30vw] place-self-center opacity-90 active:scale-95 cursor-sewingHS hover:opacity-70`}
                 >
                   <Image src={`/images/digifizzy/${image}.png`} layout="fill" />
@@ -41,7 +45,12 @@ const TV: FunctionComponent = (): JSX.Element => {
             onClick={refreshImages}
             className="absolute bottom-4 right-4 w-fit col-fit col-start-4 row-start-1 place-self-end h-fit hover:rotate-180 cursor-sewingHS active:mix-blend-color-dodge w-6 h-6 z-10 md:w-10 md:h-10"
           >
-            <Image src="/images/digifizzy/disk.png" layout="fill" width={50} height={50} />
+            <Image
+              src="/images/digifizzy/disk.png"
+              layout="fill"
+              width={50}
+              height={50}
+            />
           </motion.div>
         </div>
       </div>
