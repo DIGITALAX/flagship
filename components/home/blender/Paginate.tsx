@@ -15,14 +15,14 @@ const Paginate: FunctionComponent<usePaginateProps> = ({
           <div className="relative row-start-1 col-start-1 w-fit h-full">
             <div className="w-fit h-fit bg-offWhite p-1 lg:p-2 border-2 border-offBlack rounded-lg flex">
               <div className="w-fit h-fit justify-center leading-normal">
-                SOME TEXT
+                (1,0,0)
               </div>
             </div>
           </div>
           <div className="relative col-start-1 row-start-2 lg:col-start-2 lg:row-start-1 w-fit h-fit">
             <div className="w-fit h-fit bg-offWhite p-1 lg:p-2 border-2 border-offBlack rounded-lg flex">
               <div className="w-fit h-fit justify-center leading-normal">
-                SOME TEXT
+              (3,2,2)
               </div>
             </div>
           </div>

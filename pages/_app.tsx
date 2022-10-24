@@ -15,7 +15,7 @@ const colors = ["cream", "dark", "blue", "green", "purple", "heart"];
 function MyApp({ Component, pageProps }: AppProps) {
   const [color, setColor] = useState<string>(colors[0]);
   const changeColor = () => {
-    if (colors.indexOf(color) < 4) {
+    if (colors.indexOf(color) < 5) {
       setColor(colors[colors.indexOf(color) + 1]);
       localStorage.setItem("theme-color", color);
     } else {
@@ -130,7 +130,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           .filter(Boolean)
           .join(" ")}
       >
-        <Component {...pageProps} rewind={rewind} changeColor={changeColor} />
+        <Component {...pageProps} rewind={rewind} changeColor={changeColor} color={color} />
         <Footer handleRewind={handleRewind} />
       </div>
     </GlobalContext.Provider>

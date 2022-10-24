@@ -72,6 +72,7 @@ export type HeaderProps = {
   rewind: any;
   handleShop: () => void;
   changeColor: () => void;
+  color: string;
 };
 
 export type useLibraryResult = {
@@ -147,6 +148,7 @@ export type useFormResults = {
 export type HomeProps = {
   rewind: any;
   changeColor: () => void;
+  color: string
 };
 
 export type RefactorElementProps = {

@@ -21,7 +21,7 @@ import { GlobalContext } from "./_app";
 import { HomeProps } from "../types/general.types";
 import RefactorElement from "../components/common/modals/RefactorElement";
 
-const Home: NextPage<HomeProps> = ({ rewind, changeColor }) => {
+const Home: NextPage<HomeProps> = ({ rewind, changeColor, color}) => {
   const shop = useRef<null | HTMLDivElement>(null);
   const handleShop = (): void => {
     if (shop.current) {
@@ -56,6 +56,7 @@ const Home: NextPage<HomeProps> = ({ rewind, changeColor }) => {
         changeColor={changeColor}
         rewind={rewind}
         handleShop={handleShop}
+        color={color}
       />
       <Title />
       <Banner />
