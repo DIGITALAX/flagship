@@ -33,10 +33,12 @@ const Feed: FunctionComponent<FeedProps> = ({
         const meta = splitContent.slice(2, 3);
         const description = splitContent.slice(4, 10);
         let profileImage: any;
+        console.log(publication.profile?.picture?.original?.url);
         if (
           !publication.profile.picture ||
           publication.profile.picture.original?.url.includes("svg") ||
-          publication.profile.picture.original?.url.includes("object")
+          publication.profile.picture.original?.url.includes("object") ||
+          publication.profile.picture.original?.url === undefined
         ) {
           profileImage = "/images/inaripfp.png";
         } else if (publication.profile.picture.original) {
@@ -44,7 +46,7 @@ const Feed: FunctionComponent<FeedProps> = ({
             profileImage = publication.profile.picture.original.url;
           } else {
             const cut = publication.profile.picture.original.url.split("/");
-            profileImage = "https://" + cut[2] + ".ipfs.dweb.link/";
+            profileImage = "https://" + cut[2] + ".ipfs.w3s.link";
           }
         } else {
           profileImage = publication.profile.picture.uri;
