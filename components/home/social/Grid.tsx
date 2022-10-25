@@ -64,7 +64,7 @@ const Grid: FunctionComponent<GridProps> = ({
                 <Image
                   width={40}
                   height={50}
-                  src={"/images/inari.png"}
+                  src={"/images/inarilogo.png"}
                   className="justify-center"
                 />
               </div>

@@ -62,7 +62,7 @@ const GridSmall: FunctionComponent<GridProps> = ({
                 <Image
                   width={30}
                   height={40}
-                  src={"/images/inari.png"}
+                  src={"/images/inarilogo.png"}
                   className="justify-center"
                 />
               </div>
