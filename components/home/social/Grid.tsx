@@ -43,7 +43,7 @@ const Grid: FunctionComponent<GridProps> = ({
           WHY LENS?
         </span>{" "}
         <br />
-        DECENTRAIZED SOCIAL CONNECTS YOU <br /> WITH COLLECTORS AND CREATORS{" "}
+        DECENTRALIZED SOCIAL CONNECTS YOU <br /> WITH COLLECTORS AND CREATORS{" "}
         <br /> WITHOUT ALL THE EXTRA ANGST OVER
         <br /> WHY THE ALGORITHM DECIDED YOU’RE
         <br /> SHADOWBANNED –––––––– BECAUSE,
