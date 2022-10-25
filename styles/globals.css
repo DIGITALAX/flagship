@@ -225,7 +225,7 @@ body {
     #fdfedd
   );
   -webkit-background-clip: text;
-  color: #131313;
+  color: transparent;
 }
 
 #foot1 {
