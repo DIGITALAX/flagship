@@ -40,7 +40,7 @@ const Static: FunctionComponent = (): JSX.Element => {
           </div>
         </div>
       </div>
-      <div className="row-start-3 w-full h-fit text-center font-lib text-mainText relative pt-20 text-lg font-libB">
+      <div className="row-start-3 w-full h-fit text-center font-lib text-mainText relative pt-20 text-lg font-libB 2xl:text-[1.8vw]">
         x005.m-3 – MICROFACTORY LOCAL CO•OP
       </div>
     </div>

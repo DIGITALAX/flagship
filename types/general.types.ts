@@ -24,6 +24,7 @@ export type GalleryProps = {
   loading: boolean;
   more: boolean;
   setExpressInterest: (e: string) => void;
+  queryWindowSize2XL: boolean;
 };
 
 export type Blender = {
@@ -110,6 +111,7 @@ export type FeedProps = {
   getMoreFeed: () => Promise<any>;
   queryWindowSize: boolean;
   queryWindowSizeMobile: boolean;
+  queryWindowSizeXL: boolean;
 };
 
 export type SocialProps = {
@@ -117,6 +119,7 @@ export type SocialProps = {
   getMoreFeed: () => Promise<any>;
   queryWindowSize: boolean;
   queryWindowSizeMobile: boolean;
+  queryWindowSizeXL: boolean;
 };
 
 export type useFeedResults = {
@@ -124,6 +127,7 @@ export type useFeedResults = {
   getMoreFeed: () => Promise<any>;
   queryWindowSize: boolean;
   queryWindowSizeMobile: boolean;
+  queryWindowSizeXL: boolean;
 };
 
 export type GridProps = {
@@ -131,11 +135,13 @@ export type GridProps = {
   getMoreFeed: () => Promise<any>;
   queryWindowSize: boolean;
   queryWindowSizeMobile: boolean;
+  queryWindowSizeXL: boolean;
 };
 
 export type DisplayProps = {
   shop: any;
   setExpressInterest: (e: string) => void;
+  queryWindowSize2XL: boolean;
 };
 
 export type useFormResults = {
@@ -148,6 +154,7 @@ export type HomeProps = {
   rewind: any;
   changeColor: () => void;
   heartColor: string
+  queryWindowSize2XL: boolean;
 };
 
 export type RefactorElementProps = {

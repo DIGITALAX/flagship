@@ -7,6 +7,7 @@ import useGallery from "./hooks/useGallery";
 const Display: FunctionComponent<DisplayProps> = ({
   shop,
   setExpressInterest,
+  queryWindowSize2XL,
 }): JSX.Element => {
   const {
     currentImages,
@@ -80,6 +81,7 @@ const Display: FunctionComponent<DisplayProps> = ({
             loading={loading}
             currentImages={currentImages}
             more={more}
+            queryWindowSize2XL={queryWindowSize2XL}
             setExpressInterest={setExpressInterest}
           />
         </div>

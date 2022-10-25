@@ -4,7 +4,7 @@ import { FunctionComponent, useState } from "react";
 const Directory: FunctionComponent = (): JSX.Element => {
   const [blur, setBlur] = useState<boolean>(true);
   return (
-    <div className="grid-flow-row grid auto-rows-[auto auto] w-full h-fit relative text-offBlack md:w-56">
+    <div className="grid-flow-row grid auto-rows-[auto auto] w-full h-fit relative text-offBlack md:w-56 2xl:w-full">
       <div className="relative row-start-1 col-start-1 w-full h-fit font-lib text-xl lg:text-2xl border-b-2 border-offBlack p-4">
         Mesh
       </div>

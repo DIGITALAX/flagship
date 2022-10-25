@@ -10,6 +10,7 @@ const Social: FunctionComponent<SocialProps> = ({
   publicationsFeed,
   queryWindowSize,
   queryWindowSizeMobile,
+  queryWindowSizeXL
 }): JSX.Element => {
   return (
     <div className="bg-offBlack w-full h-full relative">
@@ -19,6 +20,7 @@ const Social: FunctionComponent<SocialProps> = ({
           publicationsFeed={publicationsFeed}
           getMoreFeed={getMoreFeed}
           queryWindowSizeMobile={queryWindowSizeMobile}
+          queryWindowSizeXL={queryWindowSizeXL}
         />
       ) : (
         <Grid
@@ -26,6 +28,7 @@ const Social: FunctionComponent<SocialProps> = ({
           publicationsFeed={publicationsFeed}
           getMoreFeed={getMoreFeed}
           queryWindowSizeMobile={queryWindowSizeMobile}
+          queryWindowSizeXL={queryWindowSizeXL}
         />
       )}
     </div>

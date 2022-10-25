@@ -10,7 +10,7 @@ const Description: FunctionComponent = (): JSX.Element => {
         Our worlds are run by interfaces,
         <br /> machine code, and APIs.
       </div>
-      <div className="relative h-fit text-skyBlue col-start-1 row-start-2 font-fut w-fit text-left pl-6 sm:pl-[19vw] text-xs pr-6 sm:pr-[19vw] place-self-center sm:text-sm">
+      <div className="relative h-fit text-skyBlue col-start-1 row-start-2 font-fut w-fit text-left pl-6 sm:pl-[19vw] text-xs pr-6 sm:pr-[19vw] place-self-center sm:text-sm 2xl:text-[1.3vw] 2xl:leading-loose">
         Here cypherpunks write prompts, design across multiple dimensions by
         hand, and build the end to end decentralize-it-yourself network economy.
         <br />

@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import { createContext, useEffect, useRef, useState } from "react";
 import Footer from "../components/layout/Footer";
 import useStickyState from "../components/common/hooks/useStickyState";
+import { useMediaQuery } from "@material-ui/core";
 
 export const GlobalProfileContextDefault = {
   expressInterest: "",
@@ -36,6 +37,7 @@ const heartColors = [
 ];
 // const { setItem, value } = useStickyState();
 function MyApp({ Component, pageProps }: AppProps) {
+  let queryWindowSize2XL: boolean = useMediaQuery("(max-width:1600px)");
   const [color, setColor] = useState<string>(colors[0]);
   const [heartColor, setHeartColor] = useState<string>(colors[0]);
   const changeColor = () => {
@@ -161,6 +163,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           rewind={rewind}
           changeColor={changeColor}
           heartColor={heartColor}
+          queryWindowSize2XL={queryWindowSize2XL}
         />
         <Footer handleRewind={handleRewind} />
       </div>

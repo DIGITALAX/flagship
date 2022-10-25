@@ -25,7 +25,7 @@ const Box: FunctionComponent<BoxProps> = ({
           </div>
           <div className="relative row-start-2 col-start-1 w-full h-full">
             <div className="grid-flow-col grid auto-cols-[auto auto] w-full h-full relative md:border-r-2 md:border-l-2 border-offBlack">
-              <div className="relative row-start-1 col-start-1 w-fit h-full border-r-0 md:border-r-2 border-offBlack border-t-0 row-start-1 lg:flex hidden">
+              <div className="relative row-start-1 col-start-1 w-fit 2xl:w-full h-full border-r-0 md:border-r-2 border-offBlack border-t-0 row-start-1 lg:flex hidden">
                 <Directory />
               </div>
               <div className="relative row-start-1 col-start-1 w-full h-full border-r-0 border-offBlack border-t-0 row-start-1 flex lg:hidden">

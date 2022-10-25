@@ -21,7 +21,12 @@ import { GlobalContext } from "./_app";
 import { HomeProps } from "../types/general.types";
 import RefactorElement from "../components/common/modals/RefactorElement";
 
-const Home: NextPage<HomeProps> = ({ rewind, changeColor, heartColor}) => {
+const Home: NextPage<HomeProps> = ({
+  rewind,
+  changeColor,
+  heartColor,
+  queryWindowSize2XL,
+}) => {
   const shop = useRef<null | HTMLDivElement>(null);
   const handleShop = (): void => {
     if (shop.current) {
@@ -38,6 +43,7 @@ const Home: NextPage<HomeProps> = ({ rewind, changeColor, heartColor}) => {
     getMoreFeed,
     queryWindowSize,
     queryWindowSizeMobile,
+    queryWindowSizeXL,
   } = useFeed();
   return (
     <div className="min-w-screen min-h-full h-full flex flex-col bg-mainBg">
@@ -60,7 +66,11 @@ const Home: NextPage<HomeProps> = ({ rewind, changeColor, heartColor}) => {
       />
       <Title />
       <Banner />
-      <Display shop={shop} setExpressInterest={setExpressInterest} />
+      <Display
+        shop={shop}
+        setExpressInterest={setExpressInterest}
+        queryWindowSize2XL={queryWindowSize2XL}
+      />
       <Description />
       <Blender />
       <Dials />
@@ -74,6 +84,7 @@ const Home: NextPage<HomeProps> = ({ rewind, changeColor, heartColor}) => {
         getMoreFeed={getMoreFeed}
         queryWindowSize={queryWindowSize}
         queryWindowSizeMobile={queryWindowSizeMobile}
+        queryWindowSizeXL={queryWindowSizeXL}
       />
       <Library setRefactorModal={setRefactorModal} />
       <Slider />

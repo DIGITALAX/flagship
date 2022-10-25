@@ -8,6 +8,7 @@ const GridSmall: FunctionComponent<GridProps> = ({
   publicationsFeed,
   queryWindowSize,
   queryWindowSizeMobile,
+  queryWindowSizeXL,
 }): JSX.Element => {
   return (
     <div className="bg-offBlack w-full h-fit relative grid grid-flow-row auto-rows-[auto auto] pb-4 pt-4">
@@ -76,6 +77,7 @@ const GridSmall: FunctionComponent<GridProps> = ({
             getMoreFeed={getMoreFeed}
             queryWindowSize={queryWindowSize}
             queryWindowSizeMobile={queryWindowSizeMobile}
+            queryWindowSizeXL={queryWindowSizeXL}
           />
         </div>
       </div>

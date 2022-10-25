@@ -10,6 +10,7 @@ const Feed: FunctionComponent<FeedProps> = ({
   getMoreFeed,
   queryWindowSize,
   queryWindowSizeMobile,
+  queryWindowSizeXL,
 }): JSX.Element => {
   return (
     <InfiniteScroll
@@ -17,7 +18,13 @@ const Feed: FunctionComponent<FeedProps> = ({
       next={getMoreFeed}
       hasMore={true}
       loader={""}
-      height={queryWindowSize ? "35rem" : "50rem"}
+      height={
+        queryWindowSize
+          ? "35rem"
+          : !queryWindowSizeXL && !queryWindowSize
+          ? "100rem"
+          : "50rem"
+      }
       scrollableTarget="scrollableDiv"
     >
       {publicationsFeed?.map((publication: any, index: number) => {

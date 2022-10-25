@@ -8,6 +8,7 @@ const useFeed = (): useFeedResults => {
   const [pageInfo, setPageInfo] = useState<any>([]);
   let queryWindowSize: boolean = useMediaQuery("(max-width:1024px)");
   let queryWindowSizeMobile: boolean = useMediaQuery("(max-width:950px)");
+  let queryWindowSizeXL: boolean = useMediaQuery("(max-width:1600px)");
 
   useEffect(() => {
     getFeedData();
@@ -56,7 +57,13 @@ const useFeed = (): useFeedResults => {
     }
   };
 
-  return { publicationsFeed, getMoreFeed, queryWindowSize, queryWindowSizeMobile };
+  return {
+    publicationsFeed,
+    getMoreFeed,
+    queryWindowSize,
+    queryWindowSizeMobile,
+    queryWindowSizeXL
+  };
 };
 
 export default useFeed;

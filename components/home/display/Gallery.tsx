@@ -8,6 +8,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({
   currentImages,
   more,
   setExpressInterest,
+  queryWindowSize2XL,
 }): JSX.Element => {
   const [blur, setBlur] = useState<boolean>(true);
   return (
@@ -16,26 +17,31 @@ const Gallery: FunctionComponent<GalleryProps> = ({
         more
           ? "h-full md:h-full lg:h-full"
           : "h-[70vh] md:h-[100vh] lg:h-[155vh]"
-      } w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center relative content-evenly gap-5 items-center inline-flex`}
+      } w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center relative content-evenly gap-5 items-center inline-flex 2xl:place-content-center`}
     >
-      <div className="relative w-fit h-full">
-        <div className="grid grid-flow-row auto-rows-[auto auto] w-fit h-fit relative gap-4">
+      <div className="relative w-full h-full place-items-center">
+        <div className="grid grid-flow-row auto-rows-[auto auto] w-full h-fit relative gap-4">
           {currentImages.slice(0, 6).map((token: Gallery, index: number) => {
             return (
               <div
                 key={index}
-                className={`h-fit w-full min-h-full flex relative row-start-${
+                className={`h-fit w-full min-h-fit flex relative row-start-${
                   index + 1
                 } group`}
               >
-                <div className={`${blur && "blur-sm animate-unblur"}`}>
+                <div
+                  className={`${blur && "blur-sm animate-unblur"} ${!queryWindowSize2XL && "w-[31.5vw]"}`}
+                >
                   <Image
                     src={token.image}
-                    width={token.width}
-                    height={token.height}
+                    width={queryWindowSize2XL ? 2 * token.width : token.width}
+                    height={
+                      queryWindowSize2XL ? 2 * token.height : token.height
+                    }
                     objectFit="cover"
                     objectPosition="center"
                     priority
+                    layout={queryWindowSize2XL ? "intrinsic" : "responsive"}
                     onLoadingComplete={() => setBlur(false)}
                     blurDataURL={token.blurred}
                   />
@@ -65,24 +71,28 @@ const Gallery: FunctionComponent<GalleryProps> = ({
           })}
         </div>
       </div>
-      <div className="relative w-fit h-full place-items-center">
-        <div className="grid grid-flow-row auto-rows-[auto auto] w-fit h-fit relative gap-4">
+      <div className="relative w-full h-full place-items-center">
+        <div className="grid grid-flow-row auto-rows-[auto auto] w-full h-fit relative gap-4">
           {currentImages.slice(6, 12).map((token: Gallery, index: number) => {
             return (
               <div
                 key={index}
-                className={`h-fit w-full min-h-full flex relative row-start-${
+                className={`h-full w-full min-h-full flex relative row-start-${
                   index + 1
                 } group`}
               >
-                <div className={`${blur && "blur-sm animate-unblur"}`}>
+                <div
+                  className={`${blur && "blur-sm animate-unblur"} ${!queryWindowSize2XL && "w-[31.5vw]"}`}
+                >
                   <Image
                     src={token.image}
-                    width={token.width}
-                    height={token.height}
-                    objectFit="cover"
+                    width={queryWindowSize2XL ? 2 * token.width : token.width}
+                    height={
+                      queryWindowSize2XL ? 2 * token.height : token.height
+                    }
                     objectPosition="center"
                     priority
+                    layout={queryWindowSize2XL ? "intrinsic" : "responsive"}
                     onLoadingComplete={() => setBlur(false)}
                     blurDataURL={token.blurred}
                   />
@@ -112,24 +122,28 @@ const Gallery: FunctionComponent<GalleryProps> = ({
           })}
         </div>
       </div>
-      <div className="relative w-fit h-full">
-        <div className="grid grid-flow-row auto-rows-[auto auto] w-fit h-fit relative gap-4">
+      <div className="relative w-full h-full">
+        <div className="grid grid-flow-row auto-rows-[auto auto] w-full h-fit relative gap-4">
           {currentImages.slice(12, 18).map((token: Gallery, index: number) => {
             return (
               <div
                 key={index}
-                className={`h-fit w-full min-h-full flex relative row-start-${
+                className={`h-full w-full min-h-full flex relative row-start-${
                   index + 1
                 } group`}
               >
-                <div className={`${blur && "blur-sm animate-unblur"}`}>
+                <div
+                  className={`${blur && "blur-sm animate-unblur"} ${!queryWindowSize2XL && "w-[31.5vw]"}`}
+                >
                   <Image
                     src={token.image}
-                    width={token.width}
-                    height={token.height}
-                    objectFit="cover"
+                    width={!queryWindowSize2XL ? 2 * token.width : token.width}
+                    height={
+                      !queryWindowSize2XL ? 2 * token.height : token.height
+                    }
                     objectPosition="center"
                     priority
+                    layout={queryWindowSize2XL ? "intrinsic" : "responsive"}
                     onLoadingComplete={() => setBlur(false)}
                     blurDataURL={token.blurred}
                   />

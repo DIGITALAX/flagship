@@ -50,9 +50,7 @@ const useGallery = (): useGalleryResult => {
       setCurrentPage(pageNumber + 1);
       setPageBoundaryForward(true);
       setPageBoundaryBackward(true);
-      console.log(pageNumber)
       if (pageNumber + 1 === totalPages) {
-        console.log("here")
         setPageBoundaryForward(false);
       }
     }
