@@ -1,7 +1,5 @@
-import Image from "next/image";
 import { FunctionComponent } from "react";
 import { SocialProps } from "../../../types/general.types";
-import Feed from "./Feed";
 import Grid from "./Grid";
 import GridSmall from "./GridSmall";
 
@@ -10,7 +8,8 @@ const Social: FunctionComponent<SocialProps> = ({
   publicationsFeed,
   queryWindowSize,
   queryWindowSizeMobile,
-  queryWindowSizeXL
+  queryWindowSizeXL,
+  queryWindowSize300,
 }): JSX.Element => {
   return (
     <div className="bg-offBlack w-full h-full relative">
@@ -21,6 +20,7 @@ const Social: FunctionComponent<SocialProps> = ({
           getMoreFeed={getMoreFeed}
           queryWindowSizeMobile={queryWindowSizeMobile}
           queryWindowSizeXL={queryWindowSizeXL}
+          queryWindowSize300={queryWindowSize300}
         />
       ) : (
         <Grid

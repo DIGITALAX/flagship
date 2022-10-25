@@ -1,14 +1,16 @@
 import Image from "next/image";
 import { FunctionComponent } from "react";
-import { GridProps } from "../../../types/general.types";
+import { GridSmallProps } from "../../../types/general.types";
 import Feed from "./Feed";
+import Feed280 from "./Feed280";
 
-const GridSmall: FunctionComponent<GridProps> = ({
+const GridSmall: FunctionComponent<GridSmallProps> = ({
   getMoreFeed,
   publicationsFeed,
   queryWindowSize,
   queryWindowSizeMobile,
   queryWindowSizeXL,
+  queryWindowSize300,
 }): JSX.Element => {
   return (
     <div className="bg-offBlack w-full h-fit relative grid grid-flow-row auto-rows-[auto auto] pb-4 pt-4">
@@ -72,13 +74,23 @@ const GridSmall: FunctionComponent<GridProps> = ({
       </div>
       <div className="row-start-6 col-start-1 relative w-full h-fit bg-offWhite border-offBlack">
         <div className="relative w-full h-full grid grid-flow-row auto-rows-[auto auto] content-center">
-          <Feed
-            publicationsFeed={publicationsFeed}
-            getMoreFeed={getMoreFeed}
-            queryWindowSize={queryWindowSize}
-            queryWindowSizeMobile={queryWindowSizeMobile}
-            queryWindowSizeXL={queryWindowSizeXL}
-          />
+          {queryWindowSize300 ? (
+            <Feed280
+              publicationsFeed={publicationsFeed}
+              getMoreFeed={getMoreFeed}
+              queryWindowSize={queryWindowSize}
+              queryWindowSizeMobile={queryWindowSizeMobile}
+              queryWindowSizeXL={queryWindowSizeXL}
+            />
+          ) : (
+            <Feed
+              publicationsFeed={publicationsFeed}
+              getMoreFeed={getMoreFeed}
+              queryWindowSize={queryWindowSize}
+              queryWindowSizeMobile={queryWindowSizeMobile}
+              queryWindowSizeXL={queryWindowSizeXL}
+            />
+          )}
         </div>
       </div>
     </div>

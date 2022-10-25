@@ -6,7 +6,7 @@ const Glass: FunctionComponent = (): JSX.Element => {
   return (
     <div className="relative w-full h-fit grid grid-flow-col auto-col-[auto auto] bg-diy pt-3 pb-3 border-t-4 border-b-4 border-deep 2xl:pt-5 2xl:pb-5">
       <div className="relative w-fit h-full col-start-1 place-self-center">
-        <div className="relative w-full h-full gap-8 grid grid-flow-col auto-col-[auto auto]">
+        <div className="relative w-full h-full gap-2 sm:gap-8 grid grid-flow-col auto-col-[auto auto]">
           <div className="relative w-[14vw] h-[14vw] sm:w-14 sm:h-14 2xl:w-[6vw] 2xl:h-[6vw] col-start-1 row-start-1 rounded-full border-2 border-offBlack place-self-center hover:rotate-45 active:rotate-45 cursor-sewingHS">
             <Image
               layout="fill"

@@ -32,6 +32,10 @@ export type Blender = {
   blurred: string;
 };
 
+export type BlenderProps = {
+  queryWindowSize300: boolean;
+}
+
 export type BoxProps = {
   currentImages: Blender[];
   currentPage: number;
@@ -120,6 +124,7 @@ export type SocialProps = {
   queryWindowSize: boolean;
   queryWindowSizeMobile: boolean;
   queryWindowSizeXL: boolean;
+  queryWindowSize300: boolean;
 };
 
 export type useFeedResults = {
@@ -136,6 +141,15 @@ export type GridProps = {
   queryWindowSize: boolean;
   queryWindowSizeMobile: boolean;
   queryWindowSizeXL: boolean;
+};
+
+export type GridSmallProps = {
+  publicationsFeed: any[];
+  getMoreFeed: () => Promise<any>;
+  queryWindowSize: boolean;
+  queryWindowSizeMobile: boolean;
+  queryWindowSizeXL: boolean;
+  queryWindowSize300: boolean;
 };
 
 export type DisplayProps = {
@@ -155,6 +169,7 @@ export type HomeProps = {
   changeColor: () => void;
   heartColor: string
   queryWindowSize2XL: boolean;
+  queryWindowSize300: boolean;
 };
 
 export type RefactorElementProps = {

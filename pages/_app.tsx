@@ -38,6 +38,7 @@ const heartColors = [
 // const { setItem, value } = useStickyState();
 function MyApp({ Component, pageProps }: AppProps) {
   let queryWindowSize2XL: boolean = useMediaQuery("(max-width:1600px)");
+  let queryWindowSize300: boolean = useMediaQuery("(max-width:300px)");
   const [color, setColor] = useState<string>(colors[0]);
   const [heartColor, setHeartColor] = useState<string>(colors[0]);
   const changeColor = () => {
@@ -164,6 +165,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           changeColor={changeColor}
           heartColor={heartColor}
           queryWindowSize2XL={queryWindowSize2XL}
+          queryWindowSize300={queryWindowSize300}
         />
         <Footer handleRewind={handleRewind} />
       </div>

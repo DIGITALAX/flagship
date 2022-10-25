@@ -26,6 +26,7 @@ const Home: NextPage<HomeProps> = ({
   changeColor,
   heartColor,
   queryWindowSize2XL,
+  queryWindowSize300,
 }) => {
   const shop = useRef<null | HTMLDivElement>(null);
   const handleShop = (): void => {
@@ -72,7 +73,9 @@ const Home: NextPage<HomeProps> = ({
         queryWindowSize2XL={queryWindowSize2XL}
       />
       <Description />
-      <Blender />
+      <Blender 
+      queryWindowSize300={queryWindowSize300}
+      />
       <Dials />
       <TV />
       <Glass />
@@ -80,6 +83,7 @@ const Home: NextPage<HomeProps> = ({
       <Poster />
       <World />
       <Social
+        queryWindowSize300={queryWindowSize300}
         publicationsFeed={publicationsFeed}
         getMoreFeed={getMoreFeed}
         queryWindowSize={queryWindowSize}
