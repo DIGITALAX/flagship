@@ -30,7 +30,9 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                 } group`}
               >
                 <div
-                  className={`${blur && "blur-sm animate-unblur"} ${!queryWindowSize2XL && "w-[31.5vw]"}`}
+                  className={`${blur && "blur-sm animate-unblur"} ${
+                    !queryWindowSize2XL && "w-[31.5vw]"
+                  }`}
                 >
                   <Image
                     src={token.image}
@@ -52,7 +54,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                       }
                     >
                       <a
-                        target={token.link === "" ? "self" : "_blank"}
+                        // target={token.link === "" ? "self" : "_blank"}
                         rel="noreferrer"
                         className="w-fit h-fit relative col-start-1 place-self-end"
                       >
@@ -82,7 +84,9 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                 } group`}
               >
                 <div
-                  className={`${blur && "blur-sm animate-unblur"} ${!queryWindowSize2XL && "w-[31.5vw]"}`}
+                  className={`${blur && "blur-sm animate-unblur"} ${
+                    !queryWindowSize2XL && "w-[31.5vw]"
+                  }`}
                 >
                   <Image
                     src={token.image}
@@ -103,7 +107,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                       }
                     >
                       <a
-                        target={token.link === "" ? "self" : "_blank"}
+                        // target={token.link === "" ? "self" : "_blank"}
                         rel="noreferrer"
                         className="w-fit h-fit relative col-start-1 place-self-end"
                       >
@@ -133,7 +137,9 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                 } group`}
               >
                 <div
-                  className={`${blur && "blur-sm animate-unblur"} ${!queryWindowSize2XL && "w-[31.5vw]"}`}
+                  className={`${blur && "blur-sm animate-unblur"} ${
+                    !queryWindowSize2XL && "w-[31.5vw]"
+                  }`}
                 >
                   <Image
                     src={token.image}
@@ -154,7 +160,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                       }
                     >
                       <a
-                        target={token.link === "" ? "self" : "_blank"}
+                        // target={token.link === "" ? "self" : "_blank"}
                         rel="noreferrer"
                         className="w-fit h-fit relative col-start-1 place-self-end"
                       >
