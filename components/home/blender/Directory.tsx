@@ -40,10 +40,10 @@ const Directory: FunctionComponent = (): JSX.Element => {
                   <Image
                     height={20}
                     width={20}
-                    src="/images/arrowdown.png"
+                    src="/images/arrowright.png"
                     priority
                     onLoadingComplete={() => setBlur(false)}
-                    blurDataURL={"/images/blurred/arrowdown.png"}
+                    blurDataURL={"/images/blurred/arrowright.png"}
                   />
                 </div>
                 <div className="relative col-start-2 w-full h-fit">plugin</div>
@@ -57,10 +57,10 @@ const Directory: FunctionComponent = (): JSX.Element => {
                   <Image
                     height={20}
                     width={20}
-                    src="/images/arrowdown.png"
+                    src="/images/arrowright.png"
                     priority
                     onLoadingComplete={() => setBlur(false)}
-                    blurDataURL={"/images/blurred/arrowdown.png"}
+                    blurDataURL={"/images/blurred/arrowright.png"}
                   />
                 </div>
                 <div className="relative col-start-2 w-full h-fit">synth</div>
@@ -74,10 +74,10 @@ const Directory: FunctionComponent = (): JSX.Element => {
                   <Image
                     height={20}
                     width={20}
-                    src="/images/arrowdown.png"
+                    src="/images/arrowright.png"
                     priority
                     onLoadingComplete={() => setBlur(false)}
-                    blurDataURL={"/images/blurred/arrowdown.png"}
+                    blurDataURL={"/images/blurred/arrowright.png"}
                   />
                 </div>
                 <div className="relative col-start-2 w-full h-fit">
@@ -93,10 +93,10 @@ const Directory: FunctionComponent = (): JSX.Element => {
                   <Image
                     height={20}
                     width={20}
-                    src="/images/arrowdown.png"
+                    src="/images/arrowright.png"
                     priority
                     onLoadingComplete={() => setBlur(false)}
-                    blurDataURL={"/images/blurred/arrowdown.png"}
+                    blurDataURL={"/images/blurred/arrowright.png"}
                   />
                 </div>
                 <div className="relative col-start-2 w-full h-fit">
@@ -112,10 +112,10 @@ const Directory: FunctionComponent = (): JSX.Element => {
                   <Image
                     height={20}
                     width={20}
-                    src="/images/arrowdown.png"
+                    src="/images/arrowright.png"
                     priority
                     onLoadingComplete={() => setBlur(false)}
-                    blurDataURL={"/images/blurred/arrowdown.png"}
+                    blurDataURL={"/images/blurred/arrowright.png"}
                   />
                 </div>
                 <div className="relative col-start-2 w-full h-fit">
@@ -131,10 +131,10 @@ const Directory: FunctionComponent = (): JSX.Element => {
                   <Image
                     height={20}
                     width={20}
-                    src="/images/arrowdown.png"
+                    src="/images/arrowright.png"
                     priority
                     onLoadingComplete={() => setBlur(false)}
-                    blurDataURL={"/images/blurred/arrowdown.png"}
+                    blurDataURL={"/images/blurred/arrowright.png"}
                   />
                 </div>
                 <div className="relative col-start-2 w-full h-fit">packing</div>
@@ -148,10 +148,10 @@ const Directory: FunctionComponent = (): JSX.Element => {
                   <Image
                     height={20}
                     width={20}
-                    src="/images/arrowdown.png"
+                    src="/images/arrowright.png"
                     priority
                     onLoadingComplete={() => setBlur(false)}
-                    blurDataURL={"/images/blurred/arrowdown.png"}
+                    blurDataURL={"/images/blurred/arrowright.png"}
                   />
                 </div>
                 <div className="relative col-start-2 w-full h-fit">
@@ -167,10 +167,10 @@ const Directory: FunctionComponent = (): JSX.Element => {
                   <Image
                     height={20}
                     width={20}
-                    src="/images/arrowdown.png"
+                    src="/images/arrowright.png"
                     priority
                     onLoadingComplete={() => setBlur(false)}
-                    blurDataURL={"/images/blurred/arrowdown.png"}
+                    blurDataURL={"/images/blurred/arrowright.png"}
                   />
                 </div>
                 <div className="relative col-start-2 w-full h-fit">
@@ -186,10 +186,10 @@ const Directory: FunctionComponent = (): JSX.Element => {
                   <Image
                     height={20}
                     width={20}
-                    src="/images/arrowdown.png"
+                    src="/images/arrowright.png"
                     priority
                     onLoadingComplete={() => setBlur(false)}
-                    blurDataURL={"/images/blurred/arrowdown.png"}
+                    blurDataURL={"/images/blurred/arrowright.png"}
                   />
                 </div>
                 <div className="relative col-start-2 w-full h-fit">
@@ -205,10 +205,10 @@ const Directory: FunctionComponent = (): JSX.Element => {
                   <Image
                     height={20}
                     width={20}
-                    src="/images/arrowdown.png"
+                    src="/images/arrowright.png"
                     priority
                     onLoadingComplete={() => setBlur(false)}
-                    blurDataURL={"/images/blurred/arrowdown.png"}
+                    blurDataURL={"/images/blurred/arrowright.png"}
                   />
                 </div>
                 <div className="relative col-start-2 w-full h-fit">mint</div>

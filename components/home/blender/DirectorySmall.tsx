@@ -43,7 +43,7 @@ const DirectorySmall: FunctionComponent = (): JSX.Element => {
                     src="/images/arrowright.png"
                     priority
                     onLoadingComplete={() => setBlur(false)}
-                    blurDataURL={"/images/blurred/arrowdown.png"}
+                    blurDataURL={"/images/blurred/arrowright.png"}
                   />
                 </div>
                 <div className="relative col-start-2 w-fit h-fit">plugin</div>
@@ -60,7 +60,7 @@ const DirectorySmall: FunctionComponent = (): JSX.Element => {
                     src="/images/arrowright.png"
                     priority
                     onLoadingComplete={() => setBlur(false)}
-                    blurDataURL={"/images/blurred/arrowdown.png"}
+                    blurDataURL={"/images/blurred/arrowright.png"}
                   />
                 </div>
                 <div className="relative col-start-2 w-fit h-fit">synth</div>
@@ -77,7 +77,7 @@ const DirectorySmall: FunctionComponent = (): JSX.Element => {
                     src="/images/arrowright.png"
                     priority
                     onLoadingComplete={() => setBlur(false)}
-                    blurDataURL={"/images/blurred/arrowdown.png"}
+                    blurDataURL={"/images/blurred/arrowright.png"}
                   />
                 </div>
                 <div className="relative col-start-2 w-fit h-fit">
@@ -96,7 +96,7 @@ const DirectorySmall: FunctionComponent = (): JSX.Element => {
                     src="/images/arrowright.png"
                     priority
                     onLoadingComplete={() => setBlur(false)}
-                    blurDataURL={"/images/blurred/arrowdown.png"}
+                    blurDataURL={"/images/blurred/arrowright.png"}
                   />
                 </div>
                 <div className="relative col-start-2 w-fit h-fit">
@@ -115,7 +115,7 @@ const DirectorySmall: FunctionComponent = (): JSX.Element => {
                     src="/images/arrowright.png"
                     priority
                     onLoadingComplete={() => setBlur(false)}
-                    blurDataURL={"/images/blurred/arrowdown.png"}
+                    blurDataURL={"/images/blurred/arrowright.png"}
                   />
                 </div>
                 <div className="relative col-start-2 w-fit h-fit">
@@ -134,7 +134,7 @@ const DirectorySmall: FunctionComponent = (): JSX.Element => {
                     src="/images/arrowright.png"
                     priority
                     onLoadingComplete={() => setBlur(false)}
-                    blurDataURL={"/images/blurred/arrowdown.png"}
+                    blurDataURL={"/images/blurred/arrowright.png"}
                   />
                 </div>
                 <div className="relative col-start-2 w-fit h-fit">packing</div>
@@ -151,7 +151,7 @@ const DirectorySmall: FunctionComponent = (): JSX.Element => {
                     src="/images/arrowright.png"
                     priority
                     onLoadingComplete={() => setBlur(false)}
-                    blurDataURL={"/images/blurred/arrowdown.png"}
+                    blurDataURL={"/images/blurred/arrowright.png"}
                   />
                 </div>
                 <div className="relative col-start-2 w-fit h-fit">
@@ -170,7 +170,7 @@ const DirectorySmall: FunctionComponent = (): JSX.Element => {
                     src="/images/arrowright.png"
                     priority
                     onLoadingComplete={() => setBlur(false)}
-                    blurDataURL={"/images/blurred/arrowdown.png"}
+                    blurDataURL={"/images/blurred/arrowright.png"}
                   />
                 </div>
                 <div className="relative col-start-2 w-fit h-fit">restitch</div>
@@ -187,7 +187,7 @@ const DirectorySmall: FunctionComponent = (): JSX.Element => {
                     src="/images/arrowright.png"
                     priority
                     onLoadingComplete={() => setBlur(false)}
-                    blurDataURL={"/images/blurred/arrowdown.png"}
+                    blurDataURL={"/images/blurred/arrowright.png"}
                   />
                 </div>
                 <div className="relative col-start-2 w-fit h-fit">
@@ -206,7 +206,7 @@ const DirectorySmall: FunctionComponent = (): JSX.Element => {
                     src="/images/arrowright.png"
                     priority
                     onLoadingComplete={() => setBlur(false)}
-                    blurDataURL={"/images/blurred/arrowdown.png"}
+                    blurDataURL={"/images/blurred/arrowright.png"}
                   />
                 </div>
                 <div className="relative col-start-2 w-fit h-fit">mint</div>
