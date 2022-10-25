@@ -20,6 +20,7 @@ import useFeed from "../components/home/social/hooks/useFeed";
 import { GlobalContext } from "./_app";
 import { HomeProps } from "../types/general.types";
 import RefactorElement from "../components/common/modals/RefactorElement";
+import CC0 from "../components/home/cc0/CC0";
 
 const Home: NextPage<HomeProps> = ({
   rewind,
@@ -73,9 +74,7 @@ const Home: NextPage<HomeProps> = ({
         queryWindowSize2XL={queryWindowSize2XL}
       />
       <Description />
-      <Blender 
-      queryWindowSize300={queryWindowSize300}
-      />
+      <Blender queryWindowSize300={queryWindowSize300} />
       <Dials />
       <TV />
       <Glass />
@@ -92,6 +91,7 @@ const Home: NextPage<HomeProps> = ({
       />
       <Library setRefactorModal={setRefactorModal} />
       <Slider />
+      <CC0 />
       {RefactorModal && <RefactorElement setRefactorModal={setRefactorModal} />}
     </div>
   );

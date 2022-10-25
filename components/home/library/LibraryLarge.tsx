@@ -19,6 +19,10 @@ const LibraryLarge: FunctionComponent<LibrarySmallProps> = ({
             blur && "blur-sm animate-unblur"
           }`}
         >
+          {/* <div className="w-80 h-full object-cover relative">
+            <img src={showImage} className="relative w-full h-full object-cover" />
+          </div> */}
+
           <Image layout="fill" objectFit="cover" src={showImage} />
           <div className="relative w-full h-full grid grid-flow-col auto-cols-[auto auto] pr-4 pb-2">
             {link !== "" ? (

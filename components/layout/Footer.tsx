@@ -106,7 +106,7 @@ const Footer: FunctionComponent<FooterProps> = ({
               </div>
             </div>
             <div className="col-start-1 row-start-2 sm:row-start-1 sm:col-start-3 h-full w-fit relative place-self-center sm:pb-0 pb-8 pl-6 sm:pl-0 sm:place-self-end pr-4 md:pr-14 pt-6">
-              <div className="grid grid-flow-col auto-cols-[auto auto] relative h-fit w-fit gap-3">
+              <div className="row-start-2 grid grid-flow-col auto-cols-[auto auto] relative h-fit w-fit gap-3">
                 <div className="relative w-fit h-fit col-start-1 place-self-end">
                   <Link href={"https://blog.digitalax.xyz/"}>
                     <a
