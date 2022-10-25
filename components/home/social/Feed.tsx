@@ -103,7 +103,7 @@ const Feed: FunctionComponent<FeedProps> = ({
                     (media: any, index: number) => {
                       const newLink = media.original.url.split("/");
                       const imageSource =
-                        "https://" + newLink[2] + ".ipfs.dweb.link/";
+                        "https://" + newLink[2] + ".ipfs.w3s.link";
                       return (
                         <div
                           key={index}
