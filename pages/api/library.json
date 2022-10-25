@@ -1,7 +1,7 @@
 [
   {
     "name": "REALMS",
-    "image": "/images/library/realms.png",
+    "image": "/images/library/Realms.png",
     "number": "1",
     "id": "one",
     "link": "",
@@ -10,7 +10,7 @@
   },
   {
     "name": "MONA",
-    "image": "/images/library/mona.png",
+    "image": "/images/library/Mona.png",
     "number": "2",
     "id": "two",
     "link": "",
@@ -19,7 +19,7 @@
   },
   {
     "name": "GLOBAL DESIGNER NETWORK",
-    "image": "/images/library/gdn.png",
+    "image": "/images/library/Gdn.png",
     "number": "3",
     "id": "three",
     "link": "",
@@ -28,7 +28,7 @@
   },
   {
     "name": "GLOBAL MODELS SYNDICATE",
-    "image": "/images/library/gms.png",
+    "image": "/images/library/Gms.png",
     "number": "4",
     "id": "four",
     "link": "",
@@ -37,7 +37,7 @@
   },
   {
     "name": "ENGINEERING",
-    "image": "/images/library/engineering.png",
+    "image": "/images/library/Engineering.png",
     "number": "5",
     "id": "five",
     "link": "https://github.com/DIGITALAX/",
@@ -46,7 +46,7 @@
   },
   {
     "name": "PODE",
-    "image": "/images/library/pode.png",
+    "image": "/images/library/Pode.png",
     "number": "6",
     "id": "six",
     "link": "",
@@ -55,7 +55,7 @@
   },
   {
     "name": "THE DLTA SYSTEM",
-    "image": "/images/library/dlta.png",
+    "image": "/images/library/Dlta.png",
     "number": "7",
     "id": "seven",
     "link": "",
@@ -64,7 +64,7 @@
   },
   {
     "name": "WEB3 FASHION WEEK",
-    "image": "/images/library/web3.png",
+    "image": "/images/library/Web3.png",
     "number": "8",
     "id": "eight",
     "link": "",
@@ -73,7 +73,7 @@
   },
   {
     "name": "REALM RUNWAYS",
-    "image": "/images/library/runways.png",
+    "image": "/images/library/Runways.png",
     "number": "9",
     "id": "nine",
     "link": "",
@@ -82,7 +82,7 @@
   },
   {
     "name": "DIY SYNTH",
-    "image": "/images/library/diy.png",
+    "image": "/images/library/Diy.png",
     "number": "10",
     "id": "ten",
     "link": "https://diysynth.xyz",
@@ -91,7 +91,7 @@
   },
   {
     "name": "INARI SYNTH",
-    "image": "/images/library/inari.png",
+    "image": "/images/library/Inari.png",
     "number": "11",
     "id": "eleven",
     "link": "https://inarisynth.xyz",
@@ -100,7 +100,7 @@
   },
   {
     "name": "WHITEPAPER V3",
-    "image": "/images/library/whitepaper.png",
+    "image": "/images/library/Whitepaper.png",
     "number": "12",
     "id": "twelve",
     "link": "https://digitalax.xyz/whitepaper",
@@ -109,7 +109,7 @@
   },
   {
     "name": "ROADMAP V3",
-    "image": "/images/library/roadmap.png",
+    "image": "/images/library/Roadmap.png",
     "number": "13",
     "id": "thirteen",
     "link": "",
@@ -118,7 +118,7 @@
   },
   {
     "name": "LOOK: FASHION LOOT",
-    "image": "/images/library/look.png",
+    "image": "/images/library/Look.png",
     "number": "14",
     "id": "fourteen",
     "link": "",
@@ -127,7 +127,7 @@
   },
   {
     "name": "ESPA",
-    "image": "/images/library/espa.png",
+    "image": "/images/library/Espa.png",
     "number": "15",
     "id": "fifteen",
     "link": "",
@@ -136,7 +136,7 @@
   },
   {
     "name": "GOVERNANCE",
-    "image": "/images/library/gov.png",
+    "image": "/images/library/Gov.png",
     "number": "16",
     "id": "sixteen",
     "link": "https://gov.digitalax.xyz",
@@ -145,7 +145,7 @@
   },
   {
     "name": "TRANSPARENCY REPORTS",
-    "image": "/images/library/transparency.png",
+    "image": "/images/library/Transparency.png",
     "number": "17",
     "id": "seventeen",
     "link": "https://primer.digitalax.xyz/transparency-reports",
@@ -154,7 +154,7 @@
   },
   {
     "name": "DASH",
-    "image": "/images/library/dash.png",
+    "image": "/images/library/Dash.png",
     "number": "18",
     "id": "eighteen",
     "link": "",
