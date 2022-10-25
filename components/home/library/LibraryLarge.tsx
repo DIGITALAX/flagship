@@ -137,7 +137,7 @@ const LibraryLarge: FunctionComponent<LibrarySmallProps> = ({
             }`}
           >
             <Image
-              src="/images/library/numbers.png"
+              src="/images/library/Numbers.png"
               layout="fill"
               priority
               onLoadingComplete={() => setBlur(false)}
