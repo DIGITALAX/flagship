@@ -33,7 +33,6 @@ const Feed: FunctionComponent<FeedProps> = ({
         const meta = splitContent.slice(2, 3);
         const description = splitContent.slice(4, 10);
         let profileImage: any;
-        console.log(publication.profile?.picture?.original?.url);
         if (
           !publication.profile.picture ||
           publication.profile.picture.original?.url.includes("svg") ||
