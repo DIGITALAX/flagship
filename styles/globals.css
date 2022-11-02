@@ -74,6 +74,12 @@
   src: url("/fonts/AUdimat Regular.ttf");
 }
 
+@font-face {
+  font-family: "Jack Lane";
+  font-weight: 400;
+  src: url("/fonts/jacklane_2.woff");
+}
+
 html,
 body {
   padding: 0;

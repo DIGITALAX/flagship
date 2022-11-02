@@ -14,7 +14,7 @@ import TV from "../components/home/tv/TV";
 import World from "../components/home/world/World";
 import Header from "../components/layout/Header";
 import Title from "./../components/home/title/Title";
-import { useContext, useRef, useState } from "react";
+import { useContext, useState } from "react";
 import Description from "../components/home/description/Description";
 import useFeed from "../components/home/social/hooks/useFeed";
 import { GlobalContext } from "./_app";
@@ -28,14 +28,8 @@ const Home: NextPage<HomeProps> = ({
   heartColor,
   queryWindowSize2XL,
   queryWindowSize300,
+  shop
 }) => {
-  const shop = useRef<null | HTMLDivElement>(null);
-  const handleShop = (): void => {
-    if (shop.current) {
-      shop.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   const [RefactorModal, setRefactorModal] = useState<boolean>(false);
 
   const { setExpressInterest } = useContext(GlobalContext);
@@ -60,12 +54,6 @@ const Home: NextPage<HomeProps> = ({
         <meta property="og:image" content="https://digitalax.xyz/card.png/" />
         <meta property="og:type" content="website" />
       </Head>
-      <Header
-        changeColor={changeColor}
-        rewind={rewind}
-        handleShop={handleShop}
-        heartColor={heartColor}
-      />
       <Title />
       <Banner />
       <Display

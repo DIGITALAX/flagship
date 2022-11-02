@@ -63,7 +63,14 @@ module.exports = {
         themHP: "#ffffff",
         themHPT: "#ce02cb",
         themGray: "#1D1F1F",
-        lightPurp: "#CEC0E7"
+        lightPurp: "#CEC0E7",
+        lightY: "#FFFFF9",
+        lightPurple: "#EDE5FB",
+        lightWhite: "#FBFBF1",
+        brightGreen: "#AAFDBE",
+        bronze: "#BB552D",
+        midBlue: "#709AF3",
+        pinkish: "#B42AA1"
       },
       fontFamily: {
         holo: "Nan Holo",
@@ -90,6 +97,7 @@ module.exports = {
         thun: "A Love of Thunder",
         fut: "Futurist",
         aud: "Audimat",
+        jacklane: "Jack Lane",
       },
       keyframes: {
         unblur: {

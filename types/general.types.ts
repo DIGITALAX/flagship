@@ -2,9 +2,20 @@ export type Gallery = {
   name: string;
   image: string;
   blurred: string;
-  link: string;
+  link?: string;
   width: number;
   height: number;
+  price?: number;
+  amount?: number;
+  collection?: string;
+  description?: string;
+  graph?: string;
+  edition?: string;
+  contract?: string;
+  type?: string;
+  realm?: string;
+  realmLink?: string;
+  trueImage?: string;
 };
 
 export type useGalleryResult = {
@@ -34,7 +45,7 @@ export type Blender = {
 
 export type BlenderProps = {
   queryWindowSize300: boolean;
-}
+};
 
 export type BoxProps = {
   currentImages: Blender[];
@@ -167,9 +178,10 @@ export type useFormResults = {
 export type HomeProps = {
   rewind: any;
   changeColor: () => void;
-  heartColor: string
+  heartColor: string;
   queryWindowSize2XL: boolean;
   queryWindowSize300: boolean;
+  shop: any;
 };
 
 export type RefactorElementProps = {
@@ -183,5 +195,64 @@ export type useTvResults = {
 
 export type useStickyStateResults = {
   setItem: (value: string) => void;
-  value: string | null
+  value: string | null;
+};
+
+export type MetadataProps = {
+  token: any;
+  connect: any;
+  errorMessage: boolean;
+  collectNFT: () => Promise<void>;
+  isLoading: boolean;
+  collectMarket: () => Promise<void>;
+  isSuccess: boolean;
+  loading: boolean;
+  data: boolean;
+};
+
+export type CollectProps = {
+  token: any;
+  connect: any;
+  errorMessage: boolean;
+  collectNFT: () => Promise<void>;
+  isLoading: boolean;
+  collectMarket: () => Promise<void>;
+  isSuccess: boolean;
+  loading: boolean;
+  data: boolean;
+};
+
+export type useMetadataResults = {
+  collectNFT: () => Promise<void>;
+  collectMarket: () => Promise<void>;
+  errorState: boolean;
+  prepareNFTDataCollection: (
+    address: string,
+    price: number,
+    amount: number
+  ) => void;
+  prepareNFTDataMarket: (
+    address: string,
+    price: number,
+    amount: number
+  ) => void;
+  errorMessage: boolean;
+  setAbiFunction: (e: string) => void;
+  isLoading: boolean;
+  loading: boolean;
+  isSuccess: boolean;
+  isError: boolean;
+  data: boolean;
+};
+
+export type useApproveResults = {
+  prepareApproval: () => void;
+  approveAddress: () => Promise<void>;
+  isLoading: boolean;
+  loading: boolean;
+  isSuccess: boolean;
+};
+
+export type PreOrderProps = {
+  heartColor: string;
 }

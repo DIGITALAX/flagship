@@ -6,27 +6,109 @@ class Document extends NextDocument {
     return (
       <Html>
         <Head>
-        <meta name="og:url" content="https://digitalax.xyz/" />
-          <meta name="og:title" content="DIGITALAX" />
-          <meta name="og:description" content="We write prompts, design styles & build code for protocol-ecosystems where web3 fashion & latent machines draw distances between ideas & reality closer each day." />
           <meta name="og:image" content="https://digitalax.xyz/card.png/" />
-          <meta name="twitter:card" content="summary" />
-          <meta name="og:url" content="https://digitalax.xyz/" />
-          <meta name="og:image" content="https://digitalax.xyz/card.png/" />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@igitalax_" />
-          <meta name="twitter:creator" content="@digitalax_" />
-          <meta
-            name="twitter:image"
-            content="https://digitalax.xyz/card.png/"
-          />
-          <meta name="twitter:url" content="https://digitalax.xyz/" />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="canonical" href="https://digitalax.xyz/" />
           <link
             rel="preconnect"
             href="https://fonts.gstatic.com"
             crossOrigin="true"
+          />
+          <link
+            rel="preload"
+            href="/fonts/jacklane_2.woff"
+            as="font"
+            type="font/woff"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/FiraCode-Regular.ttf"
+            as="font"
+            type="font/ttf"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/FiraCode-Light.ttf"
+            as="font"
+            type="font/ttf"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/FiraCode-Bold.ttf"
+            as="font"
+            type="font/ttf"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/FiraCode-Medium.ttf"
+            as="font"
+            type="font/ttf"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/Letter Magic.ttf"
+            as="font"
+            type="font/ttf"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/Internal Rainbows.otf"
+            as="font"
+            type="font/otf"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/LiberationMono-Regular.ttf"
+            as="font"
+            type="font/ttf"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/LiberationMono-Bold.ttf"
+            as="font"
+            type="font/ttf"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/FHGiselle-Light.ttf"
+            as="font"
+            type="font/ttf"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/A Love of Thunder.ttf"
+            as="font"
+            type="font/ttf"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/Futurist Fixed-width Regular.ttf"
+            as="font"
+            type="font/ttf"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/AUdimat Regular.ttf"
+            as="font"
+            type="font/ttf"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/AUdimat Regular.ttf"
+            as="font"
+            type="font/ttf"
+            crossOrigin="anonymous"
           />
           <style
             dangerouslySetInnerHTML={{
@@ -101,6 +183,12 @@ class Document extends NextDocument {
                   font-family: "Audimat";
                   font-weight: 400;
                   src: url("./fonts/AUdimat Regular.ttf");
+                }
+
+                @font-face {
+                  font-family: "Jack Lane";
+                  font-weight: 400;
+                  src: url("./fonts/jacklane_2.woff");
                 }
             `,
             }}

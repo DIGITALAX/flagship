@@ -2,8 +2,28 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { createContext, useEffect, useRef, useState } from "react";
 import Footer from "../components/layout/Footer";
-import useStickyState from "../components/common/hooks/useStickyState";
 import { useMediaQuery } from "@material-ui/core";
+import "@rainbow-me/rainbowkit/styles.css";
+import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
+import { publicProvider } from "wagmi/providers/public";
+import Header from "../components/layout/Header";
+
+const { chains, provider } = configureChains(
+  [chain.mainnet],
+  [publicProvider()]
+);
+
+const { connectors } = getDefaultWallets({
+  appName: "F3Manifesto",
+  chains,
+});
+
+const wagmiClient = createClient({
+  autoConnect: true,
+  connectors,
+  provider,
+});
 
 export const GlobalProfileContextDefault = {
   expressInterest: "",
@@ -149,27 +169,45 @@ function MyApp({ Component, pageProps }: AppProps) {
   const handleRewind = (): void => {
     rewind.current?.scrollIntoView({ behavior: "smooth" });
   };
+  const shop = useRef<null | HTMLDivElement>(null);
+  const handleShop = (): void => {
+    if (shop.current) {
+      shop.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
-    <GlobalContext.Provider value={{ expressInterest, setExpressInterest }}>
-      <div
-        className={[
-          "min-h-full h-auto min-w-screen w-screen relative selection:bg-skyBlue selection:text-dull cursor-sewingS bg-mainBg",
-          color ? `theme-${color}` : "theme-cream",
-        ]
-          .filter(Boolean)
-          .join(" ")}
-      >
-        <Component
-          {...pageProps}
-          rewind={rewind}
-          changeColor={changeColor}
-          heartColor={heartColor}
-          queryWindowSize2XL={queryWindowSize2XL}
-          queryWindowSize300={queryWindowSize300}
-        />
-        <Footer handleRewind={handleRewind} />
-      </div>
-    </GlobalContext.Provider>
+    <WagmiConfig client={wagmiClient}>
+      <RainbowKitProvider chains={chains}>
+        <GlobalContext.Provider value={{ expressInterest, setExpressInterest }}>
+          <div
+            className={[
+              "min-h-full h-auto min-w-screen w-screen relative selection:bg-skyBlue selection:text-dull cursor-sewingS bg-mainBg",
+              color ? `theme-${color}` : "theme-cream",
+            ]
+              .filter(Boolean)
+              .join(" ")}
+          >
+            <Header
+              rewind={rewind}
+              changeColor={changeColor}
+              heartColor={heartColor}
+              handleShop={handleShop}
+            />
+            <Component
+              {...pageProps}
+              rewind={rewind}
+              changeColor={changeColor}
+              heartColor={heartColor}
+              queryWindowSize2XL={queryWindowSize2XL}
+              queryWindowSize300={queryWindowSize300}
+              shop={shop}
+            />
+            <Footer handleRewind={handleRewind} />
+          </div>
+        </GlobalContext.Provider>
+      </RainbowKitProvider>
+    </WagmiConfig>
   );
 }
 

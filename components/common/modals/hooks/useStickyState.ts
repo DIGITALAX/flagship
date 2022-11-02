@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useStickyStateResults } from "../../../types/general.types";
+import { useStickyStateResults } from "./../../../../types/general.types";
 
 const useStickyState = () => {
   const DEFAULT_VALUE = "cream";

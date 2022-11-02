@@ -13,8 +13,10 @@
     "@emailjs/browser": "^3.7.0",
     "@headlessui/react": "^1.7.3",
     "@material-ui/core": "^4.12.4",
+    "@rainbow-me/rainbowkit": "^0.7.4",
     "@types/graphql": "^14.5.0",
     "critters": "^0.0.16",
+    "ethers": "^5.7.2",
     "framer-motion": "^7.6.1",
     "moment": "^2.29.4",
     "next": "12.3.1",
@@ -25,7 +27,8 @@
     "react-icons": "^4.6.0",
     "react-infinite-scroll-component": "^6.1.0",
     "shuffle-array": "^1.0.1",
-    "tailwind": "^4.0.0"
+    "tailwind": "^4.0.0",
+    "wagmi": "^0.7.9"
   },
   "devDependencies": {
     "@types/node": "18.11.2",

@@ -50,7 +50,11 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                   <div className="absolute bg-black top-0 grid grid-flow-col auto-cols-[auto auto] w-full bg-opacity-70 h-full font-lib text-midWhite invisible group-hover:visible group-active:visible">
                     <Link
                       href={
-                        token.link === "" ? "/express-interest" : token.link
+                        !token.price
+                          ? "/express-interest"
+                          : `/collect/${token.name
+                              .replaceAll(" ", "-")
+                              .toLowerCase()}`
                       }
                     >
                       <a
@@ -103,7 +107,11 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                   <div className="absolute bg-black top-0 grid grid-flow-col auto-cols-[auto auto] w-full bg-opacity-70 h-full font-lib text-midWhite invisible group-hover:visible group-active:visible">
                     <Link
                       href={
-                        token.link === "" ? "/express-interest" : token.link
+                        !token.price
+                          ? "/express-interest"
+                          : `/collect/${token.name
+                              .replaceAll(" ", "-")
+                              .toLowerCase()}`
                       }
                     >
                       <a
@@ -156,7 +164,11 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                   <div className="absolute bg-black top-0 grid grid-flow-col auto-cols-[auto auto] w-full bg-opacity-70 h-full font-lib text-midWhite invisible group-hover:visible group-active:visible">
                     <Link
                       href={
-                        token.link === "" ? "/express-interest" : token.link
+                        !token.price
+                          ? "/express-interest"
+                          : `/collect/${token.name
+                              .replaceAll(" ", "-")
+                              .toLowerCase()}`
                       }
                     >
                       <a
