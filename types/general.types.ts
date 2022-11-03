@@ -1,4 +1,4 @@
-export type Gallery = {
+export interface Gallery {
   name: string;
   image: string;
   blurred: string;
@@ -38,7 +38,7 @@ export type GalleryProps = {
   queryWindowSize2XL: boolean;
 };
 
-export type Blender = {
+export interface Blender {
   image: string;
   blurred: string;
 };
@@ -99,7 +99,7 @@ export type useLibraryResult = {
   handleLastBook: () => void;
 };
 
-export type Library = {
+export interface Library {
   name: string;
   image: string;
   number: string;
