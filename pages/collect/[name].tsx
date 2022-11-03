@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { createContext, useEffect, useRef, useState } from "react";
-import { Gallery } from "../../types/general.types";
+import { Gallery, TokenDetailsProps } from "../../types/general.types";
 import tokens from "./../api/tokens.json";
 import { AiFillBackward } from "react-icons/ai";
 import Metadata from "../../components/collect/Metadata";
@@ -10,6 +10,7 @@ import Approve from "./../../components/common/modals/Approve";
 import useMetadata from "../../components/collect/hooks/useMetadata";
 import { useAccount, useBalance } from "wagmi";
 import Head from "next/head";
+import { NextPage } from "next";
 
 export const CollectContextDefault = {
   showApprovalModal: false,
@@ -49,7 +50,10 @@ export const getStaticProps = async (context: any) => {
   };
 };
 
-const TokenDetails = ({ token }: any): JSX.Element => {
+const TokenDetails: NextPage<TokenDetailsProps> = ({
+  token,
+  heartColor,
+}): JSX.Element => {
   const { address } = useAccount();
   const connect = useRef<null | HTMLDivElement>(null);
   const [showApprovalModal, setShowApprovalModal] = useState(
@@ -116,7 +120,7 @@ const TokenDetails = ({ token }: any): JSX.Element => {
         setApprovedSuccess,
       }}
     >
-      <div className="flex min-h-screen h-fit min-w-screen relative cursor-sewingS selection:bg-lightYellow selection:text-lightYellow bg-gradient-to-b from-lightY via-white to-lightPurple z-0">
+      <div className="flex min-h-screen h-fit min-w-screen relative cursor-sewingS selection:bg-lightYellow selection:text-lightYellow bg-gradient-to-b from-mainBg via-white to-mainBg z-0">
         <Head>
           <title>{token[0].name}</title>
           <meta
@@ -180,9 +184,9 @@ const TokenDetails = ({ token }: any): JSX.Element => {
         <div className="grid grid-flow-row auto-rows-[auto auto] w-full h-full">
           <div className="relative row-start-1 w-full h-fit grid grid-flow-col auto-cols-[auto auto] pb-28 galaxy:pb-0">
             <Link href={"/#shop"} className="relative col-start-1 w-fit h-fit">
-              <div className="text-offBlack font-fira left-7 self-center pt-8 pl-6 place-self-start h-fit w-fit top-7 opacity-80 hover:opacity-20 cursor-sewingHS row-start-1 pb-0 galaxy:pb-28">
+              <div className="text-mainText font-fira left-7 self-center pt-8 pl-6 place-self-start h-fit w-fit top-7 opacity-80 hover:opacity-20 cursor-sewingHS row-start-1 pb-0 galaxy:pb-28">
                 <AiFillBackward
-                  color="#131313"
+                  color={heartColor}
                   size={25}
                   className="float-left mr-2"
                 />{" "}
@@ -190,14 +194,14 @@ const TokenDetails = ({ token }: any): JSX.Element => {
               </div>
             </Link>
             <div
-              className="row-start-2 col-start-1 galaxy:row-start-1 galaxy:col-start-2 w-fit h-fit hover:text-offBlue underline underline-offset-4 cursor-pointer h-fit pt-8 pr-6 z-10 justify-self-start pl-6 galazy:pl-0 galaxy:justify-self-end"
+              className="row-start-2 col-start-1 galaxy:row-start-1 galaxy:col-start-2 w-fit h-fit hover:text-offBlue text-mainText underline underline-offset-4 cursor-pointer h-fit pt-8 pr-6 z-10 justify-self-start pl-6 galazy:pl-0 galaxy:justify-self-end"
               ref={connect}
             >
               <Connect />
             </div>
           </div>
           <div className="relative w-full h-fit row-start-2 border-t-4 border-lightWhite grid grid-flow-col auto-cols-[auto auto]">
-            <div className="relative col-start-1 place-self-start pl-4 sm:pr-14 pr-4 sm:pl-14 pt-8 pb-4 font-jacklane text-4xl sm:text-7xl place-self-start">
+            <div className="relative text-mainText col-start-1 place-self-start pl-4 sm:pr-14 pr-4 sm:pl-14 pt-8 pb-4 font-jacklane text-4xl sm:text-7xl place-self-start">
               {token[0].name.toUpperCase()}
             </div>
           </div>

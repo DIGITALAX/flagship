@@ -255,3 +255,8 @@ export type useApproveResults = {
 export type PreOrderProps = {
   heartColor: string;
 }
+
+export type TokenDetailsProps = {
+  token: any;
+  heartColor: string;
+}
