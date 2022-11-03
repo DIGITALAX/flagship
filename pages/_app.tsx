@@ -196,8 +196,6 @@ function MyApp({ Component, pageProps }: AppProps) {
             />
             <Component
               {...pageProps}
-              rewind={rewind}
-              changeColor={changeColor}
               heartColor={heartColor}
               queryWindowSize2XL={queryWindowSize2XL}
               queryWindowSize300={queryWindowSize300}

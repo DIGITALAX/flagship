@@ -88,7 +88,7 @@ const Display: FunctionComponent<DisplayProps> = ({
         <div className="relative w-full h-fit pt-10 pb-2 flex justify-center cursor-sewingHS hover:opacity-70 active:opacity-70">
           <div
             className="relative grid grid-flow-col auto-cols-[auto auto] w-fit h-fit"
-            onClick={() => {setMore(!more)}}
+            onClick={() => setMore(!more)}
           >
             <div
               className={`col-start-1 relative w-fit h-fit pr-2 ${

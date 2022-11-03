@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Gallery, useGalleryResult } from "../../../../types/general.types";
 import tokens from "./../../../../pages/api/tokens.json";
 
@@ -37,14 +37,14 @@ const useGallery = (): useGalleryResult => {
   }
 
   const paginateBackward = (pageNumber: number): void => {
-    router.push("/", `/#shopping/${pageNumber}`, {
-      shallow: true,
-      scroll: false,
-    });
     if (pageNumber > pageNumbers[0]) {
       setCurrentPage(pageNumber - 1);
       setPageBoundaryBackward(true);
       setPageBoundaryForward(true);
+      router.replace("/", `/#shop/${pageNumber - 1}`, {
+        shallow: true,
+        scroll: false,
+      });
       if (pageNumber - 1 === pageNumbers[0]) {
         setPageBoundaryBackward(false);
       }
@@ -52,14 +52,14 @@ const useGallery = (): useGalleryResult => {
   };
 
   const paginateForward = (pageNumber: number): void => {
-    router.push("/", `/#shopping/${pageNumber}`, {
-      shallow: true,
-      scroll: false,
-    });
     if (pageNumber < totalPages) {
       setCurrentPage(pageNumber + 1);
       setPageBoundaryForward(true);
       setPageBoundaryBackward(true);
+      router.replace("/", `/#shop/${pageNumber + 1}`, {
+        shallow: true,
+        scroll: false,
+      });
       if (pageNumber + 1 === totalPages) {
         setPageBoundaryForward(false);
       }
@@ -69,17 +69,6 @@ const useGallery = (): useGalleryResult => {
   useEffect(() => {
     fetchImages();
   }, []);
-
-  // useMemo(() => {
-  //   if (more && ) {
-  //     router.replace("/", `/#shopping/${pageNumber}`, {
-  //       shallow: true,
-  //       scroll: false,
-  //     });
-  //   } else {
-  //     setCurrentParams(currentParams);
-  //   }
-  // }, [currentParams]);
 
   return {
     currentImages,

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import React, { createContext, useEffect, useRef, useState } from "react";
 import { Gallery, TokenDetailsProps } from "../../types/general.types";
 import tokens from "./../api/tokens.json";
@@ -11,6 +10,7 @@ import useMetadata from "../../components/collect/hooks/useMetadata";
 import { useAccount, useBalance } from "wagmi";
 import Head from "next/head";
 import { NextPage } from "next";
+import { useRouter } from "next/router";
 
 export const CollectContextDefault = {
   showApprovalModal: false,
@@ -109,6 +109,7 @@ const TokenDetails: NextPage<TokenDetailsProps> = ({
     isSuccess,
     data,
   ]);
+  const router = useRouter()
   return (
     <CollectContext.Provider
       value={{
@@ -183,7 +184,7 @@ const TokenDetails: NextPage<TokenDetailsProps> = ({
         )}
         <div className="grid grid-flow-row auto-rows-[auto auto] w-full h-full">
           <div className="relative row-start-1 w-full h-fit grid grid-flow-col auto-cols-[auto auto] pb-28 galaxy:pb-0">
-            <Link href={"/#shop"} className="relative col-start-1 w-fit h-fit">
+            <div onClick={() => router.back()} className="relative col-start-1 w-fit h-fit">
               <div className="text-mainText font-fira left-7 self-center pt-8 pl-6 place-self-start h-fit w-fit top-7 opacity-80 hover:opacity-20 cursor-sewingHS row-start-1 pb-0 galaxy:pb-28">
                 <AiFillBackward
                   color={heartColor}
@@ -192,7 +193,7 @@ const TokenDetails: NextPage<TokenDetailsProps> = ({
                 />{" "}
                 Return
               </div>
-            </Link>
+            </div>
             <div
               className="row-start-2 col-start-1 galaxy:row-start-1 galaxy:col-start-2 w-fit h-fit hover:text-offBlue text-mainText underline underline-offset-4 cursor-pointer h-fit pt-8 pr-6 z-10 justify-self-start pl-6 galazy:pl-0 galaxy:justify-self-end"
               ref={connect}

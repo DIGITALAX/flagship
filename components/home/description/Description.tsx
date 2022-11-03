@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import useGallery from "../display/hooks/useGallery";
 
 const Description: FunctionComponent = (): JSX.Element => {
   return (

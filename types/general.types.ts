@@ -175,9 +175,6 @@ export type useFormResults = {
 };
 
 export type HomeProps = {
-  rewind: any;
-  changeColor: () => void;
-  heartColor: string;
   queryWindowSize2XL: boolean;
   queryWindowSize300: boolean;
   shop: any;

@@ -12,7 +12,6 @@ import Social from "../components/home/social/Social";
 import Static from "../components/home/static/Static";
 import TV from "../components/home/tv/TV";
 import World from "../components/home/world/World";
-import Header from "../components/layout/Header";
 import Title from "./../components/home/title/Title";
 import { useContext, useState } from "react";
 import Description from "../components/home/description/Description";
@@ -23,9 +22,6 @@ import RefactorElement from "../components/common/modals/RefactorElement";
 import CC0 from "../components/home/cc0/CC0";
 
 const Home: NextPage<HomeProps> = ({
-  rewind,
-  changeColor,
-  heartColor,
   queryWindowSize2XL,
   queryWindowSize300,
   shop
