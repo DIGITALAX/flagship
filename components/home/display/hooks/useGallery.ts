@@ -5,6 +5,7 @@ import tokens from "./../../../../pages/api/tokens.json";
 
 const useGallery = (): useGalleryResult => {
   const router = useRouter();
+  const { pageNumber } = router.query;
   const imagesPerPage: number = 18;
   const [images, setImages] = useState<Gallery[]>(
     tokens.slice(0, imagesPerPage)
