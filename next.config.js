@@ -17,7 +17,7 @@ const nextConfig = {
     path: "",
   },
   trailingSlash: true,
-  assetPrefix: isProd ? "https://digitalax.xyz" : "",
+  assetPrefix: isProd ? "https://flagship-7b3aad.spheron.app" : "",
 };
 
 module.exports = nextConfig;
