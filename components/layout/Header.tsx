@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { FunctionComponent, useState } from "react";
 import Marquee from "react-fast-marquee";
 import { HeaderProps } from "../../types/general.types";
@@ -10,6 +11,7 @@ const Header: FunctionComponent<HeaderProps> = ({
   heartColor,
 }): JSX.Element => {
   const [blur, setBlur] = useState<boolean>(true);
+  const router = useRouter();
   return (
     <div
       ref={rewind}
@@ -60,7 +62,11 @@ const Header: FunctionComponent<HeaderProps> = ({
           <div className="relative w-fit h-fit row-start-1 place-self-center md:place-self-end pb-3">
             <div
               className="relative w-screen md:w-40 h-fit bg-white border-t border-b md:border border-1 border-mainText pt-1.5 pb-1.5 text-sm flex overflow-x-hidden whitespace-nowrap cursor-sewingHS hover:bg-mainBg hover:text-mainText active:text-mainText active:bg-mainBg text-offBlack"
-              onClick={() => handleShop()}
+              onClick={
+                router.pathname == "/"
+                  ? () => handleShop()
+                  : () => document.location.href="/#shop"
+              }
             >
               <Marquee direction="right" speed={25} gradient={false}>
                 {" "}

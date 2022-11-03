@@ -9,21 +9,21 @@ const Banner: FunctionComponent = (): JSX.Element => {
           <p className="mr-4 whitespace-nowrap w-fit h-fit">
             Collection of the Week{" "}
             <span className="font-firaM">
-              <span className="text-mevSlash font-fira">//</span> MEV Override{" "}
+              <span className="text-mevSlash font-fira">//</span> West Side Grammar{" "}
               <span className="text-mevSlash font-fira">//</span> 0.32 ETH
             </span>
           </p>
           <p className="mr-4 whitespace-nowrap w-fit h-fit">
             Collection of the Week{" "}
             <span className="font-firaM">
-              <span className="text-mevSlash font-fira">//</span> MEV Override{" "}
+              <span className="text-mevSlash font-fira">//</span> West Side Grammar{" "}
               <span className="text-mevSlash font-fira">//</span> 0.32 ETH
             </span>
           </p>
           <p className="mr-4 whitespace-nowrap w-fit h-fit">
             Collection of the Week{" "}
             <span className="font-firaM">
-              <span className="text-mevSlash font-fira">//</span> MEV Override{" "}
+              <span className="text-mevSlash font-fira">//</span> West Side Grammar{" "}
               <span className="text-mevSlash font-fira">//</span> 0.32 ETH
             </span>
           </p>

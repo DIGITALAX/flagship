@@ -6,9 +6,11 @@ import { GlobalContext } from "./_app";
 import Form from "../components/expressInterest/Form";
 import Head from "next/head";
 import { PreOrderProps } from "../types/general.types";
+import { useRouter } from "next/router";
 
-const PreOrder: NextPage<PreOrderProps> = ({heartColor}): JSX.Element => {
+const PreOrder: NextPage<PreOrderProps> = ({ heartColor }): JSX.Element => {
   const { expressInterest } = useContext(GlobalContext);
+  const router = useRouter();
   return (
     <div className="flex min-h-screen h-fit min-w-screen w-screen relative selection:bg-lightYellow selection:text-lightYellow bg-mainBg">
       <Head>
@@ -19,7 +21,10 @@ const PreOrder: NextPage<PreOrderProps> = ({heartColor}): JSX.Element => {
         <meta name="og:image" content="https://digitalax.xyz/card.png" />
         <meta name="twitter:card" content="summary" />
         <meta name="og:url" content="https://digitalax.xyz/express-interest" />
-        <meta name="og:image" content="https://digitalax.xyz/express-interest" />
+        <meta
+          name="og:image"
+          content="https://digitalax.xyz/express-interest"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@digitalax" />
         <meta name="twitter:creator" content="@digitalax" />
@@ -27,7 +32,10 @@ const PreOrder: NextPage<PreOrderProps> = ({heartColor}): JSX.Element => {
           name="twitter:image"
           content="https://digitalax.xyz/express-interest"
         />
-        <meta name="twitter:url" content="https://digitalax.xyz/express-interest" />
+        <meta
+          name="twitter:url"
+          content="https://digitalax.xyz/express-interest"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="canonical" href="https://digitalax.xyz/express-interest" />
         <link
@@ -38,16 +46,17 @@ const PreOrder: NextPage<PreOrderProps> = ({heartColor}): JSX.Element => {
       </Head>
       <div className="flex flex-col w-full flex-auto h-full min-h-full">
         <div className="relative grid auto-rows-[auto auto] grid-flow-row w-full h-fit gap-3">
-          <Link href={"/"}>
-            <div className="text-mainText font-fira left-7 self-center pt-8 pl-6 place-self-start h-fit w-fit top-7 opacity-80 hover:opacity-20 cursor-sewingHS row-start-1">
-              <AiFillBackward
-                color={heartColor}
-                size={25}
-                className="float-left mr-2"
-              />{" "}
-              Return
-            </div>
-          </Link>
+          <div
+            className="text-mainText font-fira left-7 self-center pt-8 pl-6 place-self-start h-fit w-fit top-7 opacity-80 hover:opacity-20 cursor-sewingHS row-start-1"
+            onClick={() => router.back()}
+          >
+            <AiFillBackward
+              color={heartColor}
+              size={25}
+              className="float-left mr-2"
+            />{" "}
+            Return
+          </div>
           <div className="relative row-start-2 h-fit w-fit justify-self-start sm:justify-self-center pr-4 pl-4 pt-20 sm:pl-20 sm:pr-8">
             <div className="text-mainText font-firaB text-3xl leading-relaxed">
               This work is not yet for sale.
