@@ -11,9 +11,8 @@ const useGallery = (): useGalleryResult => {
   );
   const [loading, setLoading] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [pageBoundaryBackward, setPageBoundaryBackward] =
-    useState<boolean>(false);
-  const [pageBoundaryForward, setPageBoundaryForward] = useState<boolean>(true);
+  const [pageBoundaryBackward, setPageBoundaryBackward] = useState<boolean>();
+  const [pageBoundaryForward, setPageBoundaryForward] = useState<boolean>();
 
   const fetchImages = (): void => {
     setLoading(true);
@@ -88,7 +87,7 @@ const useGallery = (): useGalleryResult => {
     fetchImages();
   }, []);
 
-  useMemo(() => {
+  useEffect(() => {
     if (router.asPath.includes("more=true")) {
       setMore(true);
     } else {
@@ -110,10 +109,9 @@ const useGallery = (): useGalleryResult => {
         setPageBoundaryForward(true);
         setPageBoundaryBackward(false);
       }
-
-      // if (router.asPath.includes("#shop")) {
-      //   // handleShop();
-      // }
+    } else {
+      setPageBoundaryForward(true);
+      setPageBoundaryBackward(false);
     }
   }, [router.asPath]);
 

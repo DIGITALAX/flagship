@@ -23,8 +23,8 @@ export type useGalleryResult = {
   currentPage: number;
   paginateBackward: (e: number) => void;
   paginateForward: (e: number) => void;
-  pageBoundaryForward: boolean;
-  pageBoundaryBackward: boolean;
+  pageBoundaryForward: boolean | undefined;
+  pageBoundaryBackward: boolean | undefined;
   more: boolean;
   setMore: (e: boolean) => void;
 };
