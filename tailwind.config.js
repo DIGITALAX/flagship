@@ -84,7 +84,7 @@ module.exports = {
         consoM: "Conso Medium",
         gaia: "Gaia",
         fira: "Fira Regular",
-        firaL: "Fira Code Light",
+        firaL: "Fira Light",
         firaB: "Fira Bold",
         firaM: "Fira Medium",
         din: "DIN Condensed",

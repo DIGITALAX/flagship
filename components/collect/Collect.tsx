@@ -70,7 +70,7 @@ const Collect: FunctionComponent<CollectProps> = ({
             }
           }}
         >
-          <div className="col-start-1 relative w-fit h-fit text-[3vw] galaxy:text-[2.2vw] sm:text-[1.6vw] md:text-[1.3vw] lg:text-[1vw] xl:text-[0.8vw] font-fira place-self-center text-white text-center">
+          <div className="col-start-1 relative w-fit h-fit text-[3vw] galaxy:text-[2.2vw] sm:text-[1.6vw] md:text-[1.3vw] lg:text-[1vw] xl:text-[0.8vw] font-fira place-self-center text-white text-center hover:cursor-sewingHS">
             CONNECT WALLET{" "}
           </div>
         </div>
