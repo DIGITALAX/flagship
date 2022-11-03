@@ -1,4 +1,3 @@
-const isProd = process.env.NODE_ENV === "production";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -17,7 +16,6 @@ const nextConfig = {
     path: "",
   },
   trailingSlash: true,
-  assetPrefix: isProd ? "https://flagship-7b3aad.spheron.app" : "",
 };
 
 module.exports = nextConfig;
