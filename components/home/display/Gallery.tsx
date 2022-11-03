@@ -58,7 +58,6 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                       }
                     >
                       <a
-                        // target={token.link === "" ? "self" : "_blank"}
                         rel="noreferrer"
                         className="w-fit h-fit relative col-start-1 place-self-end"
                       >
@@ -115,7 +114,6 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                       }
                     >
                       <a
-                        // target={token.link === "" ? "self" : "_blank"}
                         rel="noreferrer"
                         className="w-fit h-fit relative col-start-1 place-self-end"
                       >
@@ -172,7 +170,6 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                       }
                     >
                       <a
-                        // target={token.link === "" ? "self" : "_blank"}
                         rel="noreferrer"
                         className="w-fit h-fit relative col-start-1 place-self-end"
                       >

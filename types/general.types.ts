@@ -2,7 +2,6 @@ export interface Gallery {
   name: string;
   image: string;
   blurred: string;
-  link?: string;
   width: number;
   height: number;
   price?: number;
