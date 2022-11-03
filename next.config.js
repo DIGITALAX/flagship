@@ -1,3 +1,4 @@
+const isProd = process.env.NODE_ENV === "production";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -12,10 +13,11 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    loader: 'akamai',
-    path: '',
+    loader: "akamai",
+    path: "",
   },
   trailingSlash: true,
+  assetPrefix: isProd ? "https://digitalax.xyz" : "",
 };
 
-module.exports = nextConfig
+module.exports = nextConfig;
