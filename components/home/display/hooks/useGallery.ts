@@ -1,11 +1,10 @@
 import { useRouter } from "next/router";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Gallery, useGalleryResult } from "../../../../types/general.types";
 import tokens from "./../../../../pages/api/tokens.json";
 
 const useGallery = (): useGalleryResult => {
   const router = useRouter();
-  const { pageNumber } = router.query;
   const imagesPerPage: number = 18;
   const [images, setImages] = useState<Gallery[]>(
     tokens.slice(0, imagesPerPage)
@@ -42,10 +41,19 @@ const useGallery = (): useGalleryResult => {
       setCurrentPage(pageNumber - 1);
       setPageBoundaryBackward(true);
       setPageBoundaryForward(true);
-      router.replace("/", `/#shop/${pageNumber - 1}`, {
-        shallow: true,
-        scroll: false,
-      });
+      router.replace(
+        "/",
+        router.asPath.includes(`more`)
+          ? router.asPath.replaceAll(
+              router.asPath,
+              `/#shop?pageNumber=${pageNumber - 1}?more=${more}`
+            )
+          : `/#shop?pageNumber=${pageNumber - 1}`,
+        {
+          shallow: true,
+          scroll: false,
+        }
+      );
       if (pageNumber - 1 === pageNumbers[0]) {
         setPageBoundaryBackward(false);
       }
@@ -57,10 +65,19 @@ const useGallery = (): useGalleryResult => {
       setCurrentPage(pageNumber + 1);
       setPageBoundaryForward(true);
       setPageBoundaryBackward(true);
-      router.replace("/", `/#shop/${pageNumber + 1}`, {
-        shallow: true,
-        scroll: false,
-      });
+      router.replace(
+        router.asPath,
+        router.asPath.includes(`more`)
+          ? router.asPath.replaceAll(
+              router.asPath,
+              `/#shop?pageNumber=${pageNumber + 1}?more=${more}`
+            )
+          : `/#shop?pageNumber=${pageNumber + 1}`,
+        {
+          shallow: true,
+          scroll: false,
+        }
+      );
       if (pageNumber + 1 === totalPages) {
         setPageBoundaryForward(false);
       }
@@ -70,6 +87,35 @@ const useGallery = (): useGalleryResult => {
   useEffect(() => {
     fetchImages();
   }, []);
+
+  useMemo(() => {
+    if (router.asPath.includes("more=true")) {
+      setMore(true);
+    } else {
+      setMore(false);
+    }
+    if (router.asPath.includes("pageNumber")) {
+      const pageNumber: number = Number(
+        router.asPath.split("=", 2).pop()?.split("?", 1)
+      );
+      setCurrentPage(pageNumber);
+
+      if (pageNumber < totalPages && pageNumber > pageNumbers[0]) {
+        setPageBoundaryBackward(true);
+        setPageBoundaryForward(true);
+      } else if (pageNumber === totalPages) {
+        setPageBoundaryForward(false);
+        setPageBoundaryBackward(true);
+      } else if (pageNumber === pageNumbers[0]) {
+        setPageBoundaryForward(true);
+        setPageBoundaryBackward(false);
+      }
+
+      // if (router.asPath.includes("#shop")) {
+      //   // handleShop();
+      // }
+    }
+  }, [router.asPath]);
 
   return {
     currentImages,

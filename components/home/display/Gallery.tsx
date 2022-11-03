@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { FunctionComponent, useState } from "react";
 import { Gallery, GalleryProps } from "../../../types/general.types";
 
@@ -11,6 +12,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({
   queryWindowSize2XL,
 }): JSX.Element => {
   const [blur, setBlur] = useState<boolean>(true);
+  const router = useRouter();
   return (
     <div
       className={`overflow-hidden ${
@@ -48,27 +50,26 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                     blurDataURL={token.blurred}
                   />
                   <div className="absolute bg-black top-0 grid grid-flow-col auto-cols-[auto auto] w-full bg-opacity-70 h-full font-lib text-midWhite invisible group-hover:visible group-active:visible">
-                    <Link
-                      href={
+                    <div
+                      onClick={
                         !token.price
-                          ? "/express-interest"
-                          : `/collect/${token.name
-                              .replaceAll(" ", "-")
-                              .toLowerCase()}`
+                          ? () => router.push("/express-interest")
+                          : () =>
+                              router.push(
+                                `/collect/${token.name
+                                  .replaceAll(" ", "-")
+                                  .toLowerCase()}`
+                              )
                       }
+                      className="w-fit h-fit relative col-start-1 place-self-end"
                     >
-                      <a
-                        rel="noreferrer"
-                        className="w-fit h-fit relative col-start-1 place-self-end"
+                      <div
+                        className="relative decoration-1 underline underline-offset-2 whitespace-nowrap mix-blend-screen hover:cursor-sewingHS w-fit h-fit text-[1.2vw] p-6"
+                        onClick={() => setExpressInterest(token.name)}
                       >
-                        <div
-                          className="relative decoration-1 underline underline-offset-2 whitespace-nowrap mix-blend-screen hover:cursor-sewingHS w-fit h-fit text-[1.2vw] p-6"
-                          onClick={() => setExpressInterest(token.name)}
-                        >
-                          Collect NFT
-                        </div>
-                      </a>
-                    </Link>
+                        Collect NFT
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -104,27 +105,26 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                     blurDataURL={token.blurred}
                   />
                   <div className="absolute bg-black top-0 grid grid-flow-col auto-cols-[auto auto] w-full bg-opacity-70 h-full font-lib text-midWhite invisible group-hover:visible group-active:visible">
-                    <Link
-                      href={
+                    <div
+                      className="w-fit h-fit relative col-start-1 place-self-end"
+                      onClick={
                         !token.price
-                          ? "/express-interest"
-                          : `/collect/${token.name
-                              .replaceAll(" ", "-")
-                              .toLowerCase()}`
+                          ? () => router.push("/express-interest")
+                          : () =>
+                              router.push(
+                                `/collect/${token.name
+                                  .replaceAll(" ", "-")
+                                  .toLowerCase()}`
+                              )
                       }
                     >
-                      <a
-                        rel="noreferrer"
-                        className="w-fit h-fit relative col-start-1 place-self-end"
+                      <div
+                        className="relative decoration-1 underline underline-offset-2 whitespace-nowrap mix-blend-screen hover:cursor-sewingHS w-fit h-fit text-[1.2vw] p-6"
+                        onClick={() => setExpressInterest(token.name)}
                       >
-                        <div
-                          className="relative decoration-1 underline underline-offset-2 whitespace-nowrap mix-blend-screen hover:cursor-sewingHS w-fit h-fit text-[1.2vw] p-6"
-                          onClick={() => setExpressInterest(token.name)}
-                        >
-                          Collect NFT
-                        </div>
-                      </a>
-                    </Link>
+                        Collect NFT
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -160,27 +160,26 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                     blurDataURL={token.blurred}
                   />
                   <div className="absolute bg-black top-0 grid grid-flow-col auto-cols-[auto auto] w-full bg-opacity-70 h-full font-lib text-midWhite invisible group-hover:visible group-active:visible">
-                    <Link
-                      href={
+                    <div
+                      className="w-fit h-fit relative col-start-1 place-self-end"
+                      onClick={
                         !token.price
-                          ? "/express-interest"
-                          : `/collect/${token.name
-                              .replaceAll(" ", "-")
-                              .toLowerCase()}`
+                          ? () => router.push("/express-interest")
+                          : () =>
+                              router.push(
+                                `/collect/${token.name
+                                  .replaceAll(" ", "-")
+                                  .toLowerCase()}`
+                              )
                       }
                     >
-                      <a
-                        rel="noreferrer"
-                        className="w-fit h-fit relative col-start-1 place-self-end"
+                      <div
+                        className="relative decoration-1 underline underline-offset-2 whitespace-nowrap mix-blend-screen hover:cursor-sewingHS w-fit h-fit text-[1.2vw] p-6"
+                        onClick={() => setExpressInterest(token.name)}
                       >
-                        <div
-                          className="relative decoration-1 underline underline-offset-2 whitespace-nowrap mix-blend-screen hover:cursor-sewingHS w-fit h-fit text-[1.2vw] p-6"
-                          onClick={() => setExpressInterest(token.name)}
-                        >
-                          Collect NFT
-                        </div>
-                      </a>
-                    </Link>
+                        Collect NFT
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

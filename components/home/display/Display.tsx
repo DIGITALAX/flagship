@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { FunctionComponent, useState } from "react";
 import { DisplayProps } from "../../../types/general.types";
 import Gallery from "./Gallery";
@@ -20,6 +21,7 @@ const Display: FunctionComponent<DisplayProps> = ({
     setMore,
     more,
   } = useGallery();
+  const router = useRouter();
   const [blur, setBlur] = useState<boolean>(true);
   return (
     <div className="relative flex bg-offBlack w-full min-w-full h-fit min-h-fit">
@@ -88,7 +90,24 @@ const Display: FunctionComponent<DisplayProps> = ({
         <div className="relative w-full h-fit pt-10 pb-2 flex justify-center cursor-sewingHS hover:opacity-70 active:opacity-70">
           <div
             className="relative grid grid-flow-col auto-cols-[auto auto] w-fit h-fit"
-            onClick={() => setMore(!more)}
+            onClick={() => {
+              setMore(!more);
+              router.replace(
+                router.asPath,
+                router.asPath.includes(`more`)
+                  ? router.asPath.replaceAll(`?more=${more}`, `?more=${!more}`)
+                  : router.asPath.includes(`shop`)
+                  ? router.asPath + `?more=${!more}`
+                  : router.asPath.replaceAll(
+                      router.asPath,
+                      `/#shop?more=${!more}`
+                    ),
+                {
+                  shallow: true,
+                  scroll: false,
+                }
+              );
+            }}
           >
             <div
               className={`col-start-1 relative w-fit h-fit pr-2 ${
