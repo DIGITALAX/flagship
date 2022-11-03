@@ -13,11 +13,4 @@ const nextConfig = {
   },
 };
 
-module.exports = {
-  nextConfig,
-  images: {
-    loader: 'akamai',
-    path: '',
-  },
-  trailingSlash: true,
-}
+module.exports = nextConfig
