@@ -68,7 +68,25 @@ const Footer: FunctionComponent<FooterProps> = ({
             <div id="foot3" className="relative row-start-3 w-full h-1"></div>
           </div>
         </div>
-        <div className="relative row-start-3 w-full h-full text-midWhite pt-10">
+        <div className="relative row-start-3 w-full h-full pt-4 pb-10 text-midWhite font-fut text-[2vw] galaxy:text-[1.4vw] sm:text-[1.2vw] md:text-[1vw] lg:text-[0.85vw] xl:text-[0.7vw] grid grid-flow-row auto-rows-[auto auto] pl-3 pr-3 sm:pl-0 sm:pr-10 text-center gap-3">
+          <div className="relative row-start-1 w-fit h-fit place-self-center  ">
+            Visual media used by this site is mirrored using IPFS{" "}
+            <Link href={"https://flagship-7b3aad.spheron.app/"}>
+              <a
+                target={"_blank"}
+                rel="noreferrer"
+                className="underline decoration-midWhite decoration-1 underline-offset-4 cursor-sewingHS hover:text-skyBlue"
+              >
+                here.
+              </a>
+            </Link>
+          </div>
+          <div className="relative row-start-2 w-fit h-fit place-self-center pt-2">
+            <sup>*</sup>Some US based ISPs may block these links, we’re looking
+            into why.
+          </div>
+        </div>
+        <div className="relative row-start-4 w-full h-full text-midWhite pt-10">
           <div className="relative grid auto-cols-[auto auto] grid-flow-col h-full w-full">
             <div className="col-start-1 h-full w-full relative pt-6">
               <div className="relative w-fit h-fit grid grid-flow-row auto-rows-[auto auto]">
