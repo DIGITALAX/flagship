@@ -41,7 +41,7 @@ const useGallery = (): useGalleryResult => {
       setPageBoundaryBackward(true);
       setPageBoundaryForward(true);
       router.replace(
-        "/",
+        router.asPath,
         router.asPath.includes(`more`)
           ? router.asPath.replaceAll(
               router.asPath,
