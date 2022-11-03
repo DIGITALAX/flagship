@@ -23,7 +23,8 @@ export const CollectContextDefault = {
 export const CollectContext = createContext(CollectContextDefault);
 
 export const getStaticPaths = async () => {
-  const paths = tokens.map((token: Gallery) => {
+  const response = tokens.filter((token: Gallery) => token.realm);
+  const paths = response.map((token: Gallery) => {
     return {
       params: {
         name: token.name.replaceAll(" ", "-").toLowerCase(),
@@ -38,12 +39,13 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context: any) => {
   const name: string = context.params.name;
-  const response = tokens.filter(
+  const response = tokens.filter((token: Gallery) => token.realm);
+  const renamedTokens = response.filter(
     (token: Gallery) =>
       token.name.replaceAll(" ", "-").toLowerCase() === name.toLowerCase()
   );
   return {
-    props: { token: response },
+    props: { token: renamedTokens },
   };
 };
 
@@ -177,10 +179,7 @@ const TokenDetails = ({ token }: any): JSX.Element => {
         )}
         <div className="grid grid-flow-row auto-rows-[auto auto] w-full h-full">
           <div className="relative row-start-1 w-full h-fit grid grid-flow-col auto-cols-[auto auto] pb-28 galaxy:pb-0">
-            <Link
-              href={"/#shop"}
-              className="relative col-start-1 w-fit h-fit"
-            >
+            <Link href={"/#shop"} className="relative col-start-1 w-fit h-fit">
               <div className="text-offBlack font-fira left-7 self-center pt-8 pl-6 place-self-start h-fit w-fit top-7 opacity-80 hover:opacity-20 cursor-sewingHS row-start-1 pb-0 galaxy:pb-28">
                 <AiFillBackward
                   color="#131313"
