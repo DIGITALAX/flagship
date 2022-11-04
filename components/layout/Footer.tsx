@@ -71,7 +71,7 @@ const Footer: FunctionComponent<FooterProps> = ({
         <div className="relative row-start-3 w-full h-full pt-4 pb-10 text-midWhite font-fut text-[2vw] galaxy:text-[1.4vw] sm:text-[1.2vw] md:text-[1vw] lg:text-[0.85vw] xl:text-[0.7vw] grid grid-flow-row auto-rows-[auto auto] pl-3 pr-3 sm:pl-0 sm:pr-10 text-center gap-3">
           <div className="relative row-start-1 w-fit h-fit place-self-center  ">
             Visual media used by this site is mirrored using IPFS{" "}
-            <Link href={"https://flagship-7b3aad.spheron.app/"}>
+            <Link href={"https://ipfs.digitalax.xyz/"}>
               <a
                 target={"_blank"}
                 rel="noreferrer"
