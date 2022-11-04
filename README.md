@@ -2,4 +2,4 @@ We write prompts, design styles & build code for protocol-ecosystems where web3 
 
 Centralised Hosting: https://www.digitalax.xyz/
 
-Decentralised Hosting: https://flagship-7b3aad.spheron.app/
+Decentralised Hosting: https://ipfs.digitalax.xyz/
