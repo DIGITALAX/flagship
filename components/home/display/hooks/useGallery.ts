@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { Gallery, useGalleryResult } from "../../../../types/general.types";
 import tokens from "./../../../../pages/api/tokens.json";
 
@@ -34,12 +34,10 @@ const useGallery = (): useGalleryResult => {
   for (let i: number = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
   }
+  
 
   const paginateBackward = (pageNumber: number): void => {
     if (pageNumber > pageNumbers[0]) {
-      setCurrentPage(pageNumber - 1);
-      setPageBoundaryBackward(true);
-      setPageBoundaryForward(true);
       router.replace(
         router.asPath,
         router.asPath.includes(`more`)
@@ -53,17 +51,11 @@ const useGallery = (): useGalleryResult => {
           scroll: false,
         }
       );
-      if (pageNumber - 1 === pageNumbers[0]) {
-        setPageBoundaryBackward(false);
-      }
     }
   };
 
   const paginateForward = (pageNumber: number): void => {
     if (pageNumber < totalPages) {
-      setCurrentPage(pageNumber + 1);
-      setPageBoundaryForward(true);
-      setPageBoundaryBackward(true);
       router.replace(
         router.asPath,
         router.asPath.includes(`more`)
@@ -77,9 +69,6 @@ const useGallery = (): useGalleryResult => {
           scroll: false,
         }
       );
-      if (pageNumber + 1 === totalPages) {
-        setPageBoundaryForward(false);
-      }
     }
   };
 
