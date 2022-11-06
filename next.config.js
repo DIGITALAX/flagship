@@ -13,7 +13,7 @@ const nextConfig = {
   },
   images: {
     loader: "akamai",
-    path: "",
+    path: "https://digitalax.xyz",
   },
   trailingSlash: true,
 };
