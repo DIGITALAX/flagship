@@ -15,7 +15,7 @@ const { chains, provider } = configureChains(
 );
 
 const { connectors } = getDefaultWallets({
-  appName: "F3Manifesto",
+  appName: "DIGITALAX",
   chains,
 });
 
