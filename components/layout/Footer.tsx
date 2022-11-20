@@ -47,7 +47,7 @@ const Footer: FunctionComponent<FooterProps> = ({
                 </div>
               </div>
             </div>
-            <div className="md:col-start-2 relative h-fit w-full md:w-72 lg:w-[20vw] text-xs md:text-[1vw] text-midWhite place-self-end font-lib text-left sm:text-right leading-8 col-start-1 row-start-2 md:row-start-1 pr-10 pl-6">
+            <div className="md:col-start-2 relative h-fit w-full md:w-72 lg:w-[20vw] text-xs md:text-[1vw] xl:text-[0.8vw] text-midWhite place-self-end font-lib text-left sm:text-right leading-8 col-start-1 row-start-2 md:row-start-1 pr-10 pl-6">
               From mini-maps and mesh segmentation, to synth machines and
               material use, the web3 fashion ecosystem supplies more than a few
               good looks.
