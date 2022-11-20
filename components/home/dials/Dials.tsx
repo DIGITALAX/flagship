@@ -5,7 +5,7 @@ import TextSmall from "./TextSmall";
 
 const Dials: FunctionComponent = (): JSX.Element => {
   return (
-    <div className="relative w-full h-fit grid grid-flow-row auto-rows-[auto auto] pt-8 pb-8">
+    <div className="relative w-full h-fit grid grid-flow-row auto-rows-auto pt-8 pb-8">
       <div className="relative w-full h-fit row-start-1 place-self-center lg:pl-28 lg:pr-28 md:pr-20 md:pl-20 md:flex hidden 2xl:place-content-center">
         <Text />
       </div>

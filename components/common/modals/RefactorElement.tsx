@@ -8,7 +8,7 @@ const RefactorElement: FunctionComponent<RefactorElementProps> = ({
   return (
     <div className="fixed inset-0 bg-offBlack bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-10">
       <div className="relative bg-offBlack p-4 rounded w-96 h-96 z-30">
-        <div className="relative w-full h-full grid grid-flow-row auto-rows-[auto auto]">
+        <div className="relative w-full h-full grid grid-flow-row auto-rows-auto">
           <div className="relative w-fit h-fit row-start-1 place-self-center">
             <RiEyeCloseFill
               color="#FAF4E8"

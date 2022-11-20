@@ -55,9 +55,9 @@ const Feed: FunctionComponent<FeedProps> = ({
             key={index}
             className={`relative w-full h-fit p-2 md:p-[1vw] md:pl-0 md:pr-0 row-start-${index}`}
           >
-            <div className="relative grid grid-flow-row auto-rows-[auto auto] w-full h-full  rounded-xl drop-shadow-xl bg-white pb-4 pt-4 border-2 border-lightB">
+            <div className="relative grid grid-flow-row auto-rows-auto w-full h-full  rounded-xl drop-shadow-xl bg-white pb-4 pt-4 border-2 border-lightB">
               <div className="relative w-fit xl:w-full h-full row-start-1 pt-4 place-self-center sm:place-self-start half:place-self-center xl:place-self-start half:pr-2 half:pl-2 sm:pr-11 sm:pl-11 xl:pr-11 xl:pl-11 ">
-                <div className="relative grid grid-flow-col auto-cols-[auto auto] w-fit h-full">
+                <div className="relative grid grid-flow-col auto-cols-auto w-fit h-full">
                   <a
                     href={`https://lenster.xyz/u/${publication.profile.handle}`}
                     target="_blank"
@@ -135,9 +135,9 @@ const Feed: FunctionComponent<FeedProps> = ({
                     : "4"
                 }`}
               >
-                <div className="relative grid grid-flow-col auto-cols-[auto auto] w-full h-fit">
+                <div className="relative grid grid-flow-col auto-cols-auto w-full h-fit">
                   <div className="relative w-fit h-fit col-start-1 p-2">
-                    <div className="relative w-full h-fit grid grid-flow-col auto-cols-[auto auto]">
+                    <div className="relative w-full h-fit grid grid-flow-col auto-cols-auto">
                       <div className="relative w-fit h-fit col-start-1 pr-1">
                         <HiCollection
                           className="relative align-middle"
@@ -150,7 +150,7 @@ const Feed: FunctionComponent<FeedProps> = ({
                     </div>
                   </div>
                   <div className="relative w-fit h-fit col-start-2 p-2">
-                    <div className="relative w-full h-fit grid grid-flow-col auto-cols-[auto auto]">
+                    <div className="relative w-full h-fit grid grid-flow-col auto-cols-auto">
                       <div className="relative w-fit h-fit col-start-1 pr-1">
                         <FaComments
                           className="relative align-middle"
@@ -163,7 +163,7 @@ const Feed: FunctionComponent<FeedProps> = ({
                     </div>
                   </div>
                   <div className="relative w-fit h-fit col-start-3 p-2">
-                    <div className="relative w-full h-fit grid grid-flow-col auto-cols-[auto auto]">
+                    <div className="relative w-full h-fit grid grid-flow-col auto-cols-auto">
                       <div className="relative w-fit h-fit col-start-1 pr-1">
                         <FaRetweet
                           className="relative align-middle"

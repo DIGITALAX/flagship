@@ -4,7 +4,7 @@ import Header from "../components/layout/Header";
 
 const Custom404: NextPage = (): JSX.Element => {
   return (
-    <div className="relative min-h-screen min-w-screen h-screen w-screen grid grid-flow-col auto-cols-[auto auto] cursor-sewingS">
+    <div className="relative min-h-screen min-w-screen h-screen w-screen grid grid-flow-col auto-cols-auto cursor-sewingS">
       <div className="relative w-fit h-fit place-self-center text-mainText font-fira p-6 text-center">
         There's been a glitch in the fabric. Find your way back{" "}
         <Link href="/">

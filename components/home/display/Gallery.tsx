@@ -21,7 +21,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({
       } w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center relative content-evenly gap-5 items-center inline-flex 2xl:place-content-center`}
     >
       <div className="relative w-full h-full place-items-center">
-        <div className="grid grid-flow-row auto-rows-[auto auto] w-full h-fit relative gap-4">
+        <div className="grid grid-flow-row auto-rows-auto w-full h-fit relative gap-4">
           {currentImages.slice(0, 6).map((token: Gallery, index: number) => {
             return (
               <div
@@ -48,7 +48,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                     onLoadingComplete={() => setBlur(false)}
                     blurDataURL={token.blurred}
                   />
-                  <div className="absolute bg-black top-0 grid grid-flow-col auto-cols-[auto auto] w-full bg-opacity-70 h-full font-lib text-midWhite invisible group-hover:visible group-active:visible">
+                  <div className="absolute bg-black top-0 grid grid-flow-col auto-cols-auto w-full bg-opacity-70 h-full font-lib text-midWhite invisible group-hover:visible group-active:visible">
                     <div
                       onClick={
                         !token.price
@@ -77,7 +77,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({
         </div>
       </div>
       <div className="relative w-full h-full place-items-center">
-        <div className="grid grid-flow-row auto-rows-[auto auto] w-full h-fit relative gap-4">
+        <div className="grid grid-flow-row auto-rows-auto w-full h-fit relative gap-4">
           {currentImages.slice(6, 12).map((token: Gallery, index: number) => {
             return (
               <div
@@ -103,7 +103,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                     onLoadingComplete={() => setBlur(false)}
                     blurDataURL={token.blurred}
                   />
-                  <div className="absolute bg-black top-0 grid grid-flow-col auto-cols-[auto auto] w-full bg-opacity-70 h-full font-lib text-midWhite invisible group-hover:visible group-active:visible">
+                  <div className="absolute bg-black top-0 grid grid-flow-col auto-cols-auto w-full bg-opacity-70 h-full font-lib text-midWhite invisible group-hover:visible group-active:visible">
                     <div
                       className="w-fit h-fit relative col-start-1 place-self-end"
                       onClick={
@@ -132,7 +132,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({
         </div>
       </div>
       <div className="relative w-full h-full">
-        <div className="grid grid-flow-row auto-rows-[auto auto] w-full h-fit relative gap-4">
+        <div className="grid grid-flow-row auto-rows-auto w-full h-fit relative gap-4">
           {currentImages.slice(12, 18).map((token: Gallery, index: number) => {
             return (
               <div
@@ -158,7 +158,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({
                     onLoadingComplete={() => setBlur(false)}
                     blurDataURL={token.blurred}
                   />
-                  <div className="absolute bg-black top-0 grid grid-flow-col auto-cols-[auto auto] w-full bg-opacity-70 h-full font-lib text-midWhite invisible group-hover:visible group-active:visible">
+                  <div className="absolute bg-black top-0 grid grid-flow-col auto-cols-auto w-full bg-opacity-70 h-full font-lib text-midWhite invisible group-hover:visible group-active:visible">
                     <div
                       className="w-fit h-fit relative col-start-1 place-self-end"
                       onClick={

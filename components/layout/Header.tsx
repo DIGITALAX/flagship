@@ -15,10 +15,10 @@ const Header: FunctionComponent<HeaderProps> = ({
   return (
     <div
       ref={rewind}
-      className="relative grid grid-flow-col auto-cols-[auto auto] w-full gap-10 md:gap-1 md:justify-between md:content-between pt-6 md:pt-10 min-h-96 md:h-80 justify-center md:min-h-80 md:pl-8 md:pr-8 pb-4 overflow-x-hidden text-mainText"
+      className="relative grid grid-flow-col auto-cols-auto w-full gap-10 md:gap-1 md:justify-between md:content-between pt-6 md:pt-10 min-h-96 md:h-80 justify-center md:min-h-80 md:pl-8 md:pr-8 pb-4 overflow-x-hidden text-mainText"
     >
       <div className="relative col-start-1 row-start-1 md:w-fit min-h-full h-full">
-        <div className="relative grid-flow-row auto-rows-[auto auto] md:w-fit h-full min-h-full font-fira text-xs grid md:place-self-start place-self-center text-center md:text-left md:pr-20 lg:pr-11">
+        <div className="relative grid-flow-row auto-rows-auto md:w-fit h-full min-h-full font-fira text-xs grid md:place-self-start place-self-center text-center md:text-left md:pr-20 lg:pr-11">
           <div className="relative h-fit md:w-fit row-start-1">IN S ERT</div>
           <div className="relative h-fit md:w-fit row-start-2">
             <p className="pb-4">T O K EN TO R UN </p>
@@ -33,7 +33,7 @@ const Header: FunctionComponent<HeaderProps> = ({
         </div>
       </div>
       <div className="relative col-start-1 row-start-2 md:col-start-2 w-full md:row-start-1 text-center min-h-full h-full justify-self-center">
-        <div className="grid grid-row-flow auto-rows-[auto auto] relative md:w-fit h-fit justify-center w-full">
+        <div className="grid grid-row-flow auto-rows-auto relative md:w-fit h-fit justify-center w-full">
           <div className="relative w-10 h-16 row-start-1 place-self-center pb-2">
             <div
               className={`border border-2 border-mainText w-full h-full min-h-full relative flex ${
@@ -58,7 +58,7 @@ const Header: FunctionComponent<HeaderProps> = ({
         </div>
       </div>
       <div className="relative col-start-1 md:col-start-3 row-start-3 md:row-start-1 w-full md:w-fit min-w-full min-h-full h-full">
-        <div className="grid grid-row-flow auto-rows-[auto auto] relative w-full h-full gap-4">
+        <div className="grid grid-row-flow auto-rows-auto relative w-full h-full gap-4">
           <div className="relative w-fit h-fit row-start-1 place-self-center md:place-self-end pb-3">
             <div
               className="relative w-screen md:w-40 h-fit bg-white border-t border-b md:border border-1 border-mainText pt-1.5 pb-1.5 text-sm flex overflow-x-hidden whitespace-nowrap cursor-sewingHS hover:bg-mainBg hover:text-mainText active:text-mainText active:bg-mainBg text-offBlack"
@@ -123,7 +123,7 @@ const Header: FunctionComponent<HeaderProps> = ({
             </div>
           </div>
           <div className="relative w-full h-fit row-start-3 place-self-start pr-5">
-            <div className="relative w-fit h-fit grid grid-flow-col auto-cols-[auto auto] gap-2 pt-4">
+            <div className="relative w-fit h-fit grid grid-flow-col auto-cols-auto gap-2 pt-4">
               <div
                 className={`relative w-fit h-full col-start-1 place-self-end pt-2 hover:-rotate-12 ${
                   blur && "blur-sm animate-unblur"

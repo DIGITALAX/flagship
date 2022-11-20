@@ -13,7 +13,7 @@ const GridSmall: FunctionComponent<GridSmallProps> = ({
   queryWindowSize300,
 }): JSX.Element => {
   return (
-    <div className="bg-offBlack w-full h-fit relative grid grid-flow-row auto-rows-[auto auto] pb-4 pt-4">
+    <div className="bg-offBlack w-full h-fit relative grid grid-flow-row auto-rows-auto pb-4 pt-4">
       <div className="row-start-1 col-start-1 relative w-full sm:w-full h-fit border-offBlack border-8 border-r-4 border-b-4 text-foot text-[7.5vw] sm:text-[9.6vw] pb-36 font-thun">
         <Image layout="fill" objectFit="cover" src={"/images/tele.png"} />
         <div className="relative grid grid-flow-col w-[60vw] h-full pb-10 pr-2">
@@ -53,13 +53,13 @@ const GridSmall: FunctionComponent<GridSmallProps> = ({
         <br /> HAVE TO SAY, WHEN WE HAVE WEB3?
       </div>
       <div className="row-start-5 col-start-1 relative w-full h-14 border-offBlack border-2">
-        <div className="grid-flow-col grid auto-cols-[auto auto] relative w-full h-full">
+        <div className="grid-flow-col grid auto-cols-auto relative w-full h-full">
           <div
             id="static2"
             className="relative col-start-1 w-full h-full bg-offBlack saturate-0"
           ></div>
           <div className="absolute col-start-2 w-16 h-full p-2 border-offBlack self-end place-self-end m-0 bg-midWhite border-r-2 border-4 border-t-0 border-b-0">
-            <div className="relative w-full h-full grid grid-flow-row auto-rows-[auto auto]">
+            <div className="relative w-full h-full grid grid-flow-row auto-rows-auto">
               <div className="relative w-fit h-full hover:rotate-12 row-start-1 place-self-center cursor-sewingHS">
                 <Image
                   width={30}
@@ -73,7 +73,7 @@ const GridSmall: FunctionComponent<GridSmallProps> = ({
         </div>
       </div>
       <div className="row-start-6 col-start-1 relative w-full h-fit bg-offWhite border-offBlack">
-        <div className="relative w-full h-full grid grid-flow-row auto-rows-[auto auto] content-center">
+        <div className="relative w-full h-full grid grid-flow-row auto-rows-auto content-center">
           {queryWindowSize300 ? (
             <Feed280
               publicationsFeed={publicationsFeed}

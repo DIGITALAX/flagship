@@ -11,7 +11,7 @@ const Grid: FunctionComponent<GridProps> = ({
   queryWindowSizeXL,
 }): JSX.Element => {
   return (
-    <div className="bg-offBlack w-full h-fit relative grid grid-flow-row auto-rows-[auto auto] pb-4 pt-4">
+    <div className="bg-offBlack w-full h-fit relative grid grid-flow-row auto-rows-auto pb-4 pt-4">
       <div className="row-start-1 col-start-1 relative w-fit h-full border-offBlack border-8 border-r-4 border-b-4 text-foot text-[4.6vw] lg:text-[5.6vw] xl:text-[4.6vw] font-thun">
         <Image layout="fill" objectFit="cover" src={"/images/tele.png"} />
         <div className="relative grid grid-flow-col w-full h-full pb-56 md:pr-6 pr-2 lg:pr-10 xl:pr-40">
@@ -53,13 +53,13 @@ const Grid: FunctionComponent<GridProps> = ({
         <br /> HAVE TO SAY, WHEN WE HAVE WEB3?
       </div>
       <div className="row-start-2 col-start-2 relative w-full h-full border-offBlack border-t-4 border-l-4 border-r-4 border-b-0">
-        <div className="grid-flow-row grid auto-rows-[auto auto] relative w-full h-full">
+        <div className="grid-flow-row grid auto-rows-auto relative w-full h-full">
           <div
             id="static2"
             className="relative row-start-1 w-6 md:w-16 h-full bg-offBlack saturate-0 border-offBlack border-t-4 border-l-4 border-r-4 border-b-4"
           ></div>
           <div className="absolute row-start-2 w-full h-fit p-2 border-t-8 border-offBlack self-end place-self-end m-0 bg-midWhite border-4 border-b-0">
-            <div className="relative w-full h-fit grid grid-flow-row auto-rows-[auto auto]">
+            <div className="relative w-full h-fit grid grid-flow-row auto-rows-auto">
               <div className="relative w-fit h-fit hover:rotate-12 row-start-1 place-self-center cursor-sewingHS">
                 <Image
                   width={40}
@@ -73,7 +73,7 @@ const Grid: FunctionComponent<GridProps> = ({
         </div>
       </div>
       <div className="row-start-2 col-start-3 relative w-full h-fit lg:h-full bg-offWhite border-offBlack lg:border-8 lg:border-l-4 lg:border-b-0">
-        <div className="relative w-full h-full grid grid-flow-row auto-rows-[auto auto] content-center">
+        <div className="relative w-full h-full grid grid-flow-row auto-rows-auto content-center">
           <Feed
             publicationsFeed={publicationsFeed}
             getMoreFeed={getMoreFeed}

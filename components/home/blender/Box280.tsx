@@ -18,17 +18,17 @@ const Box280: FunctionComponent<BoxProps> = ({
   return (
     <div className="w-full h-full border-b-8 border-t border-offBlack rounded-xl relative">
       <div className="bg-grayMid w-full rounded-xl border-offBlack h-full relative">
-        <div className="grid-flow-row grid auto-rows-[auto auto] w-full h-fit relative">
+        <div className="grid-flow-row grid auto-rows-auto w-full h-fit relative">
           <div className="relative row-start-1 border-r-0 border-l-0 md:border-l-2 md:border-r-2 border-b-2 md:border-2 rounded-none rounded-t-md border-offBlack w-full h-fit font-libB text-xs text-center text-offBlack pt-3 pb-1 pl-2">
             Research & Development Dept.
           </div>
           <div className="relative row-start-2 col-start-1 w-full h-full">
-            <div className="grid-flow-col grid auto-cols-[auto auto] w-full h-full relative md:border-r-2 md:border-l-2 border-offBlack">
+            <div className="grid-flow-col grid auto-cols-auto w-full h-full relative md:border-r-2 md:border-l-2 border-offBlack">
               <div className="relative row-start-1 col-start-1 w-full h-full border-r-0 border-offBlack border-t-0 row-start-1 flex">
                 <Directory280 />
               </div>
               <div className="relative col-start-1 row-start-2 lg:col-start-2 lg:row-start-1 w-full h-fit">
-                <div className="relative grid grid-flow-row auto-rows-[auto auto] w-full h-fit">
+                <div className="relative grid grid-flow-row auto-rows-auto w-full h-fit">
                   <div className="relative row-start-1 w-full h-fit">
                     <Gallery280 currentImages={currentImages} />
                   </div>

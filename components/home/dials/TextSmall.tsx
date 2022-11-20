@@ -3,10 +3,10 @@ import { FunctionComponent } from "react";
 
 const TextSmall: FunctionComponent = (): JSX.Element => {
   return (
-    <div className="relative max-w-screen w-fit pb-20 h-full grid grid-flow-col auto-col-[auto auto] text-mainText">
+    <div className="relative max-w-screen w-fit pb-20 h-full grid grid-flow-col auto-col-auto text-mainText">
       <div className="relative w-full h-fit row-start-1">
-        <div className="relative w-screen h-full grid grid-flow-col auto-col-[auto auto] pb-4">
-          <div className="relative h-10 w-6 grid grid-flow-col auto-cols-[auto auto] col-start-1 place-self-center">
+        <div className="relative w-screen h-full grid grid-flow-col auto-col-auto pb-4">
+          <div className="relative h-10 w-6 grid grid-flow-col auto-cols-auto col-start-1 place-self-center">
             <div className="relative col-start-1 w-full h-full border-t-2 border-b-2 border-r border-mainText"></div>
             <div className="relative col-start-2 w-full h-full border-t-2 border-b-2 border-l border-mainText"></div>
           </div>
@@ -16,7 +16,7 @@ const TextSmall: FunctionComponent = (): JSX.Element => {
           <div className="relative w-fit place-self-center h-fit col-start-3 font-libB text-xs whitespace-nowrap pr-1 pl-0 sm:pl-4 text-center">
             x03.m-4
           </div>
-          <div className="relative h-10 w-6 grid grid-flow-col auto-cols-[auto auto] col-start-4 place-self-center">
+          <div className="relative h-10 w-6 grid grid-flow-col auto-cols-auto col-start-4 place-self-center">
             <div className="relative col-start-1 w-full h-full border-t-2 border-b-2 border-r border-mainText"></div>
             <div className="relative col-start-2 w-full h-full border-t-2 border-b-2 border-l border-mainText"></div>
           </div>

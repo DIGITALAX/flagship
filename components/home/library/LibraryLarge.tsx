@@ -12,7 +12,7 @@ const LibraryLarge: FunctionComponent<LibrarySmallProps> = ({
     useLibrary();
   const [blur, setBlur] = useState<boolean>(true);
   return (
-    <div className="relative grid grid-flow-col auto-cols-[auto auto] w-full h-full">
+    <div className="relative grid grid-flow-col auto-cols-auto w-full h-full">
       <div className="relative col-start-1 row-start-1 w-80 h-full">
         <div
           className={`relative border-t-2 border-offBlack w-full h-full xl:border-b-[1.18vw] border-b-[1.55vw] bg-offBlack ${
@@ -24,7 +24,7 @@ const LibraryLarge: FunctionComponent<LibrarySmallProps> = ({
           </div> */}
 
           <Image layout="fill" objectFit="cover" src={showImage} />
-          <div className="relative w-full h-full grid grid-flow-col auto-cols-[auto auto] pr-4 pb-2">
+          <div className="relative w-full h-full grid grid-flow-col auto-cols-auto pr-4 pb-2">
             {link !== "" ? (
               <Link href={link}>
                 <a
@@ -79,7 +79,7 @@ const LibraryLarge: FunctionComponent<LibrarySmallProps> = ({
               }}
               ref={lastBook}
             >
-              <div className="grid grid-flow-row auto-rows-[auto auto] relative w-full h-fit gap-3 p-4">
+              <div className="grid grid-flow-row auto-rows-auto relative w-full h-fit gap-3 p-4">
                 <div
                   id={book.id}
                   className={`relative row-start-1 w-14 h-14 place-self-center rounded-full border-2 border-offBlack text-center font-lib self-start`}
@@ -98,7 +98,7 @@ const LibraryLarge: FunctionComponent<LibrarySmallProps> = ({
                       onLoadingComplete={() => setBlur(false)}
                       blurDataURL={`/images/blurred/rounded.png`}
                     />
-                    <div className="relative w-full h-full grid grid-flow-col auto-cols-[auto auto]">
+                    <div className="relative w-full h-full grid grid-flow-col auto-cols-auto">
                       <div className="relative col-start-1 w-fit h-fit place-self-center">
                         {Number(book.number) < 10
                           ? `0${book.number}`
@@ -114,7 +114,7 @@ const LibraryLarge: FunctionComponent<LibrarySmallProps> = ({
                   ></div>
                 </div>
                 <div className="relative row-start-3 self-end relative text-[1.3vw] whitespace-nowrap font-lib place-self-center h-full w-10 rotate-90">
-                  <div className="relative grid grid-flow-row auto-rows-[auto auto]">
+                  <div className="relative grid grid-flow-row auto-rows-auto">
                     <div className="border-2 border-offBlack relative h-full w-fit p-2 text-offBlack row-start-1 place-self-center self-center justify-self-center z-10 bg-offWhite">
                       {book.name}
                     </div>
@@ -130,7 +130,7 @@ const LibraryLarge: FunctionComponent<LibrarySmallProps> = ({
           library.length + 1
         } row-start-1 w-full h-full bg-offBlack`}
       >
-        <div className="relative grid auto-cols-[auto auto] grid-flow-col w-full h-full pt-12 pb-12 pr-12 pl-12">
+        <div className="relative grid auto-cols-auto grid-flow-col w-full h-full pt-12 pb-12 pr-12 pl-12">
           <div
             className={`relative w-6 h-[16vw] col-start-1 place-self-center ${
               blur && "blur-sm animate-unblur"
@@ -145,7 +145,7 @@ const LibraryLarge: FunctionComponent<LibrarySmallProps> = ({
             />
           </div>
           <div className="relative w-fit h-full col-start-2 place-self-center pl-4">
-            <div className="relative h-full w-6 grid grid-flow-col auto-cols-[auto auto] col-start-1 md:row-start-1 lg:pr-1">
+            <div className="relative h-full w-6 grid grid-flow-col auto-cols-auto col-start-1 md:row-start-1 lg:pr-1">
               <div className="relative col-start-1 w-full h-full border-t-2 border-b-2 border-r border-midWhite"></div>
               <div className="relative col-start-2 w-full h-full border-t-2 border-b-2 border-l border-midWhite"></div>
             </div>

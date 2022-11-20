@@ -25,10 +25,10 @@ const Display: FunctionComponent<DisplayProps> = ({
   const [blur, setBlur] = useState<boolean>(true);
   return (
     <div className="relative flex bg-offBlack w-full min-w-full h-fit min-h-fit">
-      <div className="grid grid-flow-rows auto-row-[auto auto] w-full min-w-full p-4">
+      <div className="grid grid-flow-rows auto-row-auto w-full min-w-full p-4">
         <div className="relative h-fit w-full row-start-1">
           <div
-            className="grid relative grid-flow-col auto-cols-[auto auto] content-between justify-between w-full h-fit pt-2 pb-2"
+            className="grid relative grid-flow-col auto-cols-auto content-between justify-between w-full h-fit pt-2 pb-2"
             ref={shop}
             id="shop"
           >
@@ -37,7 +37,7 @@ const Display: FunctionComponent<DisplayProps> = ({
             </div>
             <div className="col-start-2 w-fit h-fit relative place-self-center">
               <div className="border border-offBlack rounded-full border-l border-r pl-1 pr-1 w-36 h-12 relative bg-skyBlue">
-                <div className="border-r-2 border-l-2 border-offBlack rounded-full w-full h-full whitespace-nowrap relative bg-midWhite grid grid-col-flow auto-cols-[auto auto]">
+                <div className="border-r-2 border-l-2 border-offBlack rounded-full w-full h-full whitespace-nowrap relative bg-midWhite grid grid-col-flow auto-cols-auto">
                   <div
                     className={`col-start-1 relative w-fit h-fit place-self-center pt-1.5  ${
                       pageBoundaryBackward &&
@@ -89,7 +89,7 @@ const Display: FunctionComponent<DisplayProps> = ({
         </div>
         <div className="relative w-full h-fit pt-10 pb-2 flex justify-center cursor-sewingHS hover:opacity-70 active:opacity-70">
           <div
-            className="relative grid grid-flow-col auto-cols-[auto auto] w-fit h-fit"
+            className="relative grid grid-flow-col auto-cols-auto w-fit h-fit"
             onClick={() => {
               setMore(!more);
               router.replace(

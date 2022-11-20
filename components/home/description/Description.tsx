@@ -3,7 +3,7 @@ import useGallery from "../display/hooks/useGallery";
 
 const Description: FunctionComponent = (): JSX.Element => {
   return (
-    <div className="relative w-screen h-fit grid grid-flow-col auto-col-[auto auto] items-center justify-center bg-offBlack pt-10 pb-10">
+    <div className="relative w-screen h-fit grid grid-flow-col auto-col-auto items-center justify-center bg-offBlack pt-10 pb-10">
       <div
         id="world"
         className="text-center font-mag text-[4.6vw] sm:text-[3.4vw] whitespace-nowrap pt-3 pb-10 w-fit h-full relative col-start-1 row-start-1 leading-snug pl-[8vw] pr-[8vw] place-self-center"

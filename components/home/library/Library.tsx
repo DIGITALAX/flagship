@@ -9,7 +9,7 @@ const Library: FunctionComponent<LibraryProps> = ({
 }): JSX.Element => {
   const [blur, setBlur] = useState<boolean>(true);
   return (
-    <div className="relative grid w-full h-fit grid-flow-row auto-rows-[auto auto] pt-4">
+    <div className="relative grid w-full h-fit grid-flow-row auto-rows-auto pt-4">
       <div className={`row-start-1 relative w-full h-3 border-t-4 border-black ${
             blur && "blur-sm animate-unblur"
           }`}>

@@ -19,13 +19,13 @@ const Blender: FunctionComponent<BlenderProps> = ({
   } = useBox();
   const [blur, setBlur] = useState<boolean>(true);
   return (
-    <div className="relative grid-flow-row auto-rows-[auto auto] max-w-screen overflow-hidden w-fit h-fit text-mainText place-self-center pb-10">
+    <div className="relative grid-flow-row auto-rows-auto max-w-screen overflow-hidden w-fit h-fit text-mainText place-self-center pb-10">
       <div className="relative row-start-1 w-full h-fit md:pr-0 md:pl-0 pl-3 pr-3 sm:pr-10 sm:pl-10">
-        <div className="grid grid-flow-col auto-cols-[auto auto] relative w-full h-fit pt-20">
+        <div className="grid grid-flow-col auto-cols-auto relative w-full h-fit pt-20">
           <div className="relative h-fit w-fit col-start-1 row-start-1">
-            <div className="grid grid-flow-row auto-rows-[auto auto] relative w-full h-fit gap-6">
+            <div className="grid grid-flow-row auto-rows-auto relative w-full h-fit gap-6">
               <div className="relative h-fit w-fit row-start-1">
-                <div className="relative grid grid-flow-row auto-rows-[auto auto] w-full h-fit">
+                <div className="relative grid grid-flow-row auto-rows-auto w-full h-fit">
                   <div className="relative row-start-1 w-full h-fit font-lib text-xs text-center pl-4 galaxy:pl-0">
                     x03.m-4
                   </div>

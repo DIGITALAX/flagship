@@ -17,7 +17,7 @@ const Form: FunctionComponent= (): JSX.Element => {
       onSubmit={(e) => handleSubmitForm(e)}
       className="relative h-fit w-fit"
     >
-      <div className="relative grid auto-rows-[auto auto] grid-flow-row gap-10">
+      <div className="relative grid auto-rows-auto grid-flow-row gap-10">
         <div className="relative h-fit w-fit col-start-1 row-start-1">
           <div className="relative col-start-1 row-start-1">
             <input name="expressInterest" className="hidden" defaultValue={expressInterest} />

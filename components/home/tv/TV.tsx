@@ -8,7 +8,7 @@ const TV: FunctionComponent = (): JSX.Element => {
   const { newImages, refreshImages } = useTV();
   const [blur, setBlur] = useState<boolean>(true);
   return (
-    <div className="relative grid grid-flow-row auto-rows-[auto auto] w-full min-w-full h-fit pb-32 p-10 justify-center">
+    <div className="relative grid grid-flow-row auto-rows-auto w-full min-w-full h-fit pb-32 p-10 justify-center">
       <div className="w-fit max-w-screen h-fit row-start-1 relative place-self-center h-[57vw]">
         <video
           autoPlay
@@ -19,7 +19,7 @@ const TV: FunctionComponent = (): JSX.Element => {
         >
           <source src="/videos/glitch.mp4" type="video/mp4"></source>
         </video>
-        <div className="relative grid grid-flow-col auto-cols-[auto auto] w-full h-full p-4 sm:p-4 md:p-10 pb-0 md:pb-0 sm:pb-0 md:pt-16 lg:pt-24 pt-8 sm:pt-12 gap-1 sm:gap-3 sm:gap-6 justify-center ">
+        <div className="relative grid grid-flow-col auto-cols-auto w-full h-full p-4 sm:p-4 md:p-10 pb-0 md:pb-0 sm:pb-0 md:pt-16 lg:pt-24 pt-8 sm:pt-12 gap-1 sm:gap-3 sm:gap-6 justify-center ">
           {newImages.map((image: string, index: number) => {
             return (
               <Link href={"https://digifizzy.xyz"} key={index}>

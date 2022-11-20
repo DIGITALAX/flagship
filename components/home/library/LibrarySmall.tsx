@@ -12,8 +12,8 @@ const LibrarySmall: FunctionComponent<LibraryLargeProps> = ({
   const { showImage, setShowImage, setLink, link, lastBook, handleLastBook } =
     useLibrary();
   return (
-    <div className="relative grid w-full h-fit grid-flow-row auto-rows-[auto auto]">
-      <div className="row-start-1 relative grid grid-flow-col auto-cols-[auto auto] w-full sm:min-h-[80vw] min-h-[120vw] md:min-h-[60vw]">
+    <div className="relative grid w-full h-fit grid-flow-row auto-rows-auto">
+      <div className="row-start-1 relative grid grid-flow-col auto-cols-auto w-full sm:min-h-[80vw] min-h-[120vw] md:min-h-[60vw]">
         <div className="relative w-full h-full overflow-x-scroll overflow-y-hidden flex">
           {library.map((book: Library, index: number) => {
             return (
@@ -29,7 +29,7 @@ const LibrarySmall: FunctionComponent<LibraryLargeProps> = ({
                 }}
                 ref={lastBook}
               >
-                <div className="grid grid-flow-row auto-rows-[auto auto] relative w-full h-fit gap-3 p-4">
+                <div className="grid grid-flow-row auto-rows-auto relative w-full h-fit gap-3 p-4">
                   <div
                     id={book.id}
                     className={`relative row-start-1 w-14 h-14 place-self-center rounded-full border-2 border-offBlack text-center font-lib self-start`}
@@ -48,7 +48,7 @@ const LibrarySmall: FunctionComponent<LibraryLargeProps> = ({
                         onLoadingComplete={() => setBlur(false)}
                         blurDataURL={`/images/blurred/rounded.png`}
                       />
-                      <div className="relative w-full h-full grid grid-flow-col auto-cols-[auto auto]">
+                      <div className="relative w-full h-full grid grid-flow-col auto-cols-auto">
                         <div className="relative col-start-1 w-fit h-fit place-self-center">
                           {Number(book.number) < 10
                             ? `0${book.number}`
@@ -64,7 +64,7 @@ const LibrarySmall: FunctionComponent<LibraryLargeProps> = ({
                     ></div>
                   </div>
                   <div className="relative row-start-3 self-end relative text-[3vw] sm:text-[2vw] md:text-[1.7vw] lg:text-[1.3vw] whitespace-nowrap font-lib place-self-center h-full w-10 rotate-90">
-                    <div className="relative grid grid-flow-row auto-rows-[auto auto]">
+                    <div className="relative grid grid-flow-row auto-rows-auto">
                       <div className="border-2 border-offBlack relative h-full w-fit p-2 text-offBlack row-start-1 place-self-center self-center justify-self-center z-10 bg-offWhite">
                         {book.name}
                       </div>
@@ -76,7 +76,7 @@ const LibrarySmall: FunctionComponent<LibraryLargeProps> = ({
           })}
         </div>
       </div>
-      <div className="row-start-2 w-full h-full relative relative grid-flow-col auto-cols-[auto auto] grid">
+      <div className="row-start-2 w-full h-full relative relative grid-flow-col auto-cols-auto grid">
         <div className="relative col-start-1 row-start-1 sm:min-w-[40vw] w-full h-[50vw]">
           <Image
             layout="fill"
@@ -84,7 +84,7 @@ const LibrarySmall: FunctionComponent<LibraryLargeProps> = ({
             src={showImage}
             className={`bg-offBlack ${blur && "blur-sm animate-unblur"}`}
           />
-          <div className="relative grid w-full h-full grid-flow-col auto-cols-[auto auto] pr-4 pb-2">
+          <div className="relative grid w-full h-full grid-flow-col auto-cols-auto pr-4 pb-2">
             {link !== "" ? (
               <Link href={link}>
                 <a
@@ -124,13 +124,13 @@ const LibrarySmall: FunctionComponent<LibraryLargeProps> = ({
           </div>
         </div>
         <div className="relative col-start-2 row-start-1 w-full h-full bg-offBlack self-end">
-          <div className="relative grid auto-rows-[auto auto] grid-flow-row w-full h-full">
+          <div className="relative grid auto-rows-auto grid-flow-row w-full h-full">
             <div className="relative w-fit h-fit col-start-1 row-start-1 place-self-center font-lib text-midWhite text-[2vw] p-3 text-center">
               116 104 101 32 101 99 111 <br />
               115 121 115 116 101 109
             </div>
             <div className="relative w-fit h-full col-start-1 row-start-2 place-self-center pb-0 sm:pb-4 p-0 sm:p-1 md:p-4">
-              <div className="relative h-6 w-52 grid grid-flow-row auto-rows-[auto auto] col-start-1 md:row-start-1">
+              <div className="relative h-6 w-52 grid grid-flow-row auto-rows-auto col-start-1 md:row-start-1">
                 <div className="relative row-start-1 w-full h-full border-r-2 border-l-2 border-b border-midWhite"></div>
                 <div className="relative row-start-2 w-full h-full border-l-2 border-r-2 border-t border-midWhite"></div>
               </div>

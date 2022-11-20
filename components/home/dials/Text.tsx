@@ -4,10 +4,10 @@ import { FunctionComponent, useState } from "react";
 const Text: FunctionComponent = (): JSX.Element => {
   const [blur, setBlur] = useState<boolean>(true);
   return (
-    <div className="relative max-w-screen w-fit pb-8  h-full grid grid-flow-col auto-col-[auto auto]">
+    <div className="relative max-w-screen w-fit pb-8  h-full grid grid-flow-col auto-col-auto">
       <div className="relative place-self-center w-fit lg:w-full h-full row-start-1 col-start-1 text-mainText lg:pl-4">
-        <div className="relative w-full h-full grid grid-flow-col auto-col-[auto auto]">
-          <div className="relative h-full w-6 grid grid-flow-col auto-cols-[auto auto] col-start-1 md:row-start-1 lg:pr-1">
+        <div className="relative w-full h-full grid grid-flow-col auto-col-auto">
+          <div className="relative h-full w-6 grid grid-flow-col auto-cols-auto col-start-1 md:row-start-1 lg:pr-1">
             <div className="relative col-start-1 w-full h-full border-t-2 border-b-2 border-r border-mainText"></div>
             <div className="relative col-start-2 w-full h-full border-t-2 border-b-2 border-l border-mainText"></div>
           </div>
@@ -48,7 +48,7 @@ const Text: FunctionComponent = (): JSX.Element => {
             />
           </div>
 
-          <div className="relative h-full w-6 grid grid-flow-col auto-cols-[auto auto] col-start-5 md:row-start-1">
+          <div className="relative h-full w-6 grid grid-flow-col auto-cols-auto col-start-5 md:row-start-1">
             <div className="relative col-start-1 w-full h-full border-t-2 border-b-2 border-r border-mainText"></div>
             <div className="relative col-start-2 w-full h-full border-t-2 border-b-2 border-l border-mainText"></div>
           </div>

@@ -7,7 +7,7 @@ const Gallery280: FunctionComponent<useGalleryBoxProps> = ({
 }): JSX.Element => {
   const [blur, setBlur] = useState<boolean>(true);
   return (
-    <div className="relative grid grid-flow-col auto-cols-[auto auto] w-full h-fit justify-evenly gap-2 pt-4">
+    <div className="relative grid grid-flow-col auto-cols-auto w-full h-fit justify-evenly gap-2 pt-4">
       {currentImages.slice(0, 3).map((image: Blender, index: number) => {
         return (
           <div
