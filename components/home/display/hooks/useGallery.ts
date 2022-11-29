@@ -8,7 +8,7 @@ const useGallery = (): useGalleryResult => {
   const imagesPerPage: number = 18;
   const [images, setImages] = useState<Gallery[]>(
     tokens.slice(0, imagesPerPage)
-  );
+  ); 
   const [loading, setLoading] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [pageBoundaryBackward, setPageBoundaryBackward] = useState<boolean>();
