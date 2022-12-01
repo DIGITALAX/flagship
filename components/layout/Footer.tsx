@@ -196,7 +196,7 @@ const Footer: FunctionComponent<FooterProps> = ({
                     </a>
                   </Link>
                 </div>
-                <div className="relative w-fit h-fit col-start-5">
+                <div className="relative w-fit h-fit col-start-5 place-self-center">
                   <Link href={"https://youtube.com/@digitalax"}>
                     <a
                       target="_blank"
