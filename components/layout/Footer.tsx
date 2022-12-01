@@ -196,6 +196,22 @@ const Footer: FunctionComponent<FooterProps> = ({
                     </a>
                   </Link>
                 </div>
+                <div className="relative w-fit h-fit col-start-5">
+                  <Link href={"https://youtube.com/@digitalax"}>
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      className="cursor-sewingHS h-fit relative"
+                    >
+                      <Image
+                        src={"/images/youtube.png"}
+                        width={30}
+                        height={20}
+                        priority
+                      />
+                    </a>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
