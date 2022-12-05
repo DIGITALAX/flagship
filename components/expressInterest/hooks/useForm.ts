@@ -9,10 +9,10 @@ const useForm = (): useFormResults => {
     e.preventDefault();
     try {
       await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID_2 as string,
-        process.env.NEXT_PUBLIC_SERVICE_ID_2 as string,
+        `${process.env.NEXT_PUBLIC_SERVICE_ID}` as string,
+        `${process.env.NEXT_PUBLIC_TEMPLATE_ID}` as string,
         e.target,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID_2 as string
+        `${process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID}` as string
       );
       setSubmitSuccess(true);
     } catch (err: any) {
