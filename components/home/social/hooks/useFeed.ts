@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import exploreInariPublications from "../../../../graphql/queries/explorePublications";
+import exploreInariPublications, {
+  feedTimeline,
+} from "../../../../graphql/queries/explorePublications";
 import { useFeedResults } from "../../../../types/general.types";
 import { useMediaQuery } from "@material-ui/core";
 
@@ -16,19 +18,17 @@ const useFeed = (): useFeedResults => {
 
   const getFeedData = async (): Promise<any> => {
     try {
-      const response = await exploreInariPublications({
-        sources: "inarisynth",
+      const response = await feedTimeline({
+        profileId: "0x016305",
         publicationTypes: ["POST", "COMMENT", "MIRROR"],
         limit: 30,
-        sortCriteria: "LATEST",
-        noRandomize: true,
       });
-      const arr: any[] = [...response.data.explorePublications.items];
+      const arr: any[] = [...response?.data.publications.items];
       const sortedArr: any[] = arr.sort(
         (a: any, b: any) => Date.parse(b.createdAt) - Date.parse(a.createdAt)
       );
       setPublicationsFeed(sortedArr);
-      setPageInfo(response.data.explorePublications.pageInfo);
+      setPageInfo(response?.data.publications.pageInfo);
       return sortedArr;
     } catch (err: any) {
       console.error(err.message);
@@ -37,21 +37,19 @@ const useFeed = (): useFeedResults => {
 
   const getMoreFeed = async (): Promise<any> => {
     try {
-      const response = await exploreInariPublications({
-        sources: "inarisynth",
+      const morePublications = await feedTimeline({
+        profileId: "0x016305",
         publicationTypes: ["POST", "COMMENT", "MIRROR"],
         limit: 30,
-        sortCriteria: "LATEST",
-        noRandomize: true,
-        cursor: pageInfo.next,
+        cursor: pageInfo?.next,
       });
-      const arr: any[] = [...response.data.explorePublications.items];
-      const sortedArr: any[] = arr.sort(
+
+      const arr = [...morePublications?.data.publications.items];
+      const sortedArr = arr.sort(
         (a: any, b: any) => Date.parse(b.createdAt) - Date.parse(a.createdAt)
       );
       setPublicationsFeed([...publicationsFeed, ...sortedArr]);
-      setPageInfo(response.data.explorePublications.pageInfo);
-      return sortedArr;
+      setPageInfo(morePublications?.data.publications.pageInfo);
     } catch (err: any) {
       console.error(err.message);
     }
@@ -62,7 +60,7 @@ const useFeed = (): useFeedResults => {
     getMoreFeed,
     queryWindowSize,
     queryWindowSizeMobile,
-    queryWindowSizeXL
+    queryWindowSizeXL,
   };
 };
 
