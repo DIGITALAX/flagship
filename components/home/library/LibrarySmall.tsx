@@ -14,7 +14,7 @@ const LibrarySmall: FunctionComponent<LibraryLargeProps> = ({
   return (
     <div className="relative grid w-full h-fit grid-flow-row auto-rows-auto">
       <div className="row-start-1 relative grid grid-flow-col auto-cols-auto w-full sm:min-h-[80vw] min-h-[120vw] md:min-h-[60vw]">
-        <div className="relative w-full h-full overflow-x-scroll overflow-y-hidden flex">
+        <div className="relative w-full h-full overflow-x-scroll overflow-y-hidden flex" id="library">
           {library.map((book: Library, index: number) => {
             return (
               <div

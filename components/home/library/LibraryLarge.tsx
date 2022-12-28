@@ -64,7 +64,7 @@ const LibraryLarge: FunctionComponent<LibrarySmallProps> = ({
           </div>
         </div>
       </div>
-      <div className="relative w-full h-full overflow-x-scroll overflow-y-hidden flex">
+      <div className="relative w-full h-full overflow-x-scroll overflow-y-hidden flex" id="library">
         {library.map((book: Library, index: number) => {
           return (
             <div

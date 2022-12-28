@@ -12,8 +12,16 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    loader: "akamai",
-    path: "https://digitalax.xyz",
+    // loader: "akamai",
+    remotePatterns: [
+      {
+        protocol: "https",
+        // hostname: "**.ipfs.w3s.link",
+        hostname: "thedial.infura-ipfs.io",
+        pathname: "/ipfs/**",
+      },
+    ],
+    unoptimized: true,
   },
   trailingSlash: true,
 };

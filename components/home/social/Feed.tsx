@@ -4,6 +4,7 @@ import { HiCollection } from "react-icons/hi";
 import moment from "moment";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { FeedProps } from "../../../types/general.types";
+import Image from "next/image";
 
 const Feed: FunctionComponent<FeedProps> = ({
   publicationsFeed,
@@ -25,7 +26,6 @@ const Feed: FunctionComponent<FeedProps> = ({
           ? "100rem"
           : "50rem"
       }
-      // scrollableTarget="scrollableDiv"
     >
       {publicationsFeed?.map((publication: any, index: number) => {
         let profileImage: string;
@@ -40,8 +40,8 @@ const Feed: FunctionComponent<FeedProps> = ({
           if (publication.profile.picture.original.url.includes("http")) {
             profileImage = publication.profile.picture.original.url;
           } else {
-            const cut = publication.profile.picture.original.url.split("/");
-            profileImage = "https://thedial.infura-ipfs.io/ipfs/" + cut[2];
+            const cut = publication.profile.picture.original.url.split("//");
+            profileImage = "https://thedial.infura-ipfs.io/ipfs/" + cut[1];
           }
         } else {
           profileImage = publication.profile.picture.uri;
@@ -49,49 +49,54 @@ const Feed: FunctionComponent<FeedProps> = ({
         return (
           <div
             key={index}
-            className={`relative w-full h-fit p-2 md:p-[1vw] md:pl-0 md:pr-0 row-start-${index}`}
+            className={`relative w-full h-fit row-start-${index} grid grid-flow-col auto-cols-auto pb-4 pt-4 overflow-x-none`}
           >
-            <div className="relative grid grid-flow-row auto-rows-auto w-full h-full  rounded-xl drop-shadow-xl bg-white pb-4 pt-4 border-2 border-lightB">
-              <div className="relative w-fit xl:w-full h-full row-start-1 pt-4 place-self-center sm:place-self-start half:place-self-center xl:place-self-start half:pr-2 half:pl-2 sm:pr-11 sm:pl-11 xl:pr-11 xl:pl-11 ">
-                <div className="relative grid grid-flow-col auto-cols-auto w-fit h-full">
-                  <a
-                    href={`https://lenster.xyz/u/${publication?.profile?.handle}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="cursor-sewingHS w-fit h-fit relative col-start-1 place-self-start md:place-self-center pr-3 row-start-1"
-                  >
-                    <img
-                      src={profileImage}
-                      className="w-8 h-8 rounded-full drop-shadow-md relative"
-                    />
-                  </a>
-
-                  <a
-                    href={`https://lenster.xyz/u/${publication?.profile?.handle}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="cursor-sewingHS relative w-fit h-fit col-start-2 row-start-1 self-center pt-2 md:pt-0 pr-4 xl:pr-16"
-                  >
-                    <div className="text-lensDark relative font-fira text-xs xl:text-base whitespace-nowrap">
-                      @{publication?.profile?.handle}
-                    </div>
-                  </a>
-
-                  <div className="relative w-fit h-fit col-start-3 row-start-1 text-space text-xs font-firaL self-center justify-end place-self-center md:pr-4 whitespace-nowrap pt-2 md:pt-0 pr-6">
-                    {moment(`${publication?.createdAt}`).fromNow()}
-                  </div>
-                  {publication.__typename === "Mirror" && (
-                    <div className="w-fit place-self-center self-center place-self-center  relative md:pt-0 pt-2 col-start-4 h-fit row-start-1">
-                      <FaRetweet />
-                    </div>
-                  )}
+            <div className="relative w-5/6 h-fit p-3 bg-white drop-shadow-xl grid grid-flow-row auto-rows-auto place-self-center col-start-1 rounded-xl border-2 border-offBlack">
+              {publication.__typename === "Mirror" && (
+                <div className="w-fit justify-self-end self-start relative h-fit row-start-1">
+                  <FaRetweet />
                 </div>
-              </div>
-              <div className="relative w-fit h-full row-start-2 text-sm place-self-start text-offBlack p-14 pb-8 pt-0 font-gisL">
+              )}
+              <a
+                className={`relative w-full h-fit grid grid-flow-col auto-cols-auto cursor-sewingHS justify-self-start galaxy:p-2 ${
+                  publication.__typename === "Mirror"
+                    ? "row-start-2"
+                    : "row-start-1"
+                }`}
+                href={`https://lenster.xyz/u/${publication?.profile?.handle}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div className="relative w-fit h-fit col-start-1 justify-self-start self-center grid grid-flow-col auto-cols-auto gap-2 row-start-2 sm:row-start-1">
+                  <img
+                    src={profileImage}
+                    className="w-8 h-8 rounded-full drop-shadow-md relative col-start-1"
+                  />
+                  <div className="text-lensDark relative font-fira text-xs xl:text-base w-fit h-fit col-start-2 place-self-center">
+                    @{publication?.profile?.handle}
+                  </div>
+                </div>
+                <div className="relative w-fit h-fit col-start-1 galaxy:col-start-2 place-self-center text-space text-xs font-firaL justify-self-end self-center md:pr-4 whitespace-nowrap pt-2 md:pt-0 row-start-1 galaxy:pb-0 pb-2">
+                  {moment(`${publication?.createdAt}`).fromNow()}
+                </div>
+              </a>
+              <div
+                className={`relative w-fit h-full text-sm place-self-start text-offBlack pb-8 sm:px-3 pt-6 text-center font-gisL break-all ${
+                  publication.__typename === "Mirror"
+                    ? "row-start-3"
+                    : "row-start-2"
+                }`}
+              >
                 {publication?.metadata?.description}
               </div>
               {publication?.metadata?.media?.length !== 0 && (
-                <div>
+                <div
+                  className={`relative w-full h-fit ${
+                    publication.__typename === "Mirror"
+                      ? "row-start-4"
+                      : "row-start-3"
+                  } grid grid-flow-col auto-cols-auto overflow-x-scroll place-self-center gap-2 px-4`}
+                >
                   {publication?.metadata?.media.map(
                     (media: any, index: number) => {
                       const newLink = media?.original?.url.split("/");
@@ -100,19 +105,21 @@ const Feed: FunctionComponent<FeedProps> = ({
                       return (
                         <div
                           key={index}
-                          className={`relative row-start-${
-                            index + 3
-                          } pb-2 w-full h-fit p-10 pt-0`}
+                          className={`relative col-start-${
+                            index + 1
+                          } gap-3 w-40 h-40 galaxy:w-60 galaxy:h-60 row-start-1`}
                         >
                           <a
                             href={imageSource}
                             target="_blank"
                             rel="noreferrer"
-                            className="w-full h-fit cursor-sewingHS"
+                            className="galaxy:w-60 galaxy:h-60 cursor-sewingHS w-40 h-40"
                           >
-                            <img
-                              className="rounded-xl w-full h-fit"
+                            <Image
+                              className="rounded-md border-2 border-black w-full h-full"
                               src={imageSource}
+                              layout="fill"
+                              objectFit="cover"
                             />
                           </a>
                         </div>
@@ -122,50 +129,57 @@ const Feed: FunctionComponent<FeedProps> = ({
                 </div>
               )}
               <div
-                className={`relative w-fit place-self-center h-full row-start-${
+                className={`relative w-fit h-fit grid grid-flow-col auto-cols-auto ${
+                  publication.__typename === "Mirror" &&
                   publication?.metadata?.media?.length !== 0
-                    ? (publication?.metadata?.media?.length + 4).toString()
-                    : "4"
-                }`}
+                    ? "row-start-5"
+                    : (publication.__typename === "Mirror" &&
+                        publication?.metadata?.media?.length === 0) ||
+                      (publication.__typename !== "Mirror" &&
+                        publication?.metadata?.media?.length !== 0)
+                    ? "row-start-4"
+                    : "row-start-3"
+                } gap-3 font-fira text-sm pt-4`}
               >
-                <div className="relative grid grid-flow-col auto-cols-auto w-full h-fit">
-                  <div className="relative w-fit h-fit col-start-1 p-2">
-                    <div className="relative w-full h-fit grid grid-flow-col auto-cols-auto">
-                      <div className="relative w-fit h-fit col-start-1 pr-1">
-                        <HiCollection
-                          className="relative align-middle"
-                          color="#131313"
-                        />
-                      </div>
-                      <div className="relative w-fit h-fit col-start-2 text-xs text-offBlack">
-                        {publication?.stats?.totalAmountOfCollects}
-                      </div>
+                <div className="relative w-fit h-fit col-start-1 grid grid-flow-col auto-cols-auto gap-1 place-self-center cursor-sewingHS">
+                  <div className="relative w-fit h-fit col-start-1 place-self-center">
+                    <FaComments
+                      className="relative align-middle"
+                      color="#81A8F8"
+                      size={15}
+                    />
+                  </div>
+                  <div className="relative w-fit h-fit col-start-2 place-self-center grid grid-flow-col auto-cols-auto">
+                    <div className="relative w-fit h-fit col-start-1 place-self-center">
+                      {publication?.stats?.totalAmountOfComments}
                     </div>
                   </div>
-                  <div className="relative w-fit h-fit col-start-2 p-2">
-                    <div className="relative w-full h-fit grid grid-flow-col auto-cols-auto">
-                      <div className="relative w-fit h-fit col-start-1 pr-1">
-                        <FaComments
-                          className="relative align-middle"
-                          color="#131313"
-                        />
-                      </div>
-                      <div className="relative w-fit h-fit col-start-2 text-xs text-offBlack">
-                        {publication?.stats?.totalAmountOfComments}
-                      </div>
+                </div>
+                <div className="relative w-fit h-fit col-start-2 grid grid-flow-col auto-cols-auto gap-1 place-self-center cursor-sewingHS">
+                  <div className="relative w-fit h-fit col-start-1 place-self-center">
+                    <HiCollection
+                      className="relative align-middle"
+                      color="#81A8F8"
+                      size={15}
+                    />
+                  </div>
+                  <div className="relative w-fit h-fit col-start-2 place-self-center grid grid-flow-col auto-cols-auto">
+                    <div className="relative w-fit h-fit col-start-1 place-self-center">
+                      {publication?.stats?.totalAmountOfCollects}
                     </div>
                   </div>
-                  <div className="relative w-fit h-fit col-start-3 p-2">
-                    <div className="relative w-full h-fit grid grid-flow-col auto-cols-auto">
-                      <div className="relative w-fit h-fit col-start-1 pr-1">
-                        <FaRetweet
-                          className="relative align-middle"
-                          color="#131313"
-                        />
-                      </div>
-                      <div className="relative w-fit h-fit col-start-2 text-xs text-offBlack">
-                        {publication?.stats?.totalAmountOfMirrors}
-                      </div>
+                </div>
+                <div className="relative w-fit h-fit col-start-3 grid grid-flow-col auto-cols-auto gap-1 place-self-center cursor-sewingHS">
+                  <div className="relative w-fit h-fit col-start-1 place-self-center">
+                    <FaRetweet
+                      className="relative align-middle"
+                      color="#81A8F8"
+                      size={15}
+                    />
+                  </div>
+                  <div className="relative w-fit h-fit col-start-2 place-self-center grid grid-flow-col auto-cols-auto">
+                    <div className="relative w-fit h-fit col-start-1 place-self-center">
+                      {publication?.stats?.totalAmountOfMirrors}
                     </div>
                   </div>
                 </div>

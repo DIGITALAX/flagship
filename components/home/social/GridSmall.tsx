@@ -2,7 +2,6 @@ import Image from "next/image";
 import { FunctionComponent } from "react";
 import { GridSmallProps } from "../../../types/general.types";
 import Feed from "./Feed";
-import Feed280 from "./Feed280";
 
 const GridSmall: FunctionComponent<GridSmallProps> = ({
   getMoreFeed,
@@ -10,7 +9,6 @@ const GridSmall: FunctionComponent<GridSmallProps> = ({
   queryWindowSize,
   queryWindowSizeMobile,
   queryWindowSizeXL,
-  queryWindowSize300,
 }): JSX.Element => {
   return (
     <div className="bg-offBlack w-full h-fit relative grid grid-flow-row auto-rows-auto pb-4 pt-4">
@@ -73,24 +71,14 @@ const GridSmall: FunctionComponent<GridSmallProps> = ({
         </div>
       </div>
       <div className="row-start-6 col-start-1 relative w-full h-fit bg-offWhite border-offBlack">
-        <div className="relative w-full h-full grid grid-flow-row auto-rows-auto content-center">
-          {queryWindowSize300 ? (
-            <Feed280
-              publicationsFeed={publicationsFeed}
-              getMoreFeed={getMoreFeed}
-              queryWindowSize={queryWindowSize}
-              queryWindowSizeMobile={queryWindowSizeMobile}
-              queryWindowSizeXL={queryWindowSizeXL}
-            />
-          ) : (
-            <Feed
-              publicationsFeed={publicationsFeed}
-              getMoreFeed={getMoreFeed}
-              queryWindowSize={queryWindowSize}
-              queryWindowSizeMobile={queryWindowSizeMobile}
-              queryWindowSizeXL={queryWindowSizeXL}
-            />
-          )}
+        <div className="relative w-full h-full grid grid-flow-row auto-rows-auto content-center overflow-x-none">
+          <Feed
+            publicationsFeed={publicationsFeed}
+            getMoreFeed={getMoreFeed}
+            queryWindowSize={queryWindowSize}
+            queryWindowSizeMobile={queryWindowSizeMobile}
+            queryWindowSizeXL={queryWindowSizeXL}
+          />
         </div>
       </div>
     </div>
