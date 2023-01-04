@@ -139,7 +139,7 @@ const Feed: FunctionComponent<FeedProps> = ({
                         publication?.metadata?.media?.length !== 0)
                     ? "row-start-4"
                     : "row-start-3"
-                } gap-3 font-fira text-sm pt-4`}
+                } gap-3 font-fira text-sm pt-4 pl-4`}
               >
                 <div className="relative w-fit h-fit col-start-1 grid grid-flow-col auto-cols-auto gap-1 place-self-center cursor-sewingHS">
                   <div className="relative w-fit h-fit col-start-1 place-self-center">
